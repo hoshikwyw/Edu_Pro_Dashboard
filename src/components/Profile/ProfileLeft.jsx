@@ -14,7 +14,7 @@ const ProfileLeft = () => {
       <div className="h-[95%] w-full justify-center bgTransparent rounded">
         {/* Profile */}
         <div className=" select-none relative  lg:h-[40%] md:h-[43%] h-[35%]   w-full  overflow-hidden ">
-          <div className="absolute top-[-50%] right-[0%] md:h-[250px]  md:top-[-36%] white-transparent borderDesign "></div>
+          <div className="absolute top-[-50%] right-[0%] md:h-[250px]  md:top-[-36%] white-transparent borderDesign bg-orange-700 "></div>
           <div className=" lg:absolute md:absolute lg:pt-0 md:pt-0 pt-6 right-[30%] top-[20%]  md:top-[20%] md:right-[40%]  flex justify-center flex-col items-center lg:gap-y-5 gap-y-0 md:gap-y-5    lg:top-[10%] lg:right-[40%]">
             <div className="relative h-[130px] w-[130px] flex justify-center items-center overflow-hidden   rounded-[50%] bg-pink-700 ">
               <div className=" z-10 w-[94%] h-[94%] bg-black rounded-[50%]">

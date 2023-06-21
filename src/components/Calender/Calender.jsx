@@ -89,6 +89,19 @@ const Calender = () => {
     days.push(daysOfnext[i]);
   }
 
+  const [opened, { open, close }] = useDisclosure(false);
+  const [eventValue, setEventValue] = useState("");
+  const [oneClickDate, setOneClickDate] = useState("");
+  const dispatch = useDispatch();
+  const events = useSelector((state) => state.themeSlice?.events);
+
+  const [togleEvent, setTogleEvent] = useState(false);
+  let filteredEventDisplay = events.filter(
+    (event) =>
+      event?.oneClickDate?.toLocaleString("default", { month: "long" }) ==
+      todayS?.toLocaleString("default", { month: "long" })
+  );
+
   useEffect(() => {
     setCurrentMonth(format(todayS, "MMM-yyyy"));
     days = eachDayOfInterval({
@@ -108,14 +121,13 @@ const Calender = () => {
       start: startOfNextMonth,
       end: endOfNextMonth,
     });
+    filteredEventDisplay = events.filter(
+      (event) =>
+        event?.oneClickDate?.toLocaleString("default", { month: "long" }) ==
+        todayS?.toLocaleString("default", { month: "long" })
+    );
   }, [todayS]);
-  const [opened, { open, close }] = useDisclosure(false);
-  const [eventValue, setEventValue] = useState(" ");
-  const [oneClickDate, setOneClickDate] = useState("");
-  const dispatch = useDispatch();
-  const events = useSelector((state) => state.themeSlice?.events);
-  const [togleEvent, setTogleEvent] = useState(false);
-  // let filteredEventDisplay = [];
+  // console.log(filteredEventDisplay);
   // const filteredEventDisplayFun = () => {
   //   filteredEventDisplay = events?.filter((event) =>
   //     event.oneClickDate?.getMonth()
@@ -125,20 +137,20 @@ const Calender = () => {
   // filteredEventDisplayFun();
   return (
     <>
-      <div className=" flex justify-center items-center flex-col p-10 ">
+      <div className=" flex justify-center items-center flex-col px-3 py-10 lg:p-10 md:p-10  ">
         <div className="w-full flex justify-between">
           <div className="w-full flex justify-between items-center mb-5">
             <div className="">
               <div
                 onClick={() => settoday(today)}
-                className=" w-[100px] max-[530px]:w-[90px] max-[530px]:text-[15px] max-[340px]:text-[13px] bg-white cursor-pointer hover:bg-slate-400 rounded text-center px-3 py-2 max-[340px]:w-[60px]
+                className=" max-[530px]:w-[90px] max-[530px]:text-[15px] max-[340px]:text-[13px] bg-white cursor-pointer hover:bg-slate-400 rounded text-center px-3 py-2 max-[340px]:w-[60px]
                 ">
                 Today
               </div>
             </div>
 
             {/* max-400px:hidden < > and month 2023 start */}
-            <div className=" max-[400px]:hidden">
+            <div className=" max-[400px]:hidden justify-center flex items-center flex-col">
               <p className="title text-2xl max-[530px]:text-[20px] ">
                 {todayS?.toLocaleString("default", { month: "long" })}
                 <span> {todayS?.getFullYear()}</span>
@@ -288,7 +300,7 @@ const Calender = () => {
               </div>
             </div>
             <div className=" w-full">
-              <div className=" grid grid-cols-7 ">
+              <div className=" grid grid-cols-7 overflow-hidden">
                 {days.map((day, index) => (
                   <div
                     onClick={() => {
@@ -297,17 +309,23 @@ const Calender = () => {
                     }}
                     key={index}
                     className={`lg:p-6 md:p-6 p-2 h-[150px] max-lg:h-[130px] max-md:h-[100px] max-[500px]:h-[80px]
-                     flex flex-col bgTransparent borderTransparent overflow-hidden cursor-pointer`}>
+                     flex flex-col bgTransparent borderTransparent hover:bg-slate-200 hover:bg-transparent  overflow-hidden cursor-pointer`}>
                     <div
                       className={`w-[35px] h-[35px] max-sm:w-[30px] max-sm:h-[30px] max-[430px]:w-[22px] max-[430px]:h-[22px] max-[330px]:w-[18px] max-[330px]:h-[18px] max-[430px]:text-[12px] flex items-center justify-center lg:ms-auto md:ms-auto ${
-                        isToday(day) ? "bg-orange-400 text-black" : ""
+                        isToday(day) ? "bg-orange-400 text-black " : ""
                       }  rounded-[50%] ${
                         isSameMonth(day, todayS) && !isToday(day)
-                          ? "bg-slate-200 "
+                          ? "lg:bg-slate-200 md:bg-slate-200 "
                           : "title"
                       }`}>
-                      <div className="">
-                        <time dateTime={format(day, "yyyy-MM-dd")}>
+                      <div>
+                        <time
+                          dateTime={format(day, "yyyy-MM-dd")}
+                          className={` ${
+                            isSameMonth(day, todayS)
+                              ? "text-white"
+                              : "text-black"
+                          } lg:text-black md:text-black`}>
                           {format(day, "d")}
                         </time>
                       </div>
@@ -319,7 +337,15 @@ const Calender = () => {
                           isSameDay(day, event?.oneClickDate)
                             ? "block"
                             : "hidden"
-                        } title`}>
+                        } title text-white ${
+                          index % 3 == 1
+                            ? " bg-pink-300 text-black"
+                            : "bg-teal-500"
+                        } ${index % 5 == 2 && "bg-rose-400"}
+                        ${index % 4 == 2 && "bg-violet-400"}
+                        ${index % 2 == 0 && "bg-blue-400"}
+                         ${index % 7 == 1 && " bg-fuchsia-800"}
+                         rounded mt-2 lg:px-2 md:px-2 `}>
                         {event?.eventValue}
                       </div>
                     ))}
@@ -334,7 +360,9 @@ const Calender = () => {
               togleEvent == true ? "flex w-full  lg:w-[28%]" : "hidden "
             }  bgTransparent p-3  flex-col gap-y-5 `}>
             <div className=" w-full flex items-center ">
-              <div className=" w-[40%] flex items-center">
+              <div
+                onClick={() => setTogleEvent(false)}
+                className=" w-[40%] flex items-center">
                 <HiBars3BottomRight className=" title" />
               </div>
               <div className=" w-[60%] title flex items-center gap-3">
@@ -345,7 +373,7 @@ const Calender = () => {
               </div>
             </div>
             <ul className=" w-full ">
-              {events.map((event, index) => (
+              {filteredEventDisplay.map((event, index) => (
                 <li
                   key={index}
                   className={`w-full flex gap-5 mb-3 hover:text-orange-400 title`}>
@@ -362,21 +390,26 @@ const Calender = () => {
       </div>
       <Modal opened={opened} onClose={close} withCloseButton={false}>
         <button onClick={() => close()}>
-          <AiOutlineClose />
+          <AiOutlineClose className=" text-orange-600" />
         </button>
         <form
           onSubmit={(e) => {
             e.preventDefault();
-
-            dispatch(addEvent({ oneClickDate, eventValue }));
+            if (eventValue.length) {
+              dispatch(addEvent({ oneClickDate, eventValue }));
+              setEventValue("");
+            }
+            // console.log(eventValue.length);
             close();
-            setEventValue("");
+
             // eventArray.push(eventList);
           }}
-          className=" w-[200px]">
+          className="  flex flex-col justify-center items-center gap-5">
           <div className=" w-full ">
-            <div className="w-[400px] flex justify-center gap-3 flex-col items-center">
-              <label htmlFor="eventInput">Type to create your event</label>
+            <div className=" flex justify-center gap-3 flex-col items-center">
+              <label htmlFor="eventInput" className=" text-teal-600">
+                Type to create your event
+              </label>
               <input
                 id="eventInput"
                 value={eventValue}
@@ -389,6 +422,11 @@ const Calender = () => {
               />
             </div>
           </div>
+          <button
+            onClick={() => close()}
+            className="mx-auto px-4 py-2 bg-teal-400 rounded hover:bg-slate-400 hover:text-white">
+            Note it
+          </button>
         </form>
       </Modal>
     </>

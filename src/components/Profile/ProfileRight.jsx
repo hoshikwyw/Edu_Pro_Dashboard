@@ -20,44 +20,52 @@ const ProfileRight = () => {
         <div className="flex  justify-between items-center  borderCustom">
           <div
             onClick={() => setOpen(0)}
-            className={` w-1/3 title flex  gap-y-2 border-b-blue-500
+            className={` w-1/3 title flex  gap-y-2 border-b-orange-500
              flex-col justify-center items-center ${
                open == 0 ? "border-b-2" : ""
              } py-5 `}>
             <TfiUser
-              className={` cursor-pointer title ${open == 0 ? "text-blue-500" : ""}`}
+              className={` cursor-pointer title ${
+                open == 0 ? "text-orange-500" : ""
+              }`}
             />
             <p
               className={`hidden cursor-pointer md:block lg:block  title ${
-                open == 0 ? "text-blue-500" : ""
+                open == 0 ? "text-orange-500" : ""
               }`}>
               PROFILE
             </p>
           </div>
           <div
             onClick={() => setOpen(1)}
-            className={` w-1/3 title flex  gap-y-2  border-b-blue-500 flex-col justify-center items-center ${
+            className={` w-1/3 title flex  gap-y-2  border-b-orange-500 flex-col justify-center items-center ${
               open == 1 ? "border-b-2" : ""
             } py-5 `}>
             <HiOutlineMailOpen
-              className={` cursor-pointer title ${open == 1 ? "text-blue-500" : ""}`}
+              className={` cursor-pointer title ${
+                open == 1 ? "text-orange-500" : ""
+              }`}
             />
             <p
               className={`hidden md:block cursor-pointer lg:block  title ${
-                open == 1 ? "text-blue-500" : ""
+                open == 1 ? "text-orange-500" : ""
               }`}>
               MESSAGE
             </p>
           </div>
           <div
             onClick={() => setOpen(2)}
-            className={` w-1/3 title flex gap-y-2  border-b-blue-500 flex-col justify-center items-center ${
+            className={` w-1/3 title flex gap-y-2  border-b-orange-500 flex-col justify-center items-center ${
               open == 2 ? "border-b-2" : ""
             } py-5 `}>
-            <LuEdit className={` cursor-pointer title ${open == 2 ? "text-blue-500" : ""}`} />
+            <LuEdit
+              className={` cursor-pointer title ${
+                open == 2 ? "text-orange-500" : ""
+              }`}
+            />
             <p
               className={`hidden md:block cursor-pointer lg:block  title ${
-                open == 2 ? "text-blue-500" : ""
+                open == 2 ? "text-orange-500" : ""
               }`}>
               EDIT
             </p>
