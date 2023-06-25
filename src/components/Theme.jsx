@@ -16,7 +16,7 @@ const Theme = () => {
   const dispatch = useDispatch();
   const bgTexture = useSelector((state) => state.themeSlice?.bgTexture);
 
-  localStorage.setItem("bgTexture", bgTexture);
+  // localStorage.setItem("bgTexture", bgTexture);
 
   const gaussionTexture = [
     { id: 1, name: backgroundImage1 },
@@ -97,7 +97,8 @@ const Theme = () => {
                   <div
                     onClick={() => {
                       dispatch(addBgTexture(bg.name));
-                      refresh();
+                      console.log(bg.name);
+                      //   refresh();
                     }}
                     key={bg.id}
                     className=" w-[87px] h-[75px]">
