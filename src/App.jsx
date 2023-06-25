@@ -8,18 +8,21 @@ import { useSelector } from "react-redux";
 
 const App = () => {
   const bgTexture1 = useSelector((state) => state.themeSlice.bgTexture);
-  // console.log(bgTexture1);
+
   let bgTexture = localStorage.getItem("bgTexture");
-  // console.log(bgTexture.length);
+  console.log(bgTexture?.length > 0 && bgTexture?.length > 25);
+  console.log(bgTexture1?.length < 25);
+  console.log(bgTexture1);
+  console.log(bgTexture);
   return (
     <>
-      {bgTexture1?.length < 25 ? (
+      {bgTexture?.length < 25 ? (
         <div
           className=" min-h-screen"
           style={{
             backgroundImage: bgTexture1
               ? `url(${bgTexture1})`
-              : bgTexture?.length > 0
+              : bgTexture?.length > 0 && bgTexture?.length < 25
               ? `url(${bgTexture})`
               : "url(https://themewagon.github.io/dashtreme/assets/images/bg-themes/1.png)",
             backgroundSize: "100% 100%",
@@ -35,8 +38,6 @@ const App = () => {
           style={{
             backgroundImage: bgTexture
               ? `${bgTexture}`
-              : bgTexture?.length > 0
-              ? `url(${bgTexture})`
               : "url(https://themewagon.github.io/dashtreme/assets/images/bg-themes/1.png)",
             backgroundSize: "100% 100%",
             backgroundRepeat: "no-repeat",
