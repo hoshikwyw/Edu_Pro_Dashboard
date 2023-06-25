@@ -12,6 +12,7 @@ import { addBgTexture } from '../redux/ThemeSlice';
 
 const Theme = () => {
     const [themeOpen,setThemeOpen] = useState(false)
+    const refresh = () => window.location.reload(true);
     const dispatch = useDispatch();
     const gaussionTexture = [
         {id: 1, name:backgroundImage1},
@@ -51,7 +52,10 @@ const Theme = () => {
                 <div className=' flex flex-wrap justify-center items-center gap-4'>
                     {gaussionTexture.map(bg => {
                         return(
-                            <div onClick={()=> dispatch(addBgTexture(bg.name))} key={bg.id} className=' w-[87px] h-[75px] cursor-pointer'>
+                            <div onClick={()=> {
+                                dispatch(addBgTexture(bg.name));
+                                refresh();
+                            }} key={bg.id} className=' w-[87px] h-[75px] cursor-pointer'>
                                 <img className=' w-full h-full rounded-lg' src={bg.name} alt="" />
                             </div>                                
                             )
@@ -66,7 +70,10 @@ const Theme = () => {
                 <div className=' flex flex-wrap justify-center gap-4'>
                     {gradientBackground.map(bg => {
                         return(
-                            <div onClick={()=> dispatch(addBgTexture(bg.name))} key={bg.id} className=' w-[87px] h-[75px]'>
+                            <div onClick={()=> {
+                                dispatch(addBgTexture(bg.name));
+                                refresh();
+                            }} key={bg.id} className=' w-[87px] h-[75px]'>
                                 <div className=' rounded-md cursor-pointer' style={{
                                     backgroundImage: `${bg.name}`,
                                     backgroundSize: '100% 100%',

@@ -12,7 +12,7 @@ const App = () => {
   const bgTexture = localStorage.getItem("bgTexture")
   return (
     <>
-      {bgTexture.length < 25 ? (
+      {bgTexture?.length < 25 ? (
         <div
           className=" min-h-screen"
           style={{
