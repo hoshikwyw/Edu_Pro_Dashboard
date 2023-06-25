@@ -19,7 +19,9 @@ const App = () => {
           style={{
             backgroundImage: bgTexture1
               ? `url(${bgTexture1})`
-              : `url(${bgTexture})`,
+              : bgTexture?.length > 0
+              ? `url(${bgTexture})`
+              : "url(https://themewagon.github.io/dashtreme/assets/images/bg-themes/1.png)",
             backgroundSize: "100% 100%",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
@@ -31,7 +33,11 @@ const App = () => {
         <div
           className=" min-h-screen"
           style={{
-            backgroundImage: bgTexture ? `${bgTexture}` : `url(${bgTexture})`,
+            backgroundImage: bgTexture
+              ? `${bgTexture}`
+              : bgTexture?.length > 0
+              ? `url(${bgTexture})`
+              : "url(https://themewagon.github.io/dashtreme/assets/images/bg-themes/1.png)",
             backgroundSize: "100% 100%",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
