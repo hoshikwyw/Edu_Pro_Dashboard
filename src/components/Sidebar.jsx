@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   AiOutlineAppstore,
   AiOutlineUnorderedList,
@@ -14,6 +14,28 @@ import { Link, NavLink } from "react-router-dom";
 import "./sidebar.css";
 
 const Sidebar = ({ isOpen, isScrolled, toggleSidebar }) => {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (windowWidth <= 900 ) {
+      toggleSidebar(false);
+    }
+    if (windowWidth >= 910) {
+      toggleSidebar(true);
+    }
+  }, [windowWidth]);
   const handleClick = (event) => {
     event.stopPropagation();
   };
@@ -35,7 +57,7 @@ const Sidebar = ({ isOpen, isScrolled, toggleSidebar }) => {
           />
           <p className=" text-[#ffffffa6] text-lg font-bold ">Edu-Pro</p>
         </Link>
-        
+
         <p onClick={toggleSidebar}>
           <BsBoxArrowLeft className=" text-[#ffffffa6]  hover:text-[#ffffff] cursor-pointer closeBtn text-2xl" />
         </p>
