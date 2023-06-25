@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Path from "./route/Path";
 import "./App.css";
 // import Sidebar from "./components/Sidebar";
@@ -7,18 +7,19 @@ import { useSelector } from "react-redux";
 // import Calender from "./components/Calender/calender.jsx";
 
 const App = () => {
-  // const bgTexture = useSelector((state) => state.themeSlice.bgTexture);
-  //   console.log(bgTexture.length);
-  const bgTexture = localStorage.getItem("bgTexture")
+  const bgTexture1 = useSelector((state) => state.themeSlice.bgTexture);
+  // console.log(bgTexture1);
+  let bgTexture = localStorage.getItem("bgTexture");
+  // console.log(bgTexture.length);
   return (
     <>
-      {bgTexture?.length < 25 ? (
+      {bgTexture1?.length < 25 ? (
         <div
           className=" min-h-screen"
           style={{
-            backgroundImage: bgTexture
-              ? `url(${bgTexture})`
-              : `url("https://themewagon.github.io/dashtreme/assets/images/bg-themes/1.png")`,
+            backgroundImage: bgTexture1
+              ? `url(${bgTexture1})`
+              : `url(${bgTexture})`,
             backgroundSize: "100% 100%",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
@@ -30,9 +31,7 @@ const App = () => {
         <div
           className=" min-h-screen"
           style={{
-            backgroundImage: bgTexture
-              ? `${bgTexture}`
-              : `url("https://themewagon.github.io/dashtreme/assets/images/bg-themes/1.png")`,
+            backgroundImage: bgTexture ? `${bgTexture}` : `url(${bgTexture})`,
             backgroundSize: "100% 100%",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
