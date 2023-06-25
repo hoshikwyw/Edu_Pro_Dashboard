@@ -43,7 +43,7 @@ const Theme = () => {
         <div className={`${themeOpen ? " right-0" : "right-[-300px]"} z-40 top-0 fixed transition-all ease-in duration-200 `} >
         
 
-        <div className=' bg-black w-[260px] px-2 max-h-screen overflow-y-auto'>
+        <div className=' bg-black w-[260px] px-2 h-screen overflow-y-auto'>
             <div>
                 <h1 className=' text-[15px] text-[#ffffffd9] text-center py-3'>Gaussion Texture</h1>
                 <hr className=' custom-hr mb-4 mx-2' />

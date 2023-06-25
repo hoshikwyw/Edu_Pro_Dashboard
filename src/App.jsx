@@ -7,8 +7,9 @@ import { useSelector } from "react-redux";
 // import Calender from "./components/Calender/calender.jsx";
 
 const App = () => {
-  const bgTexture = useSelector((state) => state.themeSlice.bgTexture);
+  // const bgTexture = useSelector((state) => state.themeSlice.bgTexture);
   //   console.log(bgTexture.length);
+  const bgTexture = localStorage.getItem("bgTexture")
   return (
     <>
       {bgTexture.length < 25 ? (
