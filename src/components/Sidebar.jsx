@@ -14,28 +14,28 @@ import { Link, NavLink } from "react-router-dom";
 import "./sidebar.css";
 
 const Sidebar = ({ isOpen, isScrolled, toggleSidebar }) => {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  // const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth);
-    };
+  // useEffect(() => {
+  //   const handleResize = () => {
+  //     setWindowWidth(window.innerWidth);
+  //   };
 
-    window.addEventListener("resize", handleResize);
+  //   window.addEventListener("resize", handleResize);
 
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener("resize", handleResize);
+  //   };
+  // }, []);
 
-  useEffect(() => {
-    if (windowWidth <= 900 ) {
-      toggleSidebar(false);
-    }
-    if (windowWidth >= 910) {
-      toggleSidebar(true);
-    }
-  }, [windowWidth]);
+  // useEffect(() => {
+  //   if (windowWidth <= 900 ) {
+  //     toggleSidebar(false);
+  //   }
+  //   if (windowWidth >= 910) {
+  //     toggleSidebar(true);
+  //   }
+  // }, [windowWidth]);
   const handleClick = (event) => {
     event.stopPropagation();
   };
