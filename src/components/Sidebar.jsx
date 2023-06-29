@@ -12,11 +12,14 @@ import { GiNewspaper } from "react-icons/gi";
 import { CgProfile } from "react-icons/cg";
 import { Link, NavLink } from "react-router-dom";
 import "./sidebar.css";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setShowComponents } from "../redux/showComponentsSlice";
 
 const Sidebar = ({ isOpen, isScrolled, toggleSidebar }) => {
   const dispatch = useDispatch()
+  const {showComponents} = useSelector(state => state.showComponentsSlice)
+  const [active,setActive] = useState(showComponents)
+  // console.log(active);
   // const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   // useEffect(() => {
@@ -43,6 +46,9 @@ const Sidebar = ({ isOpen, isScrolled, toggleSidebar }) => {
     event.stopPropagation();
     // dispatch(setShowComponents(value))
   };
+
+  let activeClass = showComponents == active ? "bg-[#ffffff33] border-[#fff] text-[#fff]" : "";
+
   return (
     <aside
       className={` h-screen bg-black lg:bg-opacity-20 z-50 bg-opacity-100 w-[230px] flex flex-col fixed ${
@@ -72,9 +78,9 @@ const Sidebar = ({ isOpen, isScrolled, toggleSidebar }) => {
         <p className=" text-[#ffffffa6] text-[12px] uppercase ms-4">
           main navigation
         </p>
-        <p id="navItem" className="">
+        <p id="navItem" className={`${activeClass}`}>
           <button
-            onClick={()=>dispatch(setShowComponents("Dashboard"))}
+            onClick={()=>dispatch(setShowComponents(0))}
             className=" w-full sidebar-item group flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
             <p className=" text-[#ffffffa6] text-xl group-hover:text-[#ffffff]">
               <AiOutlineAppstore />
@@ -84,9 +90,9 @@ const Sidebar = ({ isOpen, isScrolled, toggleSidebar }) => {
             </p>
           </button>
         </p>
-        <p id="navItem" className="sidebar-item">
+        <p id="navItem" className={`sidebar-item`}>
           <button
-            onClick={()=>dispatch(setShowComponents("CreateCourse"))}
+            onClick={()=>dispatch(setShowComponents(1))}
             className=" group w-full flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
             <p className=" text-[#ffffffa6] text-xl group-hover:text-[#ffffff]">
               <AiOutlineUnorderedList />
@@ -98,7 +104,7 @@ const Sidebar = ({ isOpen, isScrolled, toggleSidebar }) => {
         </p>
         <p id="navItem" className="sidebar-item">
           <button
-            onClick={()=>dispatch(setShowComponents("Calender"))}
+            onClick={()=>dispatch(setShowComponents(2))}
             className=" group w-full flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
             <p className=" text-[#ffffffa6] text-xl group-hover:text-[#ffffff]">
               <AiOutlineCalendar />
@@ -110,7 +116,7 @@ const Sidebar = ({ isOpen, isScrolled, toggleSidebar }) => {
         </p>
         <p id="navItem" className="sidebar-item">
           <button
-            onClick={()=>dispatch(setShowComponents("Profile"))}
+            onClick={()=>dispatch(setShowComponents(3))}
             className=" group w-full flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
             <p className=" text-[#ffffffa6] text-xl group-hover:text-[#ffffff]">
               <RiContactsLine />
@@ -127,7 +133,7 @@ const Sidebar = ({ isOpen, isScrolled, toggleSidebar }) => {
         <p className=" text-[#ffffffa6] text-[12px] uppercase ms-4">Tables</p>
         <p id="navItem" className="sidebar-item">
           <button
-            onClick={()=>dispatch(setShowComponents("StudentTable"))}
+            onClick={()=>dispatch(setShowComponents(4))}
             className=" group w-full flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
             <p className=" text-[#ffffffa6] text-xl group-hover:text-[#ffffff]">
               <CgProfile />
@@ -139,7 +145,7 @@ const Sidebar = ({ isOpen, isScrolled, toggleSidebar }) => {
         </p>
         <p id="navItem" className="sidebar-item">
           <button
-            onClick={()=>dispatch(setShowComponents("TeacherTable"))}
+            onClick={()=>dispatch(setShowComponents(5))}
             className=" group w-full flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
             <p className=" text-[#ffffffa6] text-xl group-hover:text-[#ffffff]">
               <AiOutlineTable />
@@ -151,7 +157,7 @@ const Sidebar = ({ isOpen, isScrolled, toggleSidebar }) => {
         </p>
         <p id="navItem" className="sidebar-item">
           <button
-            onClick={()=>dispatch(setShowComponents("CourseTable"))}
+            onClick={()=>dispatch(setShowComponents(6))}
             className=" group w-full flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
             <p className=" text-[#ffffffa6] text-xl group-hover:text-[#ffffff]">
               <GiNewspaper />
