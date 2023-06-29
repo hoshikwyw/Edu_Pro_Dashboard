@@ -1,0 +1,98 @@
+[
+    {
+        "id" : 1,
+        "name" : "Lional Messi",
+        "email" : "leomessi10@gmail.com",
+        "phone" : "+54-345-345",
+        "age" : "21",
+        "address" : "Bercelona , Spain"
+    },
+    {
+        "id" : 2,
+        "name" : "Neymar JR",
+        "email" : "neymarjr11@gmail.com",
+        "phone" : "+92-372-394",
+        "age" : "20",
+        "address" : "Mangaratibu , Brazil (BR)"
+    },
+    {
+        "id" : 3,
+        "name" : "Luka Modric",
+        "email" : "modric10@gmail.com",
+        "phone" : "+42-274-947",
+        "age" : "19",
+        "address" : "Zagreb , Croatia (HR)"
+    },
+    {
+        "id" : 4,
+        "name" : "Angel Di Maria",
+        "email" : "dimaria11@gmail.com",
+        "phone" : "+23-489-897",
+        "age" : "18",
+        "address" : "Buenos Aires , Argentina"
+    },
+    {
+        "id" : 5,
+        "name" : "Zlatan Ibrahimovic",
+        "email" : "zlatan9@gmail.com",
+        "phone" : "+88-421-974",
+        "age" : "20",
+        "address" : "Stockholm , Sweden"
+    },
+    {
+        "id" : 6,
+        "name" : "David Beckham",
+        "email" : "beckham7@gmail.com",
+        "phone" : "+33-899-555",
+        "age" : "21",
+        "address" : "London , Unite Kingdom"
+    },
+    {
+        "id" : 7,
+        "name" : "Luka Modric",
+        "email" : "modric10@gmail.com",
+        "phone" : "+42-274-947",
+        "age" : "19",
+        "address" : "Zagreb , Croatia (HR)"
+    },
+    {
+        "id" : 8,
+        "name" : "Neymar JR",
+        "email" : "neymarjr11@gmail.com",
+        "phone" : "+92-372-394",
+        "age" : "20",
+        "address" : "Mangaratibu , Brazil (BR)"
+    },
+    {
+        "id" : 9,
+        "name" : "David Beckham",
+        "email" : "beckham7@gmail.com",
+        "phone" : "+33-899-555",
+        "age" : "21",
+        "address" : "London , Unite Kingdom"
+    },
+    {
+        "id" : 10,
+        "name" : "Angel Di Maria",
+        "email" : "dimaria11@gmail.com",
+        "phone" : "+23-489-897",
+        "age" : "18",
+        "address" : "Buenos Aires , Argentina"
+    },
+    {
+        "id" : 11,
+        "name" : "Zlatan Ibrahimovic",
+        "email" : "zlatan9@gmail.com",
+        "phone" : "+88-421-974",
+        "age" : "20",
+        "address" : "Stockholm , Sweden"
+    },
+    {
+        "id" : 12,
+        "name" : "Lional Messi",
+        "email" : "leomessi10@gmail.com",
+        "phone" : "+54-345-345",
+        "age" : "21",
+        "address" : "Bercelona , Spain"
+    }
+]
