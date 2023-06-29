@@ -9,8 +9,20 @@ import Profile from "../assets/profile.png";
 import Sidebar from "./Sidebar";
 import { Link } from "react-router-dom";
 import { StateContextCustom } from "./context/StateContext";
+import { useLogoutMutation } from "../redux/api/authApi";
+import Cookies from "js-cookie"
+import { useNavigate } from 'react-router-dom';
+import { useDispatch } from "react-redux";
+import { removeUser } from "../redux/authSlice";
+import { Loader } from '@mantine/core';
 
 const Navbar = () => {
+  const [logout, {isLoading}] = useLogoutMutation()
+  const token = Cookies.get("token")
+  // const user = JSON.parse(Cookies.get("user"))
+  // console.log(user);
+  const dispatch = useDispatch()
+  const nav = useNavigate()
   // const [isSidebarOpen, setSidebarOpen] = useState(true);
   const { isSidebarOpen, setSidebarOpen } = StateContextCustom();
   const toggleSidebar = () => {
@@ -55,6 +67,13 @@ const Navbar = () => {
     };
   }, []);
 
+  const logoutHandler = async()=>{
+    const {data} = await logout(token)
+    dispatch(removeUser())
+    if(data?.success){
+      nav('/login')
+    }
+  }
   return (
     <div>
       <div
@@ -112,6 +131,11 @@ const Navbar = () => {
                     isSidebarOpen ? " box" : " right-4"
                   }  mt-2 p-4 rounded shadow-lg `}>
                   <div className=" flex flex-col items-start gap-2">
+                    {/* <div className=" text-center w-full">
+                      <h1>{user?.name.toUpperCase()}</h1>
+                      <p className="text-sm text-gray-200">{user?.email}</p>
+                    </div> */}
+
                     <Link
                       to={"/register"}
                       className=" w-full flex items-center justify-between px-2 py-1 text-left rounded text-[#ffffffc9] hover:text-white hover:bg-[#ffffff33]">
@@ -123,11 +147,15 @@ const Navbar = () => {
                       className=" mt-2 flex items-center justify-between  w-full px-2 py-1 text-left rounded text-[#ffffffc9] hover:text-white hover:bg-[#ffffff33]">
                       LogIn <BiLockAlt className=" text-xl" />
                     </Link>
-                    <Link
-                      to={"/"}
-                      className=" mt-2 flex items-center justify-between  w-full px-2 py-1 text-left rounded text-[#ffffffc9] hover:text-white hover:bg-[#ffffff33]">
-                      LogOut <IoExitOutline className=" text-xl" />
-                    </Link>
+                    {isLoading ? <button onClick={logoutHandler} disabled={isLoading && true}
+                      className=" mt-2 flex items-center justify-between  w-full px-2 py-1 text-left rounded text-red-500 font-bold hover:bg-[#ffffff33]">
+                      <div className=" flex items-center gap-2">
+                      LogOut <Loader color="red" size="xs"/>
+                        </div> <IoExitOutline className=" text-xl font-bold" />
+                    </button> : <button onClick={logoutHandler} disabled={isLoading && true}
+                      className=" mt-2 flex items-center justify-between  w-full px-2 py-1 text-left rounded text-red-500 font-bold hover:bg-[#ffffff33]">
+                      LogOut <IoExitOutline className=" text-xl font-bold" />
+                    </button> }
                   </div>
                 </div>
               )}

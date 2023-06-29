@@ -39,6 +39,7 @@ const Sidebar = ({ isOpen, isScrolled, toggleSidebar }) => {
   const handleClick = (event) => {
     event.stopPropagation();
   };
+
   return (
     <aside
       className={` h-screen bg-black lg:bg-opacity-20 z-50 bg-opacity-100 w-[230px] flex flex-col fixed ${
@@ -68,11 +69,10 @@ const Sidebar = ({ isOpen, isScrolled, toggleSidebar }) => {
         <p className=" text-[#ffffffa6] text-[12px] uppercase ms-4">
           main navigation
         </p>
-        <p id="navItem" className="">
+        <p id="navItem" >
           <NavLink
-            to={"/"}
-            onClick={handleClick}
-            className=" sidebar-item group flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
+            to={'/'}
+            className=" w-full sidebar-item group flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
             <p className=" text-[#ffffffa6] text-xl group-hover:text-[#ffffff]">
               <AiOutlineAppstore />
             </p>
@@ -81,11 +81,10 @@ const Sidebar = ({ isOpen, isScrolled, toggleSidebar }) => {
             </p>
           </NavLink>
         </p>
-        <p id="navItem" className="sidebar-item">
+        <p id="navItem" >
           <NavLink
-            to={"/createCourse"}
-            onClick={handleClick}
-            className=" group flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
+            to={'/createCourse'}
+            className=" group w-full flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
             <p className=" text-[#ffffffa6] text-xl group-hover:text-[#ffffff]">
               <AiOutlineUnorderedList />
             </p>
@@ -94,11 +93,10 @@ const Sidebar = ({ isOpen, isScrolled, toggleSidebar }) => {
             </p>
           </NavLink>
         </p>
-        <p id="navItem" className="sidebar-item">
+        <p id="navItem" >
           <NavLink
-            to={"/calender"}
-            onClick={handleClick}
-            className=" group flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
+            to={'/calender'}
+            className=" group w-full flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
             <p className=" text-[#ffffffa6] text-xl group-hover:text-[#ffffff]">
               <AiOutlineCalendar />
             </p>
@@ -107,11 +105,10 @@ const Sidebar = ({ isOpen, isScrolled, toggleSidebar }) => {
             </span>
           </NavLink>
         </p>
-        <p id="navItem" className="sidebar-item">
+        <p id="navItem" >
           <NavLink
-            to={"/profile"}
-            onClick={handleClick}
-            className=" group flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
+            to={'/profile'}
+            className=" group w-full flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
             <p className=" text-[#ffffffa6] text-xl group-hover:text-[#ffffff]">
               <RiContactsLine />
             </p>
@@ -121,28 +118,14 @@ const Sidebar = ({ isOpen, isScrolled, toggleSidebar }) => {
             </span>
           </NavLink>
         </p>
-        <p id="navItem" className="sidebar-item">
-          <NavLink
-            to={"/login"}
-            onClick={handleClick}
-            className=" group flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
-            <p className=" text-[#ffffffa6] text-xl group-hover:text-[#ffffff]">
-              <AiOutlineLock />
-            </p>
-            <span className=" text-[#ffffffa6] text-[15px] group-hover:text-[#ffffff]">
-              Login
-            </span>
-          </NavLink>
-        </p>
 
         <hr className=" bg-slate-500 border-0 py-[0.2px] " />
 
         <p className=" text-[#ffffffa6] text-[12px] uppercase ms-4">Tables</p>
-        <p id="navItem" className="sidebar-item">
+        <p id="navItem" >
           <NavLink
-            to={"/studentTable"}
-            onClick={handleClick}
-            className=" group flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
+            to={'/studentTable'}
+            className=" group w-full flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
             <p className=" text-[#ffffffa6] text-xl group-hover:text-[#ffffff]">
               <CgProfile />
             </p>
@@ -151,11 +134,10 @@ const Sidebar = ({ isOpen, isScrolled, toggleSidebar }) => {
             </span>
           </NavLink>
         </p>
-        <p id="navItem" className="sidebar-item">
+        <p id="navItem" >
           <NavLink
-            to={"/teacherTable"}
-            onClick={handleClick}
-            className=" group flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
+            to={'/teacherTable'}
+            className=" group w-full flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
             <p className=" text-[#ffffffa6] text-xl group-hover:text-[#ffffff]">
               <AiOutlineTable />
             </p>
@@ -164,11 +146,10 @@ const Sidebar = ({ isOpen, isScrolled, toggleSidebar }) => {
             </span>
           </NavLink>
         </p>
-        <p id="navItem" className="sidebar-item">
+        <p id="navItem" >
           <NavLink
-            to={"/courseTable"}
-            onClick={handleClick}
-            className=" group flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
+            to={'/courseTable'}
+            className=" group w-full flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
             <p className=" text-[#ffffffa6] text-xl group-hover:text-[#ffffff]">
               <GiNewspaper />
             </p>
