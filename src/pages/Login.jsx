@@ -1,15 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Register.css";
 import { SlUser } from "react-icons/sl";
 import { BiLock } from "react-icons/bi";
 import { RiFacebookBoxFill } from "react-icons/ri";
 import { FaTwitterSquare } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useLoginMutation } from "../redux/api/authApi";
+import { useDispatch } from "react-redux";
+import { addUser } from "../redux/authSlice";
 
 const Login = () => {
+  const [email,setEmail] = useState("teamC@gmail.com")
+  const [password,setPassword] = useState("teamc12345")
+  const [login, {isLoading}] = useLoginMutation()
+  const dispatch = useDispatch()
+  const nav = useNavigate()
+
+  const loginHandler = async(event)=>{
+    try{
+      event.preventDefault()
+      const user = {email,password}
+      // console.log(user)
+      const {data} = await login(user)
+      // console.log(data);
+      dispatch(addUser({user:data?.user, token:data?.token}))
+      if(data?.success){
+        nav('/')
+      }
+    }catch(error){
+      console.log(error);
+    }
+  }
   return (
     <div className="flex justify-center mt-10 mb-6 items-center">
-      <form className="w-96 max-[450px]:w-[90%] max-[350px]:gap-3 flex flex-col bgTransparent shadow gap-5 rounded">
+      <form onSubmit={loginHandler} className="w-96 max-[450px]:w-[90%] max-[350px]:gap-3 flex flex-col bgTransparent shadow gap-5 rounded">
         <div className="mx-auto mt-7">
           <img
             src="https://themewagon.github.io/dashtreme/assets/images/logo-icon.png"
@@ -19,15 +43,17 @@ const Login = () => {
         <h1 className="text-center text-white font-medium">SIGN IN</h1>
         <div className="flex flex-col mx-7 gap-4">
           <div className="relative flex flex-col">
-            <input
+            <input onChange={(e)=> setEmail(e.target.value)}
+              value={email}
               type="text"
-              placeholder="Enter Your Name"
+              placeholder="Enter Your Email"
               className="custom-input px-3 py-[10px] rounded"
             />
             <SlUser className="text-white opacity-80 absolute top-[10px] right-[17px]" />
           </div>
           <div className="relative flex flex-col">
-            <input
+            <input onChange={(e)=> setPassword(e.target.value)}
+              value={password}
               type="password"
               placeholder="Choose Password"
               className="custom-input px-3 py-[10px] rounded"
@@ -56,7 +82,7 @@ const Login = () => {
             </p>
           </Link>
         </div>
-        <button className="btn font-medium mx-7 tracking-wider text-white text-xs shadow-md py-[10px] rounded">
+        <button disabled={isLoading && true} className="btn font-medium mx-7 tracking-wider text-white text-xs shadow-md py-[10px] rounded">
           SIGN IN
         </button>
         <h2
