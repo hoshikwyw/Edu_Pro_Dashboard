@@ -1,0 +1,110 @@
+[
+    {
+        "id" : 1,
+        "name" : "Business",
+        "category" : "Primary",
+        "duration" : "1 h 20 m",
+        "description" : "Less than 6 year...",
+        "lesson" : "1 to 3",
+        "price" : "$1000"
+    },
+    {
+        "id" : 2,
+        "name" : "Fine Arts",
+        "category" : "Secondary",
+        "duration" : "1 h 30 m",
+        "description" : "Finished primary...",
+        "lesson" : "1 to 4",
+        "price" : "$800"
+    },
+    {
+        "id" : 3,
+        "name" : "Mathematics",
+        "category" : "Tertiary",
+        "duration" : "1 h 09 m",
+        "description" : "Finished low-level...",
+        "lesson" : "1 to 5",
+        "price" : "$400"
+    },
+    {
+        "id" : 4,
+        "name" : "Health",
+        "category" : "Primary",
+        "duration" : "1 h 22 m",
+        "description" : "University degree...",
+        "lesson" : "1 to 3",
+        "price" : "$600"
+    },
+    {
+        "id" : 5,
+        "name" : "Science",
+        "category" : "Tertiary",
+        "duration" : "1 h 40 m",
+        "description" : "Primary education...",
+        "lesson" : "1 to 5",
+        "price" : "$900"
+    },
+    {
+        "id" : 6,
+        "name" : "Social Studies",
+        "category" : "No Education",
+        "duration" : "1 h 10 m",
+        "description" : "Education in its...",
+        "lesson" : "null",
+        "price" : "$500"
+    },
+    {
+        "id" : 7,
+        "name" : "Fine Arts",
+        "category" : "Secondary",
+        "duration" : "1 h 30 m",
+        "description" : "Finished primary...",
+        "lesson" : "1 to 4",
+        "price" : "$800"
+    },
+    {
+        "id" : 8,
+        "name" : "Health",
+        "category" : "Primary",
+        "duration" : "1 h 22 m",
+        "description" : "University degree...",
+        "lesson" : "1 to 3",
+        "price" : "$600"
+    },
+    {
+        "id" : 9,
+        "name" : "Social Studies",
+        "category" : "No Education",
+        "duration" : "1 h 10 m",
+        "description" : "Education in its...",
+        "lesson" : "null",
+        "price" : "$500"
+    },
+    {
+        "id" : 10,
+        "name" : "Business",
+        "category" : "Primary",
+        "duration" : "1 h 20 m",
+        "description" : "Less than 6 year...",
+        "lesson" : "1 to 3",
+        "price" : "$1000"
+    },
+    {
+        "id" : 11,
+        "name" : "Mathematics",
+        "category" : "Tertiary",
+        "duration" : "1 h 09 m",
+        "description" : "Finished low-level...",
+        "lesson" : "1 to 5",
+        "price" : "$400"
+    },
+    {
+        "id" : 12,
+        "name" : "Science",
+        "category" : "Tertiary",
+        "duration" : "1 h 40 m",
+        "description" : "Primary education...",
+        "lesson" : "1 to 5",
+        "price" : "$900"
+    }
+]
