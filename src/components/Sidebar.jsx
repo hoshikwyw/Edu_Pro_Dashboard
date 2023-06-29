@@ -12,8 +12,11 @@ import { GiNewspaper } from "react-icons/gi";
 import { CgProfile } from "react-icons/cg";
 import { Link, NavLink } from "react-router-dom";
 import "./sidebar.css";
+import { useDispatch } from "react-redux";
+import { setShowComponents } from "../redux/showComponentsSlice";
 
 const Sidebar = ({ isOpen, isScrolled, toggleSidebar }) => {
+  const dispatch = useDispatch()
   // const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   // useEffect(() => {
@@ -38,6 +41,7 @@ const Sidebar = ({ isOpen, isScrolled, toggleSidebar }) => {
   // }, [windowWidth]);
   const handleClick = (event) => {
     event.stopPropagation();
+    // dispatch(setShowComponents(value))
   };
   return (
     <aside
@@ -69,49 +73,45 @@ const Sidebar = ({ isOpen, isScrolled, toggleSidebar }) => {
           main navigation
         </p>
         <p id="navItem" className="">
-          <NavLink
-            to={"/"}
-            onClick={handleClick}
-            className=" sidebar-item group flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
+          <button
+            onClick={()=>dispatch(setShowComponents("Dashboard"))}
+            className=" w-full sidebar-item group flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
             <p className=" text-[#ffffffa6] text-xl group-hover:text-[#ffffff]">
               <AiOutlineAppstore />
             </p>
             <p className=" text-[#ffffffa6] text-[15px] group-hover:text-[#ffffff]">
               Dashboard
             </p>
-          </NavLink>
+          </button>
         </p>
         <p id="navItem" className="sidebar-item">
-          <NavLink
-            to={"/createCourse"}
-            onClick={handleClick}
-            className=" group flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
+          <button
+            onClick={()=>dispatch(setShowComponents("CreateCourse"))}
+            className=" group w-full flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
             <p className=" text-[#ffffffa6] text-xl group-hover:text-[#ffffff]">
               <AiOutlineUnorderedList />
             </p>
             <p className=" text-[#ffffffa6] text-[15px] group-hover:text-[#ffffff]">
               Create Course
             </p>
-          </NavLink>
+          </button>
         </p>
         <p id="navItem" className="sidebar-item">
-          <NavLink
-            to={"/calender"}
-            onClick={handleClick}
-            className=" group flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
+          <button
+            onClick={()=>dispatch(setShowComponents("Calender"))}
+            className=" group w-full flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
             <p className=" text-[#ffffffa6] text-xl group-hover:text-[#ffffff]">
               <AiOutlineCalendar />
             </p>
             <span className=" text-[#ffffffa6] text-[15px] group-hover:text-[#ffffff]">
               Calendar
             </span>
-          </NavLink>
+          </button>
         </p>
         <p id="navItem" className="sidebar-item">
-          <NavLink
-            to={"/profile"}
-            onClick={handleClick}
-            className=" group flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
+          <button
+            onClick={()=>dispatch(setShowComponents("Profile"))}
+            className=" group w-full flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
             <p className=" text-[#ffffffa6] text-xl group-hover:text-[#ffffff]">
               <RiContactsLine />
             </p>
@@ -119,63 +119,47 @@ const Sidebar = ({ isOpen, isScrolled, toggleSidebar }) => {
             <span className=" text-[#ffffffa6] text-[15px] group-hover:text-[#ffffff]">
               Profile
             </span>
-          </NavLink>
-        </p>
-        <p id="navItem" className="sidebar-item">
-          <NavLink
-            to={"/login"}
-            onClick={handleClick}
-            className=" group flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
-            <p className=" text-[#ffffffa6] text-xl group-hover:text-[#ffffff]">
-              <AiOutlineLock />
-            </p>
-            <span className=" text-[#ffffffa6] text-[15px] group-hover:text-[#ffffff]">
-              Login
-            </span>
-          </NavLink>
+          </button>
         </p>
 
         <hr className=" bg-slate-500 border-0 py-[0.2px] " />
 
         <p className=" text-[#ffffffa6] text-[12px] uppercase ms-4">Tables</p>
         <p id="navItem" className="sidebar-item">
-          <NavLink
-            to={"/studentTable"}
-            onClick={handleClick}
-            className=" group flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
+          <button
+            onClick={()=>dispatch(setShowComponents("StudentTable"))}
+            className=" group w-full flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
             <p className=" text-[#ffffffa6] text-xl group-hover:text-[#ffffff]">
               <CgProfile />
             </p>
             <span className=" text-[#ffffffa6] text-[15px] group-hover:text-[#ffffff]">
               Students List
             </span>
-          </NavLink>
+          </button>
         </p>
         <p id="navItem" className="sidebar-item">
-          <NavLink
-            to={"/teacherTable"}
-            onClick={handleClick}
-            className=" group flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
+          <button
+            onClick={()=>dispatch(setShowComponents("TeacherTable"))}
+            className=" group w-full flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
             <p className=" text-[#ffffffa6] text-xl group-hover:text-[#ffffff]">
               <AiOutlineTable />
             </p>
             <span className=" text-[#ffffffa6] text-[15px] group-hover:text-[#ffffff]">
               Teacher List
             </span>
-          </NavLink>
+          </button>
         </p>
         <p id="navItem" className="sidebar-item">
-          <NavLink
-            to={"/courseTable"}
-            onClick={handleClick}
-            className=" group flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
+          <button
+            onClick={()=>dispatch(setShowComponents("CourseTable"))}
+            className=" group w-full flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
             <p className=" text-[#ffffffa6] text-xl group-hover:text-[#ffffff]">
               <GiNewspaper />
             </p>
             <span className=" text-[#ffffffa6] text-[15px] group-hover:text-[#ffffff]">
               Course List
             </span>
-          </NavLink>
+          </button>
         </p>
       </div>
     </aside>
