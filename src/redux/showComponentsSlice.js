@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  showComponents: "Dashboard",
+  showComponents: 0,
 };
 
 export const showComponentsSlice = createSlice({
