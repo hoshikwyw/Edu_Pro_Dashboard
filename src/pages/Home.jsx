@@ -14,6 +14,7 @@ import Profile from '../components/Profile/Profile';
 const Home = () => {
     const { isSidebarOpen } = StateContextCustom();
     const {showComponents} = useSelector(state => state.showComponentsSlice)
+    // const showComponents = localStorage.getItem("showComponents")
     // console.log(showComponents);
     return (
       <>
