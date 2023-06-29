@@ -11,6 +11,7 @@ export const showComponentsSlice = createSlice({
   reducers: {
     setShowComponents: (state,{payload})=>{
         state.showComponents = payload
+        // localStorage.setItem("showComponents",state.showComponents)
     }
   },
 });
