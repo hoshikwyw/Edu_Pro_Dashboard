@@ -12,14 +12,8 @@ import { GiNewspaper } from "react-icons/gi";
 import { CgProfile } from "react-icons/cg";
 import { Link, NavLink } from "react-router-dom";
 import "./sidebar.css";
-import { useDispatch, useSelector } from "react-redux";
-import { setShowComponents } from "../redux/showComponentsSlice";
 
 const Sidebar = ({ isOpen, isScrolled, toggleSidebar }) => {
-  const dispatch = useDispatch()
-  const {showComponents} = useSelector(state => state.showComponentsSlice)
-  const [active,setActive] = useState(showComponents)
-  // console.log(active);
   // const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   // useEffect(() => {
@@ -44,11 +38,7 @@ const Sidebar = ({ isOpen, isScrolled, toggleSidebar }) => {
   // }, [windowWidth]);
   const handleClick = (event) => {
     event.stopPropagation();
-    // dispatch(setShowComponents(value))
   };
-
-  const [sActive,setSActive] = useState(0);
-  // let activeClass = showComponents == active ? "bg-[#ffffff33] border-[#fff] text-[#fff]" : "";
 
   return (
     <aside
@@ -79,12 +69,9 @@ const Sidebar = ({ isOpen, isScrolled, toggleSidebar }) => {
         <p className=" text-[#ffffffa6] text-[12px] uppercase ms-4">
           main navigation
         </p>
-        <p id="navItem" className={`${sActive == 0 ? "bg-[#ffffff33] border-[#fff] text-[#fff]" : ""}`}>
-          <button
-            onClick={()=>{
-              dispatch(setShowComponents(0));
-              setSActive(0);
-            }}
+        <p id="navItem" >
+          <NavLink
+            to={'/'}
             className=" w-full sidebar-item group flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
             <p className=" text-[#ffffffa6] text-xl group-hover:text-[#ffffff]">
               <AiOutlineAppstore />
@@ -92,14 +79,11 @@ const Sidebar = ({ isOpen, isScrolled, toggleSidebar }) => {
             <p className=" text-[#ffffffa6] text-[15px] group-hover:text-[#ffffff]">
               Dashboard
             </p>
-          </button>
+          </NavLink>
         </p>
-        <p id="navItem" className={`${sActive == 1 ? "bg-[#ffffff33] border-[#fff] text-[#fff]" : ""}`}>
-          <button
-            onClick={()=>{
-              dispatch(setShowComponents(1));
-              setSActive(1);
-            }}
+        <p id="navItem" >
+          <NavLink
+            to={'/createCourse'}
             className=" group w-full flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
             <p className=" text-[#ffffffa6] text-xl group-hover:text-[#ffffff]">
               <AiOutlineUnorderedList />
@@ -107,14 +91,11 @@ const Sidebar = ({ isOpen, isScrolled, toggleSidebar }) => {
             <p className=" text-[#ffffffa6] text-[15px] group-hover:text-[#ffffff]">
               Create Course
             </p>
-          </button>
+          </NavLink>
         </p>
-        <p id="navItem" className={`${sActive == 2 ? "bg-[#ffffff33] border-[#fff] text-[#fff]" : ""}`}>
-          <button
-            onClick={()=>{
-              dispatch(setShowComponents(2));
-              setSActive(2);
-            }}
+        <p id="navItem" >
+          <NavLink
+            to={'/calender'}
             className=" group w-full flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
             <p className=" text-[#ffffffa6] text-xl group-hover:text-[#ffffff]">
               <AiOutlineCalendar />
@@ -122,14 +103,11 @@ const Sidebar = ({ isOpen, isScrolled, toggleSidebar }) => {
             <span className=" text-[#ffffffa6] text-[15px] group-hover:text-[#ffffff]">
               Calendar
             </span>
-          </button>
+          </NavLink>
         </p>
-        <p id="navItem" className={`${sActive == 3 ? "bg-[#ffffff33] border-[#fff] text-[#fff]" : ""}`}>
-          <button
-            onClick={()=>{
-              dispatch(setShowComponents(3));
-              setSActive(3);
-            }}
+        <p id="navItem" >
+          <NavLink
+            to={'/profile'}
             className=" group w-full flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
             <p className=" text-[#ffffffa6] text-xl group-hover:text-[#ffffff]">
               <RiContactsLine />
@@ -138,18 +116,15 @@ const Sidebar = ({ isOpen, isScrolled, toggleSidebar }) => {
             <span className=" text-[#ffffffa6] text-[15px] group-hover:text-[#ffffff]">
               Profile
             </span>
-          </button>
+          </NavLink>
         </p>
 
         <hr className=" bg-slate-500 border-0 py-[0.2px] " />
 
         <p className=" text-[#ffffffa6] text-[12px] uppercase ms-4">Tables</p>
-        <p id="navItem" className={`${sActive == 4 ? "bg-[#ffffff33] border-[#fff] text-[#fff]" : ""}`}>
-          <button
-            onClick={()=>{
-              dispatch(setShowComponents(4));
-              setSActive(4)
-            }}
+        <p id="navItem" >
+          <NavLink
+            to={'/studentTable'}
             className=" group w-full flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
             <p className=" text-[#ffffffa6] text-xl group-hover:text-[#ffffff]">
               <CgProfile />
@@ -157,14 +132,11 @@ const Sidebar = ({ isOpen, isScrolled, toggleSidebar }) => {
             <span className=" text-[#ffffffa6] text-[15px] group-hover:text-[#ffffff]">
               Students List
             </span>
-          </button>
+          </NavLink>
         </p>
-        <p id="navItem" className={`${sActive == 5 ? "bg-[#ffffff33] border-[#fff] text-[#fff]" : ""}`}>
-          <button
-            onClick={()=>{
-              dispatch(setShowComponents(5));
-              setSActive(5);
-            }}
+        <p id="navItem" >
+          <NavLink
+            to={'/teacherTable'}
             className=" group w-full flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
             <p className=" text-[#ffffffa6] text-xl group-hover:text-[#ffffff]">
               <AiOutlineTable />
@@ -172,14 +144,11 @@ const Sidebar = ({ isOpen, isScrolled, toggleSidebar }) => {
             <span className=" text-[#ffffffa6] text-[15px] group-hover:text-[#ffffff]">
               Teacher List
             </span>
-          </button>
+          </NavLink>
         </p>
-        <p id="navItem" className={`${sActive == 6 ? "bg-[#ffffff33] border-[#fff] text-[#fff]" : ""}`}>
-          <button
-            onClick={()=>{
-              dispatch(setShowComponents(6));
-              setSActive(6);
-            }}
+        <p id="navItem" >
+          <NavLink
+            to={'/courseTable'}
             className=" group w-full flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
             <p className=" text-[#ffffffa6] text-xl group-hover:text-[#ffffff]">
               <GiNewspaper />
@@ -187,7 +156,7 @@ const Sidebar = ({ isOpen, isScrolled, toggleSidebar }) => {
             <span className=" text-[#ffffffa6] text-[15px] group-hover:text-[#ffffff]">
               Course List
             </span>
-          </button>
+          </NavLink>
         </p>
       </div>
     </aside>
