@@ -22,44 +22,32 @@ const Path = () => {
   const { isSidebarOpen } = StateContextCustom();
   return (
     <div>
-      <BrowserRouter>
+      {/* <BrowserRouter> */}
       <ScrollTop/>
-        <div className="flex flex-col">
+        {/* <div className="flex flex-col">
           <div>
             <Navbar />
           </div>
 
-          <div className={`mt-[52px] duration-500 ${isSidebarOpen && " ml-[230px]" } max-lg:ml-0`}>
+          <div className={`mt-[52px] duration-500 ${isSidebarOpen && " ml-[230px]" } max-lg:ml-0`}> */}
 
             <Routes>
               <Route path="/" element={<Dashboard />} />
               <Route path="/register" element={<Register />} />
               <Route path="/login" element={<Login />} />
               <Route path="/resetPassword" element={<ResetPassword />} />
-              <Route path="/createCourse" element={<CreateCourse />} />
+              {/* <Route path="/createCourse" element={<CreateCourse />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="*" element={<Error />} />
               <Route path="/calender" element={<Calender />} />
               <Route path="/studentTable" element={<StudentTable />} />
               <Route path="/courseTable" element={<CourseTable />} />
-              <Route path="/teacherTable" element={<TeacherTable />} />
+              <Route path="/teacherTable" element={<TeacherTable />} /> */} 
             </Routes>
-          </div>
-        </div>
-        <Theme />
-        {/* <Navbar />
-        <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/resetPassword" element={<ResetPassword />} />
-          <Route path="/createCourse" element={<CreateCourse />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route path="/calender" element={<Calender />} />
-          <Route path="*" element={<Error />} />
-        </Routes>
-        <Theme /> */}
-      </BrowserRouter>
+          {/* </div>
+        </div> */}
+        {/* <Theme /> */}
+      {/* </BrowserRouter> */}
     </div>
   );
 };

@@ -32,8 +32,8 @@ const Register = () => {
   }
 
   return (
-    <div className="flex justify-center mt-10 mb-6 items-center">
-      <form onSubmit={registerHandler} className="w-96 max-[450px]:w-[90%] max-[350px]:gap-3 flex flex-col bgTransparent shadow gap-5 rounded">
+    <div className="flex justify-center py-10 items-center">
+      <form onSubmit={registerHandler} className=" w-96 max-[450px]:w-[90%] max-[350px]:gap-3 flex flex-col bgTransparent shadow gap-5 rounded">
         <div className="mx-auto mt-7">
           <img
             src="https://themewagon.github.io/dashtreme/assets/images/logo-icon.png"
