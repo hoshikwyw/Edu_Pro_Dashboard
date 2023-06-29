@@ -1,16 +1,39 @@
-import React from "react";
+import React,{useState} from "react";
 import "./Register.css";
 import { SlUser } from "react-icons/sl";
 import { HiOutlineMailOpen } from "react-icons/hi";
 import { BiLock } from "react-icons/bi";
 import { RiFacebookBoxFill } from "react-icons/ri";
 import { FaTwitterSquare } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useRegisterMutation } from "../redux/api/authApi";
 
 const Register = () => {
+  const [name,setName] = useState()
+  const [email,setEmail] = useState()
+  const [password,setPassword] = useState()
+  const [password_confirmation,setPassword_confirmation] = useState()
+  const [register, {isLoading}] = useRegisterMutation()
+  const nav = useNavigate()
+
+  const registerHandler = async(event)=>{
+    try{
+      event.preventDefault()
+      const user = {name, email, password, password_confirmation}
+      // console.log(user)
+      const {data} = await register(user)
+      // console.log(data)
+      if(data?.success){
+        nav('/login')
+      }
+    }catch(error){
+      console.log(error)
+    }
+  }
+
   return (
     <div className="flex justify-center mt-10 mb-6 items-center">
-      <form className="w-96 max-[450px]:w-[90%] max-[350px]:gap-3 flex flex-col bgTransparent shadow gap-5 rounded">
+      <form onSubmit={registerHandler} className="w-96 max-[450px]:w-[90%] max-[350px]:gap-3 flex flex-col bgTransparent shadow gap-5 rounded">
         <div className="mx-auto mt-7">
           <img
             src="https://themewagon.github.io/dashtreme/assets/images/logo-icon.png"
@@ -20,7 +43,8 @@ const Register = () => {
         <h1 className="text-center text-white font-medium">SIGN UP</h1>
         <div className="flex flex-col mx-7 gap-4">
           <div className="relative flex flex-col">
-            <input
+            <input onChange={(e)=> setName(e.target.value)}
+              value={name}
               type="text"
               placeholder="Enter Your Name"
               className="custom-input px-3 py-[10px] rounded"
@@ -28,17 +52,31 @@ const Register = () => {
             <SlUser className="text-white opacity-80 absolute top-[10px] right-[17px]" />
           </div>
           <div className="relative flex flex-col">
-            <input
+            <input onChange={(e)=> setEmail(e.target.value)}
+              value={email}
               type="email"
+              required
               placeholder="Enter Your Email ID"
               className="custom-input px-3 py-[10px] rounded"
             />
             <HiOutlineMailOpen className="text-white opacity-80 text-lg absolute top-[10px] right-4" />
           </div>
           <div className="relative flex flex-col">
-            <input
+            <input onChange={(e)=> setPassword(e.target.value)}
+              value={password}
+              required
               type="password"
-              placeholder="Choose Password"
+              placeholder="Password"
+              className="custom-input px-3 py-[10px] rounded"
+            />
+            <BiLock className="text-white opacity-80 text-lg absolute top-[10px] right-4" />
+          </div>
+          <div className="relative flex flex-col">
+            <input onChange={(e)=> setPassword_confirmation(e.target.value)}
+              value={password_confirmation}
+              required
+              type="password"
+              placeholder="Password Confirmation"
               className="custom-input px-3 py-[10px] rounded"
             />
             <BiLock className="text-white opacity-80 text-lg absolute top-[10px] right-4" />
@@ -58,7 +96,7 @@ const Register = () => {
             I AGREE WITH TERMS & CONDITIONS
           </label>
         </div>
-        <button className="btn font-medium mx-7 tracking-wider text-white text-xs shadow-md py-[10px] rounded">
+        <button type="submit" disabled={isLoading && true} className="btn font-medium mx-7 tracking-wider text-white text-xs shadow-md py-[10px] rounded">
           SIGN UP
         </button>
         <h2
