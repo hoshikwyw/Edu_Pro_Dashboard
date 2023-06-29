@@ -14,6 +14,7 @@ import StudentTable from "../components/StudentTable";
 import TeacherTable from "../components/TeacherTable";
 import CourseTable from "../components/CourseTable";
 import Theme from "../components/Theme";
+import Detail from "../components/Detail";
 
 const Path = () => {
   return (
@@ -31,6 +32,7 @@ const Path = () => {
         <Route path="/studentTable" element={<StudentTable />} />
         <Route path="/teacherTable" element={<TeacherTable />} />
         <Route path="/courseTable" element={<CourseTable />} />
+        <Route path="/detail" element={<Detail />} />
         <Route path="/*" element={<Error />} />
       </Routes>
     </div>

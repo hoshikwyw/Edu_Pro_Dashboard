@@ -79,7 +79,7 @@ const CourseTable = () => {
               <tbody className="tableTitle text-center">
                 {data?.map((course) => {
                   return (
-                    <tr className="custom-hover" key={course?.id}>
+                    <tr className="custom-hover cursor-pointer" key={course?.id}>
                       <td className="tracking-wide border-r border-color font-medium text-sm py-4 ">
                         {course?.id}
                       </td>

@@ -80,7 +80,7 @@ const TeacherTable = () => {
               <tbody className="tableTitle text-center">
                 {data?.map((teacher) => {
                   return (
-                    <tr className="custom-hover" key={teacher?.id}>
+                    <tr className="custom-hover cursor-pointer" key={teacher?.id}>
                       <td className="tracking-wide border-b border-b-color  font-medium text-sm py-4 ">
                         {teacher?.id}
                       </td>
