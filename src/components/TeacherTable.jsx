@@ -82,21 +82,21 @@ const TeacherTable = () => {
         </table>
       </div>
       <div className="mx-auto mb-5 bgTransparent rounded">
-        <ul className="flex p-border-color rounded">
-          <li className="custom-hover p-border-r cursor-pointer" onClick={prePage}>
-            <a href="#" className=" px-2 tableTitle text-base tracking-wider">Prev</a>
-          </li>
+        <div className="flex p-border-color rounded">
+          <button className="custom-hover p-border-r cursor-pointer" onClick={prePage}>
+            <p className=" px-2 py-2 tableTitle text-base tracking-wider">Prev</p>
+          </button>
           {
             number.map((n,i) => (
-              <li onClick={() => changeCPage(n)} className={`custom-hover cursor-pointer p-border-r ${currentPage === n ? "active" : ""}`} key={i}>
-                <a href="#" className="px-4 tableTitle text-base tracking-wider">{n}</a>
-              </li>
+              <button onClick={() => changeCPage(n)} className={`custom-hover cursor-pointer p-border-r ${currentPage === n ? "active" : ""}`} key={i}>
+                <p className="px-4 tableTitle text-base tracking-wider">{n}</p>
+              </button>
             ))
           }
-          <li className="custom-hover cursor-pointer " onClick={nextPage}>
-            <a href="#" className="px-2 tableTitle text-base tracking-wider">Next</a>
-          </li>
-        </ul>
+          <button className="custom-hover cursor-pointer " onClick={nextPage}>
+            <p className="px-2 py-2 tableTitle text-base tracking-wider">Next</p>
+          </button>
+        </div>
       </div>
     </div>
   )
