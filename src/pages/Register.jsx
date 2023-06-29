@@ -7,6 +7,7 @@ import { RiFacebookBoxFill } from "react-icons/ri";
 import { FaTwitterSquare } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { useRegisterMutation } from "../redux/api/authApi";
+import { Loader } from '@mantine/core';
 
 const Register = () => {
   const [name,setName] = useState()
@@ -96,9 +97,11 @@ const Register = () => {
             I AGREE WITH TERMS & CONDITIONS
           </label>
         </div>
-        <button type="submit" disabled={isLoading && true} className="btn font-medium mx-7 tracking-wider text-white text-xs shadow-md py-[10px] rounded">
+        {isLoading ? <button disabled={isLoading && true} className="btn font-medium mx-7 tracking-wider text-white text-xs shadow-md h-9 rounded flex items-center justify-center gap-2">
+          SIGN IN <Loader color="white" size="xs"/>
+        </button> : <button disabled={isLoading && true} className="btn font-medium mx-7 tracking-wider text-white text-xs shadow-md py-[10px] rounded">
           SIGN UP
-        </button>
+        </button> }
         <h2
           className=" text-white text-center opacity-80 tracking-wider
          text-sm"

@@ -8,6 +8,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useLoginMutation } from "../redux/api/authApi";
 import { useDispatch } from "react-redux";
 import { addUser } from "../redux/authSlice";
+import { Loader } from '@mantine/core';
 
 const Login = () => {
   const [email,setEmail] = useState("teamC@gmail.com")
@@ -82,9 +83,11 @@ const Login = () => {
             </p>
           </Link>
         </div>
-        <button disabled={isLoading && true} className="btn font-medium mx-7 tracking-wider text-white text-xs shadow-md py-[10px] rounded">
-          SIGN IN
-        </button>
+        {isLoading ? <button disabled={isLoading && true} className="btn font-medium mx-7 tracking-wider text-white text-xs shadow-md h-9 rounded flex items-center justify-center gap-2">
+          SIGN IN <Loader color="white" size="xs"/>
+        </button> : <button disabled={isLoading && true} className="btn font-medium mx-7 tracking-wider text-white text-xs shadow-md py-[10px] rounded">
+          SIGN IN 
+        </button> }
         <h2
           className=" text-white text-center opacity-80 tracking-wider
          text-sm"

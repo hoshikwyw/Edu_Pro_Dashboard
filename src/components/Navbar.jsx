@@ -14,6 +14,7 @@ import Cookies from "js-cookie"
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from "react-redux";
 import { removeUser } from "../redux/authSlice";
+import { Loader } from '@mantine/core';
 
 const Navbar = () => {
   const [logout, {isLoading}] = useLogoutMutation()
@@ -146,10 +147,15 @@ const Navbar = () => {
                       className=" mt-2 flex items-center justify-between  w-full px-2 py-1 text-left rounded text-[#ffffffc9] hover:text-white hover:bg-[#ffffff33]">
                       LogIn <BiLockAlt className=" text-xl" />
                     </Link>
-                    <div onClick={logoutHandler} disabled={isLoading && true}
+                    {isLoading ? <button onClick={logoutHandler} disabled={isLoading && true}
+                      className=" mt-2 flex items-center justify-between  w-full px-2 py-1 text-left rounded text-red-500 font-bold hover:bg-[#ffffff33]">
+                      <div className=" flex items-center gap-2">
+                      LogOut <Loader color="red" size="xs"/>
+                        </div> <IoExitOutline className=" text-xl font-bold" />
+                    </button> : <button onClick={logoutHandler} disabled={isLoading && true}
                       className=" mt-2 flex items-center justify-between  w-full px-2 py-1 text-left rounded text-red-500 font-bold hover:bg-[#ffffff33]">
                       LogOut <IoExitOutline className=" text-xl font-bold" />
-                    </div>
+                    </button> }
                   </div>
                 </div>
               )}
