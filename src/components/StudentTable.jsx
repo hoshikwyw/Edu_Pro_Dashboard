@@ -3,10 +3,13 @@ import "./Table.css";
 import studentTable from "../json/studentTable.json";
 import { StateContextCustom } from "./context/StateContext";
 import Navbar from "./Navbar";
+import { Navigate, useNavigate } from "react-router-dom";
 
 const StudentTable = () => {
   const [students, setStudents] = useState([]);
   const { isSidebarOpen } = StateContextCustom();
+  const nav = useNavigate();
+  const toDetail = () => nav("/detail");
   useEffect(() => {
     setStudents(studentTable);
   }, []);
@@ -70,7 +73,7 @@ const StudentTable = () => {
             <tbody className="tableTitle text-center">
               {data?.map((student) => {
                 return (
-                  <tr className="custom-hover cursor-pointer" key={student.id}>
+                  <tr onClick={toDetail} className="custom-hover cursor-pointer" key={student.id}>
                     <td className="tracking-wide border-r border-color font-medium text-sm py-4 ">
                       {student?.id}
                     </td>

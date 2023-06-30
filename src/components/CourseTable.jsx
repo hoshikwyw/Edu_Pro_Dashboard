@@ -6,10 +6,13 @@ import { MdDeleteSweep } from "react-icons/md";
 import courseTable from "../json/courseTable.json";
 import Navbar from "./Navbar";
 import { StateContextCustom } from "./context/StateContext";
+import { useNavigate } from "react-router-dom";
 
 const CourseTable = () => {
   const [courses, setCourses] = useState([]);
   const { isSidebarOpen } = StateContextCustom();
+  const nav = useNavigate();
+  const toDetail = () => nav("/detail");
   useEffect(() => {
     setCourses(courseTable);
   }, []);
@@ -79,7 +82,7 @@ const CourseTable = () => {
               <tbody className="tableTitle text-center">
                 {data?.map((course) => {
                   return (
-                    <tr className="custom-hover cursor-pointer" key={course?.id}>
+                    <tr onClick={toDetail} className="custom-hover cursor-pointer" key={course?.id}>
                       <td className="tracking-wide border-r border-color font-medium text-sm py-4 ">
                         {course?.id}
                       </td>
