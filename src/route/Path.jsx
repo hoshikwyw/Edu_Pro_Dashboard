@@ -1,5 +1,5 @@
 import React from "react";
-import {Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Register from "../pages/Register";
 import Login from "../pages/Login";
 import ResetPassword from "../pages/ResetPassword";
@@ -15,16 +15,24 @@ import TeacherTable from "../components/TeacherTable";
 import CourseTable from "../components/CourseTable";
 import Theme from "../components/Theme";
 import Detail from "../components/Detail";
+import BarChart from "../components/dashboard-componentes/BarChart";
 
 const Path = () => {
   return (
     <div>
-      <ScrollTop/>
+      <ScrollTop />
       <Theme />
       <Routes>
-        <Route path="/" element={<Routegaurd><Dashboard /></Routegaurd>} />
+        <Route
+          path="/"
+          element={
+            <Routegaurd>
+              <Dashboard />
+            </Routegaurd>
+          }
+        />
         <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login/>} />
+        <Route path="/login" element={<Login />} />
         <Route path="/resetPassword" element={<ResetPassword />} />
         <Route path="/createCourse" element={<CreateCourse />} />
         <Route path="/calender" element={<Calender />} />
@@ -34,6 +42,7 @@ const Path = () => {
         <Route path="/courseTable" element={<CourseTable />} />
         <Route path="/detail" element={<Detail />} />
         <Route path="/*" element={<Error />} />
+        <Route path="/BarChart" element={<BarChart />} />
       </Routes>
     </div>
   );
