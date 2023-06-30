@@ -28,7 +28,7 @@ const Theme = () => {
   ];
 
   const gradientBackground = [
-    { id: 7, name: "linear-gradient(45deg, #0c675e, #069e90)" },
+    { id: 7, name: "linear-gradient(45deg, #4a0725, #4b0539)" },
     {
       id: 8,
       name: "linear-gradient(567deg, rgba(165, 42, 4, 0.89), rgba(113, 102, 8, 0.89), rgba(13, 95, 16, 0.93), rgba(4, 79, 88, 0.94), rgba(19, 56, 86, 0.9), rgba(24, 32, 78, 0.94), rgba(100, 8, 115, 0.95))",
@@ -38,7 +38,7 @@ const Theme = () => {
     { id: 11, name: "linear-gradient(45deg, #1565C0, #1E88E5)" },
     { id: 12, name: "linear-gradient(45deg, #65379b, #886aea)" },
     { id: 13, name: " linear-gradient(180deg, #ff5447, #f1076f)" },
-    { id: 14, name: "linear-gradient(180deg, #08a50e, #69bb03)" },
+    { id: 14, name: "linear-gradient(180deg, #4e0147, #610e87)" },
     { id: 15, name: "linear-gradient(45deg, #6a11cb, #2575fc)" },
     { id: 16, name: "linear-gradient(45deg, #792248, #944b48)" },
   ];
