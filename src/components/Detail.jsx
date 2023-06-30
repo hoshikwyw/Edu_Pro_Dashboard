@@ -27,7 +27,7 @@ const Detail = () => {
               <div className=' flex flex-col'>
                 {/* image div  */}
                 <div className=' relative p-10 max-[500px]:p-5'>
-                  <img className=' w-[500px] h-[240px] max-xl:w-[900px] max-xl:h-[350px] max-md:h-[240px] rounded-lg' src="	https://eduvibe.devsvibe.com/main/wp-content/themes/eduvibe/assets/images/course-preview.png" alt="" />
+                  <img className=' opacity-80 w-[500px] h-[240px] max-xl:w-[900px] max-xl:h-[350px] max-md:h-[240px] rounded-lg' src="	https://eduvibe.devsvibe.com/main/wp-content/themes/eduvibe/assets/images/course-preview.png" alt="" />
                   <p className=' absolute top-[40%] left-[45%] text-[50px] max-xl:text-[60px] max-md:text-[50px] text-blue-500'><BsFillPlayCircleFill/></p>
                 </div>
 
@@ -128,7 +128,7 @@ const Detail = () => {
             <div className="w-[55%] max-xl:w-full flex flex-col gap-5 py-10 pr-10 max-xl:pl-10 max-[500px]:px-5">
               <img
                 src="https://eduvibe.devsvibe.com/main/wp-content/uploads/2023/03/course-26.webp"
-                  className="w-full h-[330px] max-xl:h-[400px] max-md:h-[330px] max-[600px]:h-[300px] max-[500px]:h-[240px] rounded-lg"
+                  className="w-full h-[330px] max-xl:h-[400px] max-md:h-[330px] max-[600px]:h-[300px] max-[500px]:h-[240px] rounded-lg opacity-80"
               />
               <div className="flex justify-between max-[600px]:flex-col max-[600px]:gap-3">
                   <div className="flex gap-2 items-center">
