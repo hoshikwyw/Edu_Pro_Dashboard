@@ -8,26 +8,35 @@ import {AiTwotoneCalendar} from "react-icons/ai"
 import {MdPersonOutline} from "react-icons/md"
 import {RxCalendar} from "react-icons/rx"
 import {TiMessages} from "react-icons/ti"
+import {TbArrowBigLeftLineFilled} from "react-icons/tb"
 import './Theme.css'
 import "../pages/Register.css"
 import "./detail.css";
+import { useNavigate } from 'react-router-dom';
 
 const Detail = () => {
   const { isSidebarOpen } = StateContextCustom();
+  const nav = useNavigate();
+  const backBtn = () => nav(-1);
+
   return (
-    <div className="flex flex-col">
-      <div>
-        <Navbar />
-      </div>
-      <div className={`mt-[52px] duration-500 ${isSidebarOpen && " ml-[230px]" } max-lg:ml-0`}>
+    // <div className="flex flex-col">
+    //   <div>
+    //     <Navbar />
+    //   </div>
+      // <div className={`mt-[52px] duration-500 ${isSidebarOpen && " ml-[230px]" } max-lg:ml-0`}>
         <div className=' flex justify-center'>
-          <div className=" bgTransparent w-[95%] my-10 rounded flex justify-between max-xl:flex-col">
+          <div className=" bgTransparent relative w-[92%] my-12 rounded flex justify-between max-xl:flex-col">
+            {/* back btn */}
+            <div onClick={backBtn} className=' absolute top-2 left-2 z-10 cursor-pointer'>
+            <TbArrowBigLeftLineFilled className='icon-btn text-xl'/>
+            </div>
             {/* detail left start */}
             <div className='flex justify-center w-[45%] max-xl:w-full text-white'>
               <div className=' flex flex-col'>
                 {/* image div  */}
                 <div className=' relative p-10 max-[500px]:p-5'>
-                  <img className=' opacity-80 w-[500px] h-[240px] max-xl:w-[900px] max-xl:h-[350px] max-md:h-[240px] rounded-lg' src="	https://eduvibe.devsvibe.com/main/wp-content/themes/eduvibe/assets/images/course-preview.png" alt="" />
+                  <img className=' opacity-80 w-[500px] h-[280px] max-xl:w-[900px] max-xl:h-[400px] max-md:h-[240px] rounded-lg' src="	https://eduvibe.devsvibe.com/main/wp-content/themes/eduvibe/assets/images/course-preview.png" alt="" />
                   <p className=' absolute top-[40%] left-[45%] text-[50px] max-xl:text-[60px] max-md:text-[50px] text-blue-500'><BsFillPlayCircleFill/></p>
                 </div>
 
@@ -128,7 +137,7 @@ const Detail = () => {
             <div className="w-[55%] max-xl:w-full flex flex-col gap-5 py-10 pr-10 max-xl:pl-10 max-[500px]:px-5">
               <img
                 src="https://eduvibe.devsvibe.com/main/wp-content/uploads/2023/03/course-26.webp"
-                  className="w-full h-[330px] max-xl:h-[400px] max-md:h-[330px] max-[600px]:h-[300px] max-[500px]:h-[240px] rounded-lg opacity-80"
+                  className="w-full h-[360px] max-xl:h-[400px] max-md:h-[330px] max-[600px]:h-[300px] max-[500px]:h-[240px] rounded-lg opacity-80"
               />
               <div className="flex justify-between max-[600px]:flex-col max-[600px]:gap-3">
                   <div className="flex gap-2 items-center">
@@ -197,8 +206,8 @@ const Detail = () => {
             {/* detail right end */}
           </div>
         </div>
-      </div>
-    </div>
+      // </div>
+    // </div>
   );
 };
 
