@@ -27,6 +27,7 @@
     "react-router-dom": "^6.13.0"
   },
   "devDependencies": {
+    "@tinymce/tinymce-react": "^4.3.0",
     "@types/react": "^18.0.37",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^4.0.0",
