@@ -8,7 +8,7 @@ import {AiTwotoneCalendar} from "react-icons/ai"
 import {MdPersonOutline} from "react-icons/md"
 import {RxCalendar} from "react-icons/rx"
 import {TiMessages} from "react-icons/ti"
-import {TbArrowBigLeftLineFilled} from "react-icons/tb"
+import {FaArrowLeft} from "react-icons/fa"
 import './Theme.css'
 import "../pages/Register.css"
 import "./detail.css";
@@ -26,10 +26,10 @@ const Detail = () => {
     //   </div>
       // <div className={`mt-[52px] duration-500 ${isSidebarOpen && " ml-[230px]" } max-lg:ml-0`}>
         <div className=' flex justify-center'>
-          <div className=" bgTransparent relative w-[92%] my-12 rounded flex justify-between max-xl:flex-col">
+          <div className=" bgTransparent relative w-[92%] my-12 max-xl:my-10 max-lg:my-8 max-sm:my-6 rounded flex justify-between max-xl:flex-col">
             {/* back btn */}
-            <div onClick={backBtn} className=' absolute top-3 left-2 z-10 cursor-pointer '>
-            <TbArrowBigLeftLineFilled className='icon-btn text-xl'/>
+            <div onClick={backBtn} className=' absolute max-[500px]:top-1 max-[500px]:left-1 top-3 left-3 z-10 cursor-pointer '>
+            <FaArrowLeft className='icon-btn max-[500px]:text-sm'/>
             </div>
             {/* detail left start */}
             <div className='flex justify-center w-[45%] max-xl:w-full text-white'>
@@ -46,87 +46,87 @@ const Detail = () => {
                     <div className='flex justify-between pb-3'>
                       <p className=' flex items-center gap-2'>
                         <span className='text-xl'><HiOutlineClock/></span>
-                        <span className='max-xl:text-lg max-md:text-base'>Duration</span>
+                        <span className='max-xl:text-lg max-md:text-base max-sm:text-sm'>Duration</span>
                       </p>
-                      <p>17 Weeks</p>
+                      <p className='max-xl:text-lg max-md:text-base max-sm:text-sm'>17 Weeks</p>
                     </div>
                     <hr className='custom-hr' />
 
                     <div className='flex justify-between py-3'>
                       <p className=' flex items-center gap-2'>
                         <span className='text-lg'><BsPeople/></span>
-                        <span className='max-xl:text-lg max-md:text-base'>Students</span>
+                        <span className='max-xl:text-lg max-md:text-base max-sm:text-sm'>Students</span>
                       </p>
-                      <p>189</p>
+                      <p className='max-xl:text-lg max-md:text-base max-sm:text-sm'>189</p>
                     </div>
                     <hr className='custom-hr' />
 
                     <div className='flex justify-between py-3'>
                       <p className=' flex items-center gap-2'>
                         <span className='text-lg'><RiDraftLine/></span>
-                        <span className='max-xl:text-lg max-md:text-base'>Lessons</span>
+                        <span className='max-xl:text-lg max-md:text-base max-sm:text-sm'>Lessons</span>
                       </p>
-                      <p>18</p>
+                      <p className='max-xl:text-lg max-md:text-base max-sm:text-sm'>18</p>
                     </div>
                     <hr className='custom-hr' />
 
                     <div className='flex justify-between py-3'>
                       <p className=' flex items-center gap-2'>
                         <span className='text-lg'><BsBarChart/></span>
-                        <span className='max-xl:text-lg max-md:text-base'>Skill level</span>
+                        <span className='max-xl:text-lg max-md:text-base max-sm:text-sm'>Skill level</span>
                       </p>
-                      <p>Expert</p>
+                      <p className='max-xl:text-lg max-md:text-base max-sm:text-sm'>Expert</p>
                     </div>
                     <hr className='custom-hr' />
 
                     <div className='flex justify-between py-3'>
                       <p className=' flex items-center gap-2'>
                         <span className='text-lg'><RiArtboardLine/></span>
-                        <span className='max-xl:text-lg max-md:text-base'>Quizzes</span>
+                        <span className='max-xl:text-lg max-md:text-base max-sm:text-sm'>Quizzes</span>
                       </p>
-                      <p>0</p>
+                      <p className='max-xl:text-lg max-md:text-base max-sm:text-sm'>0</p>
                     </div>
                     <hr className='custom-hr' />
 
                     <div className='flex justify-between py-3'>
                       <p className=' flex items-center gap-2'>
                         <span className='text-lg'><RiAwardLine/></span>
-                        <span className='max-xl:text-lg max-md:text-base'>Certifications</span>
+                        <span className='max-xl:text-lg max-md:text-base max-sm:text-sm'>Certifications</span>
                       </p>
-                      <p>Yes</p>
+                      <p className='max-xl:text-lg max-md:text-base max-sm:text-sm'>Yes</p>
                     </div>
                     <hr className='custom-hr' />
 
                     <div className='flex justify-between py-3'>
                       <p className=' flex items-center gap-2'>
                         <span className='text-lg'><BsPercent/></span>
-                        <span className='max-xl:text-lg max-md:text-base'>Pass Percentage</span>
+                        <span className='max-xl:text-lg max-md:text-base max-sm:text-sm'>Pass Percentage</span>
                       </p>
-                      <p>80%</p>
+                      <p className='max-xl:text-lg max-md:text-base max-sm:text-sm'>80%</p>
                     </div>
                     <hr className='custom-hr' />
 
                     <div className='flex justify-between py-3'>
                       <p className=' flex items-center gap-2'>
                         <span className='text-lg'><AiTwotoneCalendar/></span>
-                        <span className='max-xl:text-lg max-md:text-base'>Deadline</span>
+                        <span className='max-xl:text-lg max-md:text-base max-sm:text-sm'>Deadline</span>
                       </p>
-                      <p>25 Dec, 2023</p>
+                      <p className='max-xl:text-lg max-md:text-base max-sm:text-sm'>25 Dec, 2023</p>
                     </div>
                     <hr className='custom-hr' />
 
                     <div className='flex justify-between py-3'>
                       <p className=' flex items-center gap-2'>
                         <span className='text-lg'><MdPersonOutline/></span>
-                        <span className='max-xl:text-lg max-md:text-base'>Instructor</span>
+                        <span className='max-xl:text-lg max-md:text-base max-sm:text-sm'>Instructor</span>
                       </p>
-                      <p>James Carlson</p>
+                      <p className='max-xl:text-lg max-md:text-base max-sm:text-sm'>James Carlson</p>
                     </div>
                   </div>
 
                   {/* price  */}
                   <div className=' text-center py-3 mt-5 text-lg btn'>
-                    <p className=' select-none'>Price $49.00</p>
+                    <p className=' select-none max-sm:text-base'>Price $49.00</p>
                   </div>
                 </div>
               </div>
