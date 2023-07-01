@@ -28,7 +28,7 @@ const Detail = () => {
         <div className=' flex justify-center'>
           <div className=" bgTransparent relative w-[92%] my-12 rounded flex justify-between max-xl:flex-col">
             {/* back btn */}
-            <div onClick={backBtn} className=' absolute top-2 left-2 z-10 cursor-pointer'>
+            <div onClick={backBtn} className=' absolute top-3 left-2 z-10 cursor-pointer '>
             <TbArrowBigLeftLineFilled className='icon-btn text-xl'/>
             </div>
             {/* detail left start */}
@@ -36,8 +36,8 @@ const Detail = () => {
               <div className=' flex flex-col'>
                 {/* image div  */}
                 <div className=' relative p-10 max-[500px]:p-5'>
-                  <img className=' opacity-80 w-[500px] h-[280px] max-xl:w-[900px] max-xl:h-[400px] max-md:h-[240px] rounded-lg' src="	https://eduvibe.devsvibe.com/main/wp-content/themes/eduvibe/assets/images/course-preview.png" alt="" />
-                  <p className=' absolute top-[40%] left-[45%] text-[50px] max-xl:text-[60px] max-md:text-[50px] text-blue-500'><BsFillPlayCircleFill/></p>
+                  <img className=' opacity-80 w-full min-xl:h-[280px] max-xl:w-[900px] rounded-lg' src="https://eduvibe.devsvibe.com/main/wp-content/uploads/2023/03/course-27-1024x551.webp" alt="" />
+                  <p className=' absolute top-[40%] left-[45%] text-[50px] max-xl:text-[60px] max-md:text-[50px] max-[600px]:text-[30px] text-white'><BsFillPlayCircleFill/></p>
                 </div>
 
                 {/* detail  */}
@@ -45,7 +45,7 @@ const Detail = () => {
                   <div>
                     <div className='flex justify-between pb-3'>
                       <p className=' flex items-center gap-2'>
-                        <span className='text-lg'><HiOutlineClock/></span>
+                        <span className='text-xl'><HiOutlineClock/></span>
                         <span className='max-xl:text-lg max-md:text-base'>Duration</span>
                       </p>
                       <p>17 Weeks</p>
@@ -137,7 +137,7 @@ const Detail = () => {
             <div className="w-[55%] max-xl:w-full flex flex-col gap-5 py-10 pr-10 max-xl:pl-10 max-[500px]:px-5">
               <img
                 src="https://eduvibe.devsvibe.com/main/wp-content/uploads/2023/03/course-26.webp"
-                  className="w-full h-[360px] max-xl:h-[400px] max-md:h-[330px] max-[600px]:h-[300px] max-[500px]:h-[240px] rounded-lg opacity-80"
+                  className="w-full  rounded-lg opacity-80"
               />
               <div className="flex justify-between max-[600px]:flex-col max-[600px]:gap-3">
                   <div className="flex gap-2 items-center">
@@ -163,7 +163,7 @@ const Detail = () => {
                   </div>
               </div>
               <div className=" flex flex-col gap-4">
-                  <h1 className="text-gray-50 text-xl font-medium">
+                  <h1 className="text-gray-50 text-xl font-medium max-xl:text-2xl max-md:text-xl">
                     Social Media Marketing MASTERY( A-Z ) Journey
                   </h1>
                   <p className="tableTitle text-sm tracking-wide">
