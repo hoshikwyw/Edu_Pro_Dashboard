@@ -1,0 +1,39 @@
+
+@media (min-width: 990px) {
+  .size {
+    scale: 155%;
+    margin: 70px;
+  }
+}
+
+@media (max-width: 990px) {
+  .size {
+    scale: 1.5;
+    margin: 65px;
+  }
+}
+
+@media (max-width: 450px) {
+  .size {
+    scale: 1.2;
+    margin-left: 65px;
+  }
+}
+@media (max-width: 350px) {
+  .size {
+    scale: 1;
+    margin: auto;
+  }
+}
+
+@media (max-width: 770px) {
+  .card-size {
+    width: 60%;
+  }
+}
+@media (max-width: 520px) {
+  .card-size {
+    width: 88%;
+    margin: 0 10px;
+  }
+}

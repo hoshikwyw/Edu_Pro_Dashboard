@@ -4,6 +4,8 @@ import LineChart from "../components/dashboard-componentes/LineChart";
 import DoughnutChart from "../components/dashboard-componentes/DoughnutChart";
 import { StateContextCustom } from "../components/context/StateContext";
 import Navbar from "../components/Navbar";
+import Feedback from "../components/dashboard-componentes/Feedback";
+import Smallcalendar from "../components/dashboard-componentes/Smallcalendar";
 
 const Dashboard = () => {
   const { isSidebarOpen } = StateContextCustom();
@@ -13,19 +15,22 @@ const Dashboard = () => {
         <div>
           <Navbar />
         </div>
-  
-        <div className={`mt-[52px] duration-500 ${isSidebarOpen && " ml-[230px]" } max-lg:ml-0`}>
+
+        <div
+          className={`mt-[52px] duration-500 ${
+            isSidebarOpen && " ml-[230px]"
+          } max-lg:ml-0 overflow-hidden`}>
           <div className=" flex flex-col gap-7">
-                <Progress />
-                <div className={`w-[95%] flex max-lg:flex-col mx-auto gap-7 mb-7`}>
-                  <LineChart />
-                  <DoughnutChart />
-                </div>
+            <Progress />
+            <div className={`w-[95%] flex max-lg:flex-col mx-auto gap-7 mb-7`}>
+              <LineChart />
+              <DoughnutChart />
+            </div>
+            <Smallcalendar />
+            <Feedback />
           </div>
         </div>
-        
       </div>
-        
     </>
   );
 };
