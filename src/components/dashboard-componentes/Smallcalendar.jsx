@@ -5,15 +5,17 @@ import { BiSearchAlt } from "react-icons/bi";
 import { IoLocationSharp } from "react-icons/io5";
 import { CiTempHigh } from "react-icons/ci";
 import { MdClose } from "react-icons/md";
+import moment from "moment-timezone";
 import "./feedback.css";
 const Api_key = "626a6abe348b9d2c19cf6f3f8d15fd79";
 
 const Smallcalendar = () => {
-  const inputRef = useRef("");
+  const inputRef = useRef(null);
   const [apiData, setApiData] = useState(null);
   // console.log(apiData);
   const [showWeather, setShowWeather] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [currentDateTime, setCurrentDateTime] = useState("");
 
   const WeatherTypes = [
     {
@@ -65,7 +67,12 @@ const Smallcalendar = () => {
           )
         );
         setApiData(data);
-        console.log(data);
+        const timeZone = moment.tz.guess();
+        const currentDateTime = moment()
+          .tz(timeZone)
+          .format("DD-MM-YYYY , HH:mm:ss");
+        setCurrentDateTime(currentDateTime);
+        // console.log(data);
         setLoading(false);
       })
       .catch((error) => {
@@ -82,10 +89,27 @@ const Smallcalendar = () => {
     e.preventDefault();
     const location = inputRef.current.value || "yangon";
     fetchWeather(location);
+    updateCurrentDateTime(location);
+  };
+
+  const handleInputChange = () => {
+    const location = inputRef.current.value || "yangon";
+    fetchWeather(location);
+    updateCurrentDateTime(location);
   };
 
   const handleClearInput = () => {
     inputRef.current.value = "";
+    handleInputChange();
+    updateCurrentDateTime("yangon");
+  };
+
+  const updateCurrentDateTime = (location) => {
+    const timeZone = moment.tz.guess();
+    const currentDateTime = moment()
+      .tz(timeZone)
+      .format("DD-MM-YYYY , HH:mm:ss");
+    setCurrentDateTime(currentDateTime);
   };
 
   return (
@@ -103,14 +127,15 @@ const Smallcalendar = () => {
         {/* right side weather  */}
 
         <div className=" card-size md:w-[50%] lg:w-[50%] flex flex-col justify-center items-center cursor-pointer">
-          <div className=" w-full bgTransparent rounded shadow-md pt-3 pb-10 ">
+          <div className=" w-full bgTransparent rounded shadow-md pt-3 ">
             <div className=" flex items-center justify-center mt-3">
               <form
                 onSubmit={handleSubmit}
-                className=" flex items-center bg-[#2e2e2e9d] rounded px-3 py-1">
+                className=" flex items-center bg-[#2e2e2e31] rounded px-3 py-1">
                 <input
                   type="text"
                   ref={inputRef}
+                  onChange={handleInputChange}
                   placeholder=" Enter Your Location"
                   className=" text-sm px-3 py-1 rounded bg-transparent uppercase outline-none flex-1 text-[#ffffffd0]"
                 />
@@ -140,8 +165,13 @@ const Smallcalendar = () => {
                       {apiData?.name + " , " + apiData?.sys?.country}{" "}
                       <IoLocationSharp />
                     </p>
-                    <img src={showWeather[0]?.img} alt="" className="w-28" />
-                    
+                    {currentDateTime && (
+                      <p className="text-sm text-[#ffffffc0] tracking-wider">
+                        {currentDateTime}
+                      </p>
+                    )}
+                    <img src={showWeather[0]?.img} alt="" className=" w-40" />
+
                     <h2 className="text-lg text-[#ffffffef] tracking-wider">
                       {showWeather[0]?.type}
                     </h2>

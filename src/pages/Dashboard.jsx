@@ -10,7 +10,6 @@ import Smallcalendar from "../components/dashboard-componentes/Smallcalendar";
 
 import BarChart from "../components/dashboard-componentes/BarChart";
 
-
 const Dashboard = () => {
   const { isSidebarOpen } = StateContextCustom();
   return (
@@ -23,9 +22,7 @@ const Dashboard = () => {
         <div
           className={`mt-[52px] duration-500 ${
             isSidebarOpen && " ml-[230px]"
-
           } max-lg:ml-0`}>
-
           <div className=" flex flex-col gap-7">
             <Progress />
             <div className={`w-[95%] flex max-lg:flex-col mx-auto gap-7 mb-7`}>
@@ -33,12 +30,10 @@ const Dashboard = () => {
               <DoughnutChart />
             </div>
             <BarChart />
-            <Smallcalendar />
+            <div className=" mt-10">
+              <Smallcalendar />
+            </div>
             <Feedback />
-
-
-           
-
           </div>
         </div>
       </div>
