@@ -103,8 +103,8 @@ const Login = () => {
           </button>
           <button className="btn max-[350px]:w-full flex gap-1 font-medium justify-center items-center tracking-wider w-[48%] text-white text-xs shadow-md py-[10px] rounded">
             <span>
-              <FaTwitterSquare className=" mb-[2px]" />
             </span>
+              <FaTwitterSquare className=" mb-[2px]" />
             TWITTER
           </button>
         </div>
