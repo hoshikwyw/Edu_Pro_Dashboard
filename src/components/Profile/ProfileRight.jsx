@@ -121,7 +121,7 @@ const ProfileRight = () => {
                   chatGPT
                 </small>
               </div>
-              <div className=" flex flex-wrap items-center py-3 ">
+              <div className=" flex flex-wrap gap-2 items-center py-3 ">
                 <div className=" bg-blue-600 rounded px-2 flex items-center justify-center gap-1">
                   <FaUserAlt className=" text-sm text-[#ffffffd9]" />
                   <p className="  text-sm text-[#ffffffd9]">900 Followers</p>

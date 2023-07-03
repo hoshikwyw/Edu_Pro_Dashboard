@@ -22,7 +22,7 @@ const Profile = () => {
                   <ProfileLeft />
                 </div>
                 {/* right */}
-                <div className="w-full lg:w-[65%] md:w-full pt-[14px] ">
+                <div className="w-[90%] lg:w-[65%] md:w-full pt-[14px] ">
                   <ProfileRight />
                 </div>
               </div>
