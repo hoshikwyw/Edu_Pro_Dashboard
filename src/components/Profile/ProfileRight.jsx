@@ -14,7 +14,7 @@ const ProfileRight = () => {
   const [open, setOpen] = useState(0);
   const [close, setClose] = useState(false);
   return (
-    <div className=" w-full h-auto   lg:p-5 flex justify-center items-center  overflow-hidden">
+    <div className=" w-full h-auto last:lg:p-5 flex justify-center items-center  overflow-hidden">
       <div className="h-[95%] w-full justify-center bgTransparent  rounded lg:p-5">
         {/* headerTitle */}
         <div className="flex  justify-between items-center  borderCustom">
