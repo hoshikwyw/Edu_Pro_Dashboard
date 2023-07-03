@@ -15,7 +15,7 @@ const Feedback = () => {
           Here are the some feedbacks of what our students say about us...
         </h2>
         {/* main card control  */}
-        <div className=" my-3 flex flex-col lg:flex-row gap-4">
+        <div className=" my-5 flex flex-col lg:flex-row gap-4">
           {/* first card  */}
           <div className=" py-5 px-5  bgTransparent rounded shadow-md hover:shadow-slate-700 hover:skew-y-1">
             {/* headline */}
@@ -68,7 +68,7 @@ const Feedback = () => {
             </p>
           </div>
         </div>
-        <div className=" flex justify-center mb-4">
+        <div className=" flex justify-center mb-8">
           <button className=" bgTransparent px-4 py-1 rounded shadow-md text-[#ffffffaf] text-lg font-semibold hover:text-[#ffff] hover:animate-bounce">
             See More
           </button>

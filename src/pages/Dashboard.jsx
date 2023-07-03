@@ -25,17 +25,25 @@ const Dashboard = () => {
           } max-lg:ml-0`}>
           <div className=" flex flex-col gap-7">
             <Progress />
-            <div className={`w-[95%] flex max-lg:flex-col mx-auto gap-7 mb-7`}>
+
+            <div className={`w-[95%] flex max-lg:flex-col mx-auto gap-7`}>
               <LineChart />
               <DoughnutChart />
             </div>
+
             <BarChart />
-            <div className=" mt-10">
+
+            <div className=" mt-5">
               <Smallcalendar />
             </div>
-            <Feedback />
+
+            <div className="mt-5">
+              <Feedback />
+            </div>
+            
           </div>
         </div>
+
       </div>
     </>
   );
