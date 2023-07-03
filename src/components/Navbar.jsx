@@ -127,7 +127,7 @@ const Navbar = () => {
               {showBox && (
                 <div
                   ref={boxRef}
-                  className={`absolute bg-gray-700 bg-opacity-90 w-[200px] top-full ${
+                  className={`absolute bg-gray-700 bg-opacity-100 shadow-xl w-[200px] top-full ${
                     isSidebarOpen ? " box" : " right-4"
                   }  mt-2 p-4 rounded shadow-lg `}>
                   <div className=" flex flex-col items-start gap-2">
