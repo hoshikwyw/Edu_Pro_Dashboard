@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const ResetPassword = () => {
   return (
-    <div className="flex justify-center mt-10 items-center">
+    <div className="flex justify-center h-screen items-center">
       <form className="w-96 max-[450px]:w-[90%] flex flex-col bgTransparent shadow gap-5 rounded">
         <h1 className=" font-medium text-white mt-7 mx-7 tracking-wide">
           RESET PASSWORD

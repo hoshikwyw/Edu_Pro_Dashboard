@@ -33,7 +33,7 @@ const Register = () => {
   }
 
   return (
-    <div className="flex justify-center py-10 items-center">
+    <div className="flex justify-center h-screen items-center">
       <form onSubmit={registerHandler} className=" w-96 max-[450px]:w-[90%] max-[350px]:gap-3 flex flex-col bgTransparent shadow gap-5 rounded">
         <div className="mx-auto mt-7">
           <img
