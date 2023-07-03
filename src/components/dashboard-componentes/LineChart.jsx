@@ -122,8 +122,8 @@ const LineChart = () => {
         </div>
       </div>
 
-      <div className="px-5 w-full h-[331px] flex justify-center">
-        <Line data={data} options={options} className="my-auto"></Line>
+      <div className="px-5 w-full h-[331px] max-sm:h-[200px] max-[450px]:h-[180px] max-[400px]:h-[150px] max-[380px]:h-[130px] max-[350px]:h-[120px] flex justify-center">
+        <Line data={data} options={options} className="my-auto py-3"></Line>
       </div>
 
       <div className=" w-full max-lg:flex-col flex justify-center border-t border-t-color  ">
