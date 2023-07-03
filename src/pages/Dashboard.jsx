@@ -14,7 +14,7 @@ const Dashboard = () => {
   const { isSidebarOpen } = StateContextCustom();
   return (
     <>
-      <div className="flex flex-col w-screen">
+      <div className="flex flex-col">
         <div>
           <Navbar />
         </div>
