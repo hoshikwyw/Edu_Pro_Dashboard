@@ -1,4 +1,3 @@
-
 @media (min-width: 990px) {
   .size {
     scale: 155%;
@@ -15,14 +14,17 @@
 
 @media (max-width: 450px) {
   .size {
-    scale: 1.2;
-    margin-left: 65px;
+    scale: 1.4;
+  }
+}
+@media (max-width: 400px) {
+  .size {
+    scale: 1.3;
   }
 }
 @media (max-width: 350px) {
   .size {
-    scale: 1;
-    margin: auto;
+    scale: 1.1;
   }
 }
 
@@ -34,6 +36,18 @@
 @media (max-width: 520px) {
   .card-size {
     width: 88%;
-    margin: 0 10px;
+    margin: 0 0;
+  }
+}
+
+@media (max-width: 770px) {
+  .make-gap {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 350px) {
+  .make-gap {
+    gap: 0;
   }
 }

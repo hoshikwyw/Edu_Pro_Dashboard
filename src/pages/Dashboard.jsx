@@ -33,7 +33,7 @@ const Dashboard = () => {
 
             <BarChart />
 
-            <div className=" mt-5">
+            <div className="">
               <Smallcalendar />
             </div>
 
