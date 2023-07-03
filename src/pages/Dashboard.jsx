@@ -31,11 +31,11 @@ const Dashboard = () => {
               <DoughnutChart />
             </div>
 
-            {/* <BarChart /> */}
+            <BarChart />
 
-            <div className="mt-4">
+            {/* <div className="mt-4">
               <Smallcalendar />
-            </div>
+            </div> */}
 
             <div className="mt-4">
               <Feedback />
