@@ -33,11 +33,11 @@ const Dashboard = () => {
 
             <BarChart />
 
-            <div className="mt-4">
+            <div className=" md:mt-4">
               <Smallcalendar />
             </div>
 
-            <div className="mt-4">
+            <div className="">
               <Feedback />
             </div>
           </div>
