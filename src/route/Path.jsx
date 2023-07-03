@@ -16,6 +16,7 @@ import CourseTable from "../components/CourseTable";
 import Theme from "../components/Theme";
 import Detail from "../components/Detail";
 import BarChart from "../components/dashboard-componentes/BarChart";
+import EditorFun from "../components/TextEditor/EditorFun";
 
 const Path = () => {
   return (
@@ -43,6 +44,7 @@ const Path = () => {
         <Route path="/detail" element={<Detail />} />
         <Route path="/*" element={<Error />} />
         <Route path="/BarChart" element={<BarChart />} />
+        <Route path="/edit" element={<EditorFun />} />
       </Routes>
     </div>
   );

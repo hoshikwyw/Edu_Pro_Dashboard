@@ -100,7 +100,7 @@ export const options = {
 const BarChart = () => {
   return (
     <div className="w-full flex justify-center items-center">
-      <div className=" w-[95%] bgTransparent flex justify-center">
+      <div className=" w-[95%] bgTransparent flex justify-center rounded">
         <Bar options={options} data={data} />
       </div>
     </div>
