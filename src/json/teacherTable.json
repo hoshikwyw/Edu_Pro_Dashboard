@@ -118,5 +118,75 @@
         "salary" : 25000,
         "gender" : "Male",
         "address" : "Newcastle"
+    },
+    {
+        "id" : 13,
+        "name" : "Jugal",
+        "age" : 34,
+        "department":"Computer Sc",
+        "date" : "2017-03-10",
+        "salary" : 12000,
+        "gender" : "Male",
+        "address" : "London"
+    },
+    {
+        "id" : 14,
+        "name" : "Sharmila",
+        "age" : 31,
+        "department":"History",
+        "date" : "2009-05-22",
+        "salary" : 20000,
+        "gender" : "Female",
+        "address" : "Birmingham"
+    },
+    {
+        "id" : 15,
+        "name" : "Sandeep",
+        "age" : 32,
+        "department":"Mathematic",
+        "date" : "2014-07-16",
+        "salary" : 34000,
+        "gender" : "Male",
+        "address" : "Liverpool"
+    },
+    {
+        "id" : 16,
+        "name" : "Sangeeta",
+        "age" : 35,
+        "department":"Science",
+        "date" : "2015-01-09",
+        "salary" : 40000,
+        "gender" : "Female",
+        "address" : "Manchester"
+    },
+    {
+        "id" : 17,
+        "name" : "Rakesh",
+        "age" : 42,
+        "department":"Chemistry",
+        "date" : "2012-08-19",
+        "salary" : 25000,
+        "gender" : "Male",
+        "address" : "Newcastle"
+    },
+    {
+        "id" : 18,
+        "name" : "Shyam",
+        "age" : 50,
+        "department":"Art",
+        "date" : "2006-02-26",
+        "salary" : 30000,
+        "gender" : "Male",
+        "address" : "Leicester"
+    },
+    {
+        "id" : 19,
+        "name" : "Sharmila",
+        "age" : 31,
+        "department":"History",
+        "date" : "2009-05-22",
+        "salary" : 20000,
+        "gender" : "20000",
+        "address" : "Birmingham"
     }
 ]

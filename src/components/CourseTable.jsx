@@ -18,7 +18,7 @@ const CourseTable = () => {
   }, []);
 
   const [currentPage, setCurrentPage] = useState(1);
-  const dataPerPage = 5;
+  const dataPerPage = 7;
   const lastIndex = currentPage * dataPerPage;
   const firstIndex = lastIndex - dataPerPage;
   const data = courses.slice(firstIndex, lastIndex);
