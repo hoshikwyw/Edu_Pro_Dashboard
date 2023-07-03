@@ -31,7 +31,7 @@ const Dashboard = () => {
               <DoughnutChart />
             </div>
 
-            <BarChart />
+            {/* <BarChart /> */}
 
             <div className="">
               <Smallcalendar />
