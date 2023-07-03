@@ -38,7 +38,7 @@ const CreateCourse = () => {
                   Create New Course
                 </h1>
                 <div className=" flex flex-col">
-                  <div className=" flex max-[900px]:flex-col max-[900px]:gap-5 gap-9 items-center max-[900px]:items-start">
+                  <div className=" flex max-[900px]:flex-col max-[900px]:gap-5 gap-9 max-[900px]:items-start">
                     <div className=" w-[30%] max-[900px]:w-[50%] max-[700px]:w-[70%] max-[600px]:w-[80%] max-[500px]:w-[100%]">
                       <div
                         onClick={() => {
@@ -46,7 +46,7 @@ const CreateCourse = () => {
                           console.log("click");
                         }}
                         className=" custom-input cursor-pointer w-full h-[370px] max-xl:h-[350px] rounded-md flex justify-center items-center">
-                        <p className="subtitle">Upload cover</p>
+                        <p className="text-[#bebebe] text-base">Upload cover</p>
                         <input
                           id="cover"
                           className=" w-full h-[370px] "
@@ -59,7 +59,7 @@ const CreateCourse = () => {
 
                     <div className=" w-[70%] max-[900px]:w-full">
                       <div className="flex flex-col gap-8 max-[900px]:gap-5">
-                        <div className=" flex flex-col gap-7 max-[900px]:gap-5">
+                        <div className=" flex flex-col gap-8 max-[900px]:gap-5">
                           <input
                             className="   py-3 pl-4 custom-input rounded-md"
                             type="text"
@@ -71,11 +71,18 @@ const CreateCourse = () => {
                             id="idText"
                             placeholder="Description"
                           /> */}
-                          <div className="custom-input pt-4 pb-2   pl-4 rounded-md flex justify-center">
+                          {/* <div className="custom-input pt-4 pb-2 pl-4 rounded-md flex justify-center">
                             <div className="w-[98%]">
                               <EditorFun setValueF={setValueF} />
                             </div>
-                          </div>
+                          </div> */}
+                            
+                          <input
+                          className="  custom-input py-3 pl-4 rounded-md"
+                          type="text"
+                          placeholder="Instructor"
+                        />
+
                           <div className=" flex gap-5 w-[100%] max-[700px]:flex-col">
                             <input
                               className="  custom-input w-full py-3 pl-4 rounded-md"
@@ -98,17 +105,33 @@ const CreateCourse = () => {
                               placeholder="Price"
                             />
                           </div>
+
+                          <input
+                            className="   py-3 pl-4 custom-input rounded-md"
+                            type="text"
+                            placeholder="Skill level"
+                          />
                         </div>
-                        <input
-                          className="  custom-input py-3 pl-4 rounded-md"
-                          type="text"
-                          placeholder="Instructor"
-                        />
+                       
+                        <div
+                              onClick={() => inputVideo.current.click()}
+                              className=" custom-input flex justify-between cursor-pointer w-full py-5 max-xl:py-3 max-[900px]:py-5 pl-4 mr-1  border-[#e5eaef] rounded-md">
+                              <p className="text-[#bebebe]">Upload video</p>
+                              <input
+                                className=" py-3 pl-4 custom-input rounded-md"
+                                type="file"
+                                ref={inputVideo}
+                                hidden
+                              />
+                              <p className=" text-xl pr-4 text-[#bebebe]">
+                                <BiMovie />
+                              </p>
+                        </div>
                       </div>
                     </div>
                   </div>
 
-                  <div
+                  {/* <div
                     onClick={() => inputVideo.current.click()}
                     className=" custom-input flex justify-between cursor-pointer w-full mb-8 max-[900px]:mb-5 mt-8 max-[900px]:mt-5 py-4 pl-4 mr-1  border-[#e5eaef] rounded-md">
                     <p className="subtitle">Upload video</p>
@@ -121,6 +144,12 @@ const CreateCourse = () => {
                     <p className=" text-xl pr-4 subtitle">
                       <BiMovie />
                     </p>
+                  </div> */}
+
+                  <div className="custom-input pt-4 pb-2 pl-4 rounded-md flex justify-center my-8 max-[900px]:my-5">
+                      <div className="w-[98%]">
+                          <EditorFun setValueF={setValueF} />
+                      </div>
                   </div>
                 </div>
 
