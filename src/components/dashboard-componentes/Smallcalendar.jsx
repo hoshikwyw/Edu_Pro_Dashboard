@@ -116,7 +116,7 @@ const Smallcalendar = () => {
     <div className="">
       <div className=" flex flex-col make-gap justify-center items-center md:items-start lg:items-start md:flex-row lg:flex-row md:gap-[5%] lg:gap-[5%] w-[95%] mx-auto">
         {/* calendar  */}
-        <div className="">
+        <div className=" calendar">
           <Group className=" custom-calendar">
             <Calendar
               color="blue"

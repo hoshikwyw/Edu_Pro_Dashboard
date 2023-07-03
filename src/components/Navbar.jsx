@@ -10,19 +10,19 @@ import Sidebar from "./Sidebar";
 import { Link } from "react-router-dom";
 import { StateContextCustom } from "./context/StateContext";
 import { useLogoutMutation } from "../redux/api/authApi";
-import Cookies from "js-cookie"
-import { useNavigate } from 'react-router-dom';
+import Cookies from "js-cookie";
+import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { removeUser } from "../redux/authSlice";
-import { Loader } from '@mantine/core';
+import { Loader } from "@mantine/core";
 
 const Navbar = () => {
-  const [logout, {isLoading}] = useLogoutMutation()
-  const token = Cookies.get("token")
+  const [logout, { isLoading }] = useLogoutMutation();
+  const token = Cookies.get("token");
   // const user = JSON.parse(Cookies.get("user"))
   // console.log(user);
-  const dispatch = useDispatch()
-  const nav = useNavigate()
+  const dispatch = useDispatch();
+  const nav = useNavigate();
   // const [isSidebarOpen, setSidebarOpen] = useState(true);
   const { isSidebarOpen, setSidebarOpen } = StateContextCustom();
   const toggleSidebar = () => {
@@ -67,13 +67,13 @@ const Navbar = () => {
     };
   }, []);
 
-  const logoutHandler = async()=>{
-    const {data} = await logout(token)
-    dispatch(removeUser())
-    if(data?.success){
-      nav('/login')
+  const logoutHandler = async () => {
+    const { data } = await logout(token);
+    dispatch(removeUser());
+    if (data?.success) {
+      nav("/login");
     }
-  }
+  };
   return (
     <div>
       <div
@@ -89,22 +89,24 @@ const Navbar = () => {
           isSidebarOpen ? "navW" : " left-0 w-full"
         } transition-all ease-in duration-300 ${
           isScrolled ? " bg-black" : "bg-black bg-opacity-20"
-        } ${isScrolled ? "" : ""}  `}>
+        }   `}>
         {/* Navbar content */}
         <div className={` flex items-center justify-between w-full`}>
           <div className=" flex gap-3 ">
             <button className={` text-white text-xl `} onClick={toggleSidebar}>
               <FiMenu />
             </button>
-            <div className=" flex bg-[#ffffff33] putField items-center py-2 px-3 rounded">
-              <input
-                type="text"
-                className=" bg-transparent text-sm outline-none"
-                placeholder="Enter Keywords"
-              />
-              <p className=" text-[#ffffffc2] text-xl cursor-pointer">
-                <BiSearch />
-              </p>
+            <div className=" bg-[#ffffff33] w-fit  py-2 px-3 rounded">
+              <div className=" flex items-center">
+                <input
+                  type="text"
+                  className=" bg-transparent text-sm outline-none"
+                  placeholder="Enter Keywords"
+                />
+                <p className=" text-[#ffffffc2] text-xl cursor-pointer">
+                  <BiSearch />
+                </p>
+              </div>
             </div>
           </div>
           <div className=" flex items-center gap-5 fixed mr-5 right-0 cursor-pointer">
@@ -147,15 +149,24 @@ const Navbar = () => {
                       className=" mt-2 flex items-center justify-between  w-full px-2 py-1 text-left rounded text-[#ffffffc9] hover:text-white hover:bg-[#ffffff33]">
                       LogIn <BiLockAlt className=" text-xl" />
                     </Link>
-                    {isLoading ? <button onClick={logoutHandler} disabled={isLoading && true}
-                      className=" mt-2 flex items-center justify-between  w-full px-2 py-1 text-left rounded text-red-500 font-bold hover:bg-[#ffffff33]">
-                      <div className=" flex items-center gap-2">
-                      LogOut <Loader color="red" size="xs"/>
-                        </div> <IoExitOutline className=" text-xl font-bold" />
-                    </button> : <button onClick={logoutHandler} disabled={isLoading && true}
-                      className=" mt-2 flex items-center justify-between  w-full px-2 py-1 text-left rounded text-red-500 font-bold hover:bg-[#ffffff33]">
-                      LogOut <IoExitOutline className=" text-xl font-bold" />
-                    </button> }
+                    {isLoading ? (
+                      <button
+                        onClick={logoutHandler}
+                        disabled={isLoading && true}
+                        className=" mt-2 flex items-center justify-between  w-full px-2 py-1 text-left rounded text-red-500 font-bold hover:bg-[#ffffff33]">
+                        <div className=" flex items-center gap-2">
+                          LogOut <Loader color="red" size="xs" />
+                        </div>{" "}
+                        <IoExitOutline className=" text-xl font-bold" />
+                      </button>
+                    ) : (
+                      <button
+                        onClick={logoutHandler}
+                        disabled={isLoading && true}
+                        className=" mt-2 flex items-center justify-between  w-full px-2 py-1 text-left rounded text-red-500 font-bold hover:bg-[#ffffff33]">
+                        LogOut <IoExitOutline className=" text-xl font-bold" />
+                      </button>
+                    )}
                   </div>
                 </div>
               )}

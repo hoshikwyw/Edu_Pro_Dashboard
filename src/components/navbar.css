@@ -1,52 +1,7 @@
 /* profile shadow */
-.navbar-profile-shadow{
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-}
-.putField {
-  width: 450px;
-  display: flex;
-  justify-content: space-between;
-}
-
-@media (max-width: 750px) {
-  .putField {
-    width: 300px;
-  }
-}
-@media (min-width: 1300px) {
-  .putField {
-    width: 500px;
-  }
-}
-@media (min-width: 900px) {
-  .putField {
-    width: 300px;
-  }
-}
-
-@media (max-width: 600px) {
-  .putField {
-    width: 200px;
-  }
-}
-@media (max-width: 330px) {
-  .putField {
-    width: 190px;
-  }
-}
-
-.icons {
-  margin: 0 200px;
-  position: absolute;
-  right: -60px;
-  gap: 40%;
-}
-@media (max-width: 500px) {
-  .icons {
-    visibility: hidden;
-    position: absolute;
-    left: -1000px;
-  }
+.navbar-profile-shadow {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 }
 
 @media (min-width: 900px) {
@@ -62,26 +17,13 @@
   }
 }
 
+
 @media (min-width: 900px) {
   .icons {
     right: 40px;
   }
 }
-.pfp {
-  position: absolute;
-  right: 10px;
-}
-@media (min-width: 900px) {
-  .pfp {
-    position: absolute;
-    right: 100px;
-  }
-}
-@media (min-width: 1200px) {
-  .pfp {
-    right: 80px;
-  }
-}
+
 @media (max-width: 500px) {
   .hide-icons {
     visibility: hidden;
