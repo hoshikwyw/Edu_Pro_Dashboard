@@ -65,7 +65,6 @@ export const options = {
       position: "top",
       color: "rgba(255, 255, 255, 0.1)",
     },
-<<<<<<< HEAD
     title: {
       display: true,
       text: "Popular courses Per Year",
@@ -74,8 +73,6 @@ export const options = {
         size: 20,
       },
     },
-=======
->>>>>>> 3132ecbddb3090a6f5fa68245f753c30a6d4e1f2
   },
   scales: {
     y: {
