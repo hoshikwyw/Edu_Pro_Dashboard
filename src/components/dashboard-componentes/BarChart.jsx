@@ -69,7 +69,7 @@ export const options = {
       text: "Popular courses Per Year",
       color: "rgb(255, 255, 255)",
       font: {
-        size: 24,
+        size: 20,
       },
     },
   },
