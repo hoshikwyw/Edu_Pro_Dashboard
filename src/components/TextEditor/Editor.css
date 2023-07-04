@@ -10,7 +10,7 @@
 .tox-toolbar,
 .tox-tinymce,
 .tox-toolbar__primary {
-  background-color: #faf7f709 !important;
+  background-color: transparent !important;
 }
 
 .tox-mbtn__select-label,
@@ -22,10 +22,10 @@
 .tox-tinymce {
   color: white !important;
 }
-svg {
+.tox .tox-tbtn svg {
   fill: rgb(215, 225, 225) !important;
 }
-svg:hover {
+.tox .tox-tbtn svg:hover {
   fill: rgb(0, 0, 0) !important;
 }
 .tox-tbtn__select-label:hover,
@@ -41,7 +41,7 @@ svg:hover {
   border: 2px solid transparent !important;
 }
 .tox-statusbar {
-  border-top: 1px solid rgba(255, 255, 255, 0.445) !important;
+  border-top: 1px solid rgba(255, 254, 254, 0.192) !important;
 }
 /* .tox-menu {
   background-color: rgba(181, 176, 176, 0.715) !important;
