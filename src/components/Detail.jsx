@@ -37,7 +37,7 @@ const Detail = () => {
                 {/* image div  */}
                 <div className=' relative p-10 max-[500px]:p-5'>
                   <img className=' opacity-80 w-full min-xl:h-[280px] max-xl:w-[900px] rounded-lg' src="https://eduvibe.devsvibe.com/main/wp-content/uploads/2023/03/course-27-1024x551.webp" alt="" />
-                  <p className=' absolute top-[40%] left-[45%] text-[50px] max-xl:text-[60px] max-md:text-[50px] max-[600px]:text-[30px] text-white'><BsFillPlayCircleFill/></p>
+                  <button className=' absolute top-[40%] left-[45%] text-[50px] max-xl:text-[60px] max-md:text-[50px] max-[600px]:text-[30px] text-white play-btn'><BsFillPlayCircleFill/></button>
                 </div>
 
                 {/* detail  */}
