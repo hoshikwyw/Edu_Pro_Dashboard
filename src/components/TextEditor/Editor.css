@@ -1,3 +1,49 @@
 .tox .tox-statusbar__branding svg {
   display: none;
 }
+.tox .tox-edit-area__iframe,
+.tox-editor-header,
+.tox-menubar,
+.tox-toolbar-overlord,
+.tox-statusbar,
+.tox-tbtn--bespoke,
+.tox-toolbar,
+.tox-tinymce,
+.tox-toolbar__primary {
+  background-color: #faf7f709 !important;
+}
+
+.tox-mbtn__select-label,
+.tox-tbtn__select-label,
+.tox-statusbar__wordcount,
+.tox-statusbar__path,
+.mce-content-body,
+.tox-statusbar__path-item,
+.tox-tinymce {
+  color: white !important;
+}
+svg {
+  fill: rgb(215, 225, 225) !important;
+}
+svg:hover {
+  fill: rgb(0, 0, 0) !important;
+}
+.tox-tbtn__select-label:hover,
+.tox-statusbar__wordcount:hover,
+.tox .tox-menubar:hover,
+.tox-statusbar__path-item:hover,
+.mce-content-body:hover,
+.tox-tinymce:hover,
+.tox-mbtn__select-label:hover {
+  color: black !important;
+}
+.tox-tinymce {
+  border: 2px solid transparent !important;
+}
+.tox-statusbar {
+  border-top: 1px solid rgba(255, 255, 255, 0.445) !important;
+}
+/* .tox-menu {
+  background-color: rgba(181, 176, 176, 0.715) !important;
+  color: white !important;
+} */

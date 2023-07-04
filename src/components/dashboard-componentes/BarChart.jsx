@@ -27,6 +27,7 @@ const courseYear2021 = [700, 600, 700, 500];
 
 const data = {
   labels: courseName,
+
   datasets: [
     {
       label: "2019",
@@ -58,12 +59,13 @@ export const options = {
       labels: {
         color: "gray",
         font: {
-          size: 18,
+          size: 12,
         },
       },
       position: "top",
       color: "rgba(255, 255, 255, 0.1)",
     },
+<<<<<<< HEAD
     title: {
       display: true,
       text: "Popular courses Per Year",
@@ -72,6 +74,8 @@ export const options = {
         size: 20,
       },
     },
+=======
+>>>>>>> 3132ecbddb3090a6f5fa68245f753c30a6d4e1f2
   },
   scales: {
     y: {
@@ -99,8 +103,11 @@ export const options = {
 
 const BarChart = () => {
   return (
-    <div className="w-full flex justify-center items-center">
-      <div className=" w-[95%] bgTransparent flex justify-center rounded">
+    <div className="w-full flex justify-center flex-col items-center gap-2 md:gap-3 lg:gap-5 ">
+      <h1 className=" title  md:text-xl lg:text-2xl ">
+        Popular courses per Year
+      </h1>
+      <div className=" w-[95%] bgTransparent flex justify-center rounded   ">
         <Bar options={options} data={data} />
       </div>
     </div>
