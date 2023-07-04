@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Path from "./route/Path";
 import "./App.css";
+import backgroundImage2 from "../src/assets/bg-img/2.png";
 // import Sidebar from "./components/Sidebar";
 // import Navbar from "./components/Navbar";
 import { useSelector } from "react-redux";
@@ -24,7 +25,7 @@ const App = () => {
               ? `url(${bgTexture1})`
               : bgTexture?.length > 0 && bgTexture?.length < 25
               ? `url(${bgTexture})`
-              : "url(http://127.0.0.1:5173/src/assets/bg-img/2.png)",
+              : `url(${backgroundImage2})`,
             backgroundSize: "100% 100%",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
@@ -38,7 +39,7 @@ const App = () => {
           style={{
             backgroundImage: bgTexture
               ? `${bgTexture}`
-              : "url(http://127.0.0.1:5173/src/assets/bg-img/2.png)",
+              : `url(${backgroundImage2})`,
             backgroundSize: "100% 100%",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
