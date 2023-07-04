@@ -19,8 +19,8 @@ const Theme = () => {
   // localStorage.setItem("bgTexture", bgTexture);
 
   const gaussionTexture = [
-    { id: 1, name: backgroundImage1 },
-    { id: 2, name: backgroundImage2 },
+    { id: 1, name: backgroundImage2 },
+    { id: 2, name: backgroundImage1 },
     { id: 3, name: backgroundImage3 },
     { id: 4, name: backgroundImage4 },
     { id: 5, name: backgroundImage5 },

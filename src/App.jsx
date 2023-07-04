@@ -24,7 +24,7 @@ const App = () => {
               ? `url(${bgTexture1})`
               : bgTexture?.length > 0 && bgTexture?.length < 25
               ? `url(${bgTexture})`
-              : "url(https://themewagon.github.io/dashtreme/assets/images/bg-themes/1.png)",
+              : "url(http://127.0.0.1:5173/src/assets/bg-img/2.png)",
             backgroundSize: "100% 100%",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
@@ -38,7 +38,7 @@ const App = () => {
           style={{
             backgroundImage: bgTexture
               ? `${bgTexture}`
-              : "url(https://themewagon.github.io/dashtreme/assets/images/bg-themes/1.png)",
+              : "url(http://127.0.0.1:5173/src/assets/bg-img/2.png)",
             backgroundSize: "100% 100%",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
