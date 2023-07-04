@@ -30,11 +30,11 @@ const CreateCourse = () => {
             isSidebarOpen && " ml-[230px]"
           } max-lg:ml-0`}>
           <div className="flex justify-center ">
-            <div className=" w-[95%] max-[900px]:w-[95% max-[900px]:w-[94%] max-[600px]:w-[92%] mt-10 mb-6 bgTransparent">
+            <div className=" w-[95%] max-[900px]:w-[95% max-[900px]:w-[94%] max-[600px]:w-[96%] mt-10 mb-6 bgTransparent">
               <form
                 onSubmit={onSubmitHandler}
-                className=" mx-10 max-sm:mx-5 mb-16">
-                <h1 className=" text-4xl text-white text-shadow my-10 max-[435px]:text-3xl max-[380px]:text-2xl createFamily tracking-wide">
+                className=" mx-10 max-sm:mx-5 mb-8">
+                <h1 className=" text-4xl my-10 max-[900px]:my-5 text-white text-shadow max-[435px]:text-3xl max-[380px]:text-2xl createFamily tracking-wide">
                   Create New Course
                 </h1>
                 <div className=" flex flex-col">
