@@ -25,7 +25,7 @@ const App = () => {
               ? `url(${bgTexture1})`
               : bgTexture?.length > 0 && bgTexture?.length < 25
               ? `url(${bgTexture})`
-              : `url(${backgroundImage2})`,
+              : `(linear-gradient(45deg, #1f1f1e, #1f1f1e)`,
             backgroundSize: "100% 100%",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
@@ -39,7 +39,7 @@ const App = () => {
           style={{
             backgroundImage: bgTexture
               ? `${bgTexture?.name}`
-              : `url(${backgroundImage2})`,
+              : `linear-gradient(45deg, #1f1f1e, #1f1f1e)`,
             backgroundSize: "100% 100%",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",

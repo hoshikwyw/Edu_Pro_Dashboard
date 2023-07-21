@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  bgTexture: "",
+  bgTexture: JSON.parse(localStorage.getItem("bgTexture")),
   events: [],
 };
 
