@@ -49,14 +49,14 @@ const Sidebar = ({ isOpen, isScrolled, toggleSidebar }) => {
       <div
         className={`sidebar-item flex gap-14 items-center ps-5 py-5 h-[65px] transition-all ease-in duration-300
       ${isScrolled ? " bg-black" : "bg-black bg-opacity-30"} `}>
-        <Link to={"/"} className=" flex items-center gap-4">
+        <Link to={"/"} className=" ">
           <img
-            className=" sidebar-item w-12"
+            className=" sidebar-item"
             onClick={handleClick}
-            src="https://themewagon.github.io/dashtreme/assets/images/logo-icon.png"
+            src="https://eduvibe.devsvibe.com/main/wp-content/uploads/2023/01/logo-2.png"
             alt=""
           />
-          <p className=" text-[#ffffffa6] text-lg font-bold ">Edu-Pro</p>
+          {/* <p className=" text-[#ffffffa6] text-lg font-bold ">Edu-Pro</p> */}
         </Link>
 
         <p onClick={toggleSidebar}>

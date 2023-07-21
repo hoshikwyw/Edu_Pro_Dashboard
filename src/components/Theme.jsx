@@ -8,7 +8,7 @@ import backgroundImage4 from "../assets/bg-img/4.png";
 import backgroundImage5 from "../assets/bg-img/5.png";
 import backgroundImage6 from "../assets/bg-img/6.png";
 import { useDispatch, useSelector } from "react-redux";
-import { addBgTexture } from "../redux/ThemeSlice";
+import { addBgTexture } from "../redux/themeSlice";
 
 const Theme = () => {
   const [themeOpen, setThemeOpen] = useState(false);

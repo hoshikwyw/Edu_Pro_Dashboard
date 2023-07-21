@@ -20,11 +20,11 @@ const Detail = () => {
   const backBtn = () => nav(-1);
 
   return (
-    // <div className="flex flex-col">
-    //   <div>
-    //     <Navbar />
-    //   </div>
-      // <div className={`mt-[52px] duration-500 ${isSidebarOpen && " ml-[230px]" } max-lg:ml-0`}>
+    <div className="flex flex-col">
+      <div>
+        <Navbar />
+      </div>
+      <div className={`mt-[52px] duration-500 ${isSidebarOpen && " ml-[230px]" } max-lg:ml-0`}>
         <div className=' flex justify-center'>
           <div className=" bgTransparent relative w-[92%] my-12 max-xl:my-10 max-lg:my-8 max-sm:my-6 rounded flex justify-between max-xl:flex-col">
             {/* back btn */}
@@ -206,8 +206,8 @@ const Detail = () => {
             {/* detail right end */}
           </div>
         </div>
-      // </div>
-    // </div>
+       </div>
+     </div>
   );
 };
 
