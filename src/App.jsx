@@ -10,7 +10,14 @@ import { useSelector } from "react-redux";
 const App = () => {
   const bgTexture1 = useSelector((state) => state.themeSlice.bgTexture);
 
-  let bgTexture = localStorage.getItem("bgTexture") && JSON.parse(localStorage.getItem("bgTexture"));
+  // let bgTexture = localStorage.getItem("bgTexture") && JSON.parse(localStorage.getItem("bgTexture"));
+  let bgTexture = null;
+  try {
+    bgTexture = localStorage.getItem("bgTexture") && JSON.parse(localStorage.getItem("bgTexture"));
+  } catch (error) {
+    console.error("Error parsing bgTexture:", error);
+  }
+  
   
   console.log(bgTexture1)
   console.log(bgTexture)
