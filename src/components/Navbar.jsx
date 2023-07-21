@@ -15,8 +15,12 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { removeUser } from "../redux/authSlice";
 import { Loader } from "@mantine/core";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
+  let bgTexture = JSON.parse(localStorage.getItem("bgTexture"));
+  // console.log(bgTexture?.white ? "yes" : "no");
+
   const [logout, { isLoading }] = useLogoutMutation();
   const token = Cookies.get("token");
   // const user = JSON.parse(Cookies.get("user"))
@@ -85,7 +89,7 @@ const Navbar = () => {
         />
       </div>
       <nav
-        className={` z-30 h-[65px] text-white p-4 flex fixed ${
+        className={` z-30 h-[65px] ${bgTexture?.white ? "text-blue-500" : "text-white"} p-4 flex fixed ${
           isSidebarOpen ? "navW" : " left-0 w-full"
         } transition-all ease-in duration-300 ${
           isScrolled ? " bg-black" : "bg-black bg-opacity-20"

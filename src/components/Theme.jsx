@@ -15,30 +15,30 @@ const Theme = () => {
   // const refresh = () => window.location.reload(true);
   const dispatch = useDispatch();
   const bgTexture = useSelector((state) => state.themeSlice?.bgTexture);
-
+  // console.log(bgTexture);
   // localStorage.setItem("bgTexture", bgTexture);
 
-  const gaussionTexture = [
-    { id: 1, name: backgroundImage2 },
-    { id: 2, name: backgroundImage1 },
-    { id: 3, name: backgroundImage3 },
-    { id: 4, name: backgroundImage4 },
-    { id: 5, name: backgroundImage5 },
-    { id: 6, name: backgroundImage6 },
+  const gradientBackground = [
+    { id: 1, name: "linear-gradient(45deg, #fff, #fff)", white:true },
+    // { id: 2, name: "linear-gradient(45deg, #29323c, #485563)" },
+    { id: 2, name: "linear-gradient(45deg, #1f1f1e, #1f1f1e)" },
+    {id: 3,
+    name: "linear-gradient(567deg, rgba(165, 42, 4, 0.89), rgba(113, 102, 8, 0.89), rgba(13, 95, 16, 0.93), rgba(4, 79, 88, 0.94), rgba(19, 56, 86, 0.9), rgba(24, 32, 78, 0.94), rgba(100, 8, 115, 0.95))",
+    },
+    { id: 4, name: "linear-gradient(45deg, #795548, #945c48)" },
+    { id: 5, name: "linear-gradient(45deg, #4a0725, #4b0539)" },
+    { id: 6, name: "linear-gradient(180deg, #4e0147, #610e87)" },
+    { id: 7, name: "linear-gradient(45deg, #792248, #944b48)" },
+    { id: 8, name: "linear-gradient(45deg, #0c675e, #069e90)" },
   ];
 
-  const gradientBackground = [
-    { id: 7, name: "linear-gradient(45deg, #0c675e, #069e90)" },
-    {
-      id: 8,
-      name: "linear-gradient(567deg, rgba(165, 42, 4, 0.89), rgba(113, 102, 8, 0.89), rgba(13, 95, 16, 0.93), rgba(4, 79, 88, 0.94), rgba(19, 56, 86, 0.9), rgba(24, 32, 78, 0.94), rgba(100, 8, 115, 0.95))",
-    },
-    { id: 9, name: "linear-gradient(45deg, #29323c, #485563)" },
-    { id: 10, name: "linear-gradient(45deg, #795548, #945c48)" },
-    { id: 11, name: "linear-gradient(45deg, #4a0725, #4b0539)" },
-    { id: 12, name: "linear-gradient(45deg, #65379b, #886aea)" },
-    { id: 13, name: "linear-gradient(180deg, #4e0147, #610e87)" },
-    { id: 14, name: "linear-gradient(45deg, #792248, #944b48)" },
+  const gaussionTexture = [
+    { id: 9, name: backgroundImage2 },
+    { id: 10, name: backgroundImage1 },
+    { id: 11, name: backgroundImage3 },
+    { id: 12, name: backgroundImage4 },
+    { id: 13, name: backgroundImage5 },
+    { id: 14, name: backgroundImage6 },
   ];
   useEffect(() => {}, []);
   return (
@@ -63,39 +63,12 @@ const Theme = () => {
             <hr className=" custom-hr mb-4 mx-2" />
 
             <div className=" flex flex-wrap justify-center items-center gap-4">
-              {gaussionTexture.map((bg) => {
-                return (
-                  <div
-                    onClick={() => {
-                      dispatch(addBgTexture(bg.name));
-                      //   refresh();
-                    }}
-                    key={bg.id}
-                    className=" w-[87px] h-[75px] cursor-pointer">
-                    <img
-                      className=" w-full h-full rounded-lg"
-                      src={bg.name}
-                      alt=""
-                    />
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-
-          <div className=" pb-4">
-            <h1 className=" text-[15px] text-[#ffffffd9] text-center py-3">
-              Gradient Background
-            </h1>
-            <hr className=" custom-hr mb-4 mx-2" />
-
-            <div className=" flex flex-wrap justify-center gap-4">
               {gradientBackground.map((bg) => {
                 return (
                   <div
                     onClick={() => {
-                      dispatch(addBgTexture(bg.name));
-                      console.log(bg.name);
+                      dispatch(addBgTexture(bg));
+                      // console.log(bg.name);
                       //   refresh();
                     }}
                     key={bg.id}
@@ -110,6 +83,33 @@ const Theme = () => {
                         width: "100%",
                         height: "100%",
                       }}></div>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          <div className=" pb-4">
+            <h1 className=" text-[15px] text-[#ffffffd9] text-center py-3">
+              Gradient Background
+            </h1>
+            <hr className=" custom-hr mb-4 mx-2" />
+
+            <div className=" flex flex-wrap justify-center gap-4">
+            {gaussionTexture.map((bg) => {
+                return (
+                  <div
+                    onClick={() => {
+                      dispatch(addBgTexture(bg.name));
+                      //   refresh();
+                    }}
+                    key={bg.id}
+                    className=" w-[87px] h-[75px] cursor-pointer">
+                    <img
+                      className=" w-full h-full rounded-lg"
+                      src={bg.name}
+                      alt=""
+                    />
                   </div>
                 );
               })}

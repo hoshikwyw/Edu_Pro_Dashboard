@@ -10,11 +10,11 @@ import { useSelector } from "react-redux";
 const App = () => {
   const bgTexture1 = useSelector((state) => state.themeSlice.bgTexture);
 
-  let bgTexture = localStorage.getItem("bgTexture");
-  console.log(bgTexture?.length > 0 && bgTexture?.length > 25);
-  console.log(bgTexture1?.length < 25);
-  console.log(bgTexture1);
-  console.log(bgTexture);
+  let bgTexture = JSON.parse(localStorage.getItem("bgTexture"));
+  // console.log(bgTexture?.length > 0 && bgTexture?.length > 25);
+  // console.log(bgTexture1?.length < 25);
+  // console.log(bgTexture1.name);
+  // console.log(bgTexture);
   return (
     <>
       {bgTexture?.length < 25 ? (
@@ -38,12 +38,12 @@ const App = () => {
           className=" min-h-screen"
           style={{
             backgroundImage: bgTexture
-              ? `${bgTexture}`
+              ? `${bgTexture?.name}`
               : `url(${backgroundImage2})`,
             backgroundSize: "100% 100%",
             backgroundRepeat: "no-repeat",
             backgroundPosition: "center",
-            transition: bgTexture ? "background-image 0.5s ease-in-out" : "",
+            transition: bgTexture?.name ? "background-image 0.5s ease-in-out" : "",
           }}>
           <Path />
         </div>
