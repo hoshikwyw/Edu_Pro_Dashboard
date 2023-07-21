@@ -40,7 +40,7 @@ const App = () => {
         <div
           className=" min-h-screen"
           style={{
-            backgroundImage: bgTexture.name
+            backgroundImage: bgTexture
               ? `${bgTexture?.name}`
               : `linear-gradient(45deg, #1f1f1e, #1f1f1e)`,
             backgroundSize: "100% 100%",
