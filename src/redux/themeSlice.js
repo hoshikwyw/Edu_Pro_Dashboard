@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  bgTexture: "linear-gradient(45deg, #1f1f1e, #1f1f1e)",
+  bgTexture: null,
   events: [],
 };
 
