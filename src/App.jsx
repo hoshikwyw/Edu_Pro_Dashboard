@@ -11,20 +11,23 @@ const App = () => {
   const bgTexture1 = useSelector((state) => state.themeSlice.bgTexture);
 
   let bgTexture = JSON.parse(localStorage.getItem("bgTexture"));
+  
+  console.log(bgTexture1)
+  console.log(bgTexture)
   // console.log(bgTexture?.length > 0 && bgTexture?.length > 25);
   // console.log(bgTexture1?.length < 25);
   // console.log(bgTexture1.name);
   // console.log(bgTexture);
   return (
     <>
-      {bgTexture?.length < 25 ? (
+      {bgTexture?.name.length < 25 ? (
         <div
           className=" min-h-screen"
           style={{
-            backgroundImage: bgTexture1
-              ? `url(${bgTexture1})`
-              : bgTexture?.length > 0 && bgTexture?.length < 25
-              ? `url(${bgTexture})`
+            backgroundImage: bgTexture1.name
+              ? `url(${bgTexture1.name})`
+              : bgTexture?.name.length > 0 && bgTexture?.length < 25
+              ? `url(${bgTexture.name})`
               : `(linear-gradient(45deg, #1f1f1e, #1f1f1e)`,
             backgroundSize: "100% 100%",
             backgroundRepeat: "no-repeat",
@@ -37,7 +40,7 @@ const App = () => {
         <div
           className=" min-h-screen"
           style={{
-            backgroundImage: bgTexture
+            backgroundImage: bgTexture.name
               ? `${bgTexture?.name}`
               : `linear-gradient(45deg, #1f1f1e, #1f1f1e)`,
             backgroundSize: "100% 100%",

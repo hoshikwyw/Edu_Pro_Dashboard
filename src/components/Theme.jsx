@@ -99,7 +99,7 @@ const Theme = () => {
                 return (
                   <div
                     onClick={() => {
-                      dispatch(addBgTexture(bg.name));
+                      dispatch(addBgTexture(bg));
                       //   refresh();
                     }}
                     key={bg.id}
