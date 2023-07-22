@@ -21,6 +21,10 @@
   background-color: rgba(0, 0, 0, 0.192);
 }
 
+.bgTransparent2 {
+  background-color: rgba(255, 255, 255, 0.600);
+}
+
 .visuallyHidden {
   visibility: visible;
 }

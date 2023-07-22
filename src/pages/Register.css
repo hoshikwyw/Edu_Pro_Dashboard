@@ -6,6 +6,15 @@
     box-shadow: 0 0 0 1px transparent;
     transition: background-color 0.2s ease, box-shadow 0.2s ease;
   }
+
+  .custom-input2 {
+    background-color: #f5f6f7;
+    color: black;
+    font-size: 13px;
+    border: none;
+    box-shadow: 0 0 0 1px transparent;
+    transition: background-color 0.2s ease, box-shadow 0.2s ease;
+  }
   
   .custom-input::placeholder {
     color: rgba(255, 255, 255, 0.5);
@@ -14,10 +23,20 @@
   .custom-input:hover{
     box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
   }
+
+  .custom-input2:hover{
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.5);
+  }
   
   .custom-input:focus {
     background-color: rgba(0, 0, 0, 0.2);
     box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.5);
+    outline: none;
+  }
+
+  .custom-input2:focus {
+    background-color: white;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.5);
     outline: none;
   }
 
@@ -30,6 +49,18 @@
     transition: background-color 0.3s ease;
     background-color: transparent;
     margin-right: 8px;
+  }
+
+  .custom-checkbox2 {
+    width: 20px;
+    height: 20px;
+    border: 2px solid black;
+    border-radius: 3px;
+    outline: none;
+    transition: background-color 0.3s ease;
+    background-color: black;
+    margin-right: 8px;
+    color: black
   }
   
   .custom-checkbox:checked {

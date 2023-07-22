@@ -20,7 +20,7 @@ const Theme = () => {
 
   const gradientBackground = [
     { id: 1, name: "linear-gradient(45deg, #1f1f1e, #1f1f1e)" },
-    { id: 2, name: "linear-gradient(45deg, #fff, #fff)", white:true },
+    { id: 2, name: "linear-gradient(45deg, #F5F7FA, #F5F7FA)", white:true },
     {id: 3,
     name: "linear-gradient(567deg, rgba(165, 42, 4, 0.89), rgba(113, 102, 8, 0.89), rgba(13, 95, 16, 0.93), rgba(4, 79, 88, 0.94), rgba(19, 56, 86, 0.9), rgba(24, 32, 78, 0.94), rgba(100, 8, 115, 0.95))",
     },
