@@ -8,14 +8,16 @@
   }
 
   .custom-input2 {
-    background-color: #f5f6f7;
+    background-color: #e4e4e1;
     color: black;
     font-size: 13px;
     border: none;
     box-shadow: 0 0 0 1px transparent;
     transition: background-color 0.2s ease, box-shadow 0.2s ease;
   }
-  
+.shadow2{
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
   .custom-input::placeholder {
     color: rgba(255, 255, 255, 0.5);
   }
@@ -25,7 +27,7 @@
   }
 
   .custom-input2:hover{
-    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 0 3px rgba(168, 168, 168, 0.5);
   }
   
   .custom-input:focus {
