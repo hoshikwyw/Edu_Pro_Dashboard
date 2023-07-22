@@ -8,6 +8,7 @@ import { FaTwitterSquare } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { useRegisterMutation } from "../redux/api/authApi";
 import { Loader } from '@mantine/core';
+import logo from "../assets/edu-logo/logo.png";
 
 const Register = () => {
   const [name,setName] = useState()
@@ -35,10 +36,10 @@ const Register = () => {
   return (
     <div className="flex justify-center h-screen items-center">
       <form onSubmit={registerHandler} className=" w-96 max-[450px]:w-[90%] max-[350px]:gap-3 flex flex-col bgTransparent shadow gap-5 rounded">
-        <div className="mx-auto mt-7">
+        <div className="mx-auto mt-5">
           <img
-            src="https://themewagon.github.io/dashtreme/assets/images/logo-icon.png"
-            className="w-[60px]"
+            src={logo}
+            className=""
           />
         </div>
         <h1 className="text-center text-white font-medium">SIGN UP</h1>

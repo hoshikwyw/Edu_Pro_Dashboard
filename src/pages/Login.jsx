@@ -9,6 +9,8 @@ import { useLoginMutation } from "../redux/api/authApi";
 import { useDispatch } from "react-redux";
 import { addUser } from "../redux/authSlice";
 import { Loader } from '@mantine/core';
+import logo from "../assets/edu-logo/logo.png";
+// import eduText from "../assets/edu-logo/edu-text.png";
 
 const Login = () => {
   const [email,setEmail] = useState("teamC@gmail.com")
@@ -39,8 +41,8 @@ const Login = () => {
       <form onSubmit={loginHandler} className={`mx-auto w-96 max-[450px]:w-[90%] max-[350px]:gap-3 flex flex-col ${bgTexture?.white ? "bgTransparent2 shadow2" : "bgTransparent shadow"} gap-5 rounded`}>
         <div className="mx-auto mt-7">
           <img
-            src="https://themewagon.github.io/dashtreme/assets/images/logo-icon.png"
-            className="w-[60px]"
+            src={logo}
+            className=""
           />
         </div>
         <h1 className={`text-center ${bgTexture?.white ? "text-black" : "text-white"} font-medium`}>SIGN IN</h1>
