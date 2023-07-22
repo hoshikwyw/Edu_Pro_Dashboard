@@ -20,7 +20,6 @@ const Login = () => {
   const nav = useNavigate()
   let bgTexture = JSON.parse(localStorage.getItem("bgTexture"));
 
-
   const loginHandler = async(event)=>{
     try{
       event.preventDefault()
@@ -37,7 +36,7 @@ const Login = () => {
     }
   }
   return (
-    <div className="flex justify-center h-screen items-center">
+    <div className="flex justify-center max-sm:h-full max-sm:py-10 h-screen items-center">
       <form onSubmit={loginHandler} className={`mx-auto w-96 max-[450px]:w-[90%] max-[350px]:gap-3 flex flex-col ${bgTexture?.white ? "bgTransparent2 shadow2" : "bgTransparent shadow"} gap-5 rounded`}>
         <div className="mx-auto mt-7">
           <img
@@ -54,7 +53,7 @@ const Login = () => {
               placeholder="Enter Your Email"
               className={`${bgTexture?.white ? "custom-input2" : "custom-input"} px-3 py-[10px] rounded`}
             />
-            <SlUser className={`${bgTexture?.white ? "text-black" : "text-white"} opacity-80 absolute top-[10px] right-[17px]`} />
+            <SlUser className={`${bgTexture?.white ? "text-black" : "text-white opacity-80"} absolute top-[10px] right-[17px]`} />
           </div>
           <div className="relative flex flex-col">
             <input onChange={(e)=> setPassword(e.target.value)}
@@ -63,7 +62,7 @@ const Login = () => {
               placeholder="Choose Password"
               className={`${bgTexture?.white ? "custom-input2" : "custom-input"} px-3 py-[10px] rounded`}
             />
-            <BiLock className={`${bgTexture?.white ? "text-black" : "text-white"} opacity-80 text-lg absolute top-[10px] right-4`} />
+            <BiLock className={`${bgTexture?.white ? "text-black" : "text-white opacity-80"} text-lg absolute top-[10px] right-4`} />
           </div>
         </div>
         <div className="flex max-[350px]:flex-col max-[350px]:gap-3 items-center justify-between mx-7">
@@ -115,7 +114,7 @@ const Login = () => {
         </div>
         <hr className=" opacity-30 mt-2" />
         <div className="mb-5 flex max-[350px]:flex-col gap-3 mx-auto">
-          <h2 className={`${bgTexture?.white ? "text-orange-500 font-medium" : "text-orange-400"} text-sm tracking-wider`}>
+          <h2 className={`${bgTexture?.white ? "text-blue-600 font-medium" : "text-orange-400"} text-sm tracking-wider`}>
             Do not have an account?
           </h2>
           <Link to={"/register"}>
