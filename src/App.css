@@ -22,7 +22,7 @@
 }
 
 .bgTransparent2 {
-  background-color: rgba(255, 255, 255, 0.600);
+  background-color: rgba(255, 255, 255, 0.6);
 }
 
 .visuallyHidden {
@@ -36,4 +36,10 @@
 .borderTransparent {
   border-width: 1px 1px 1px 1px;
   border-color: rgba(255, 254, 254, 0.192);
+}
+.bgHover:hover .childHover {
+  background-color: #cec0ba;
+}
+.liCalendar:hover .childCalendar {
+  color: rgb(251 146 60 / var(--tw-text-opacity));
 }

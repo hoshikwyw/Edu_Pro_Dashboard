@@ -138,75 +138,88 @@ const Calender = () => {
   //   console.log(filteredEventDisplay);
   // };
   // filteredEventDisplayFun();
+  let bgTexture = JSON.parse(localStorage.getItem("bgTexture"));
   return (
     <>
-    <div className="flex flex-col">
+      <div className="flex flex-col ">
         <div>
           <Navbar />
         </div>
-  
-        <div className={`mt-[52px] duration-500 ${isSidebarOpen && " ml-[230px]" } max-lg:ml-0`}>
-          <div className=" flex justify-center items-center flex-col px-3 py-10 lg:p-10 md:p-10  ">
-          <div className="w-full flex justify-between">
-            <div className="w-full flex justify-between items-center mb-5">
-              <div className="">
-                <div
-                  onClick={() => settoday(today)}
-                  className=" max-[530px]:w-[90px] max-[530px]:text-[15px] max-[340px]:text-[13px] bg-white cursor-pointer hover:bg-slate-400 rounded text-center px-3 py-2 max-[340px]:w-[60px]
-                  ">
-                  Today
+
+        <div
+          className={`mt-[52px] duration-500 ${
+            isSidebarOpen && " ml-[230px]"
+          } max-lg:ml-0 `}>
+          <div className="  flex justify-center items-center flex-col px-3 py-10 lg:p-10 md:p-10  ">
+            <div className="w-full flex justify-between ">
+              <div className="w-full flex  justify-between items-center mb-5">
+                <div className="">
+                  <div
+                    onClick={() => settoday(today)}
+                    className={`${
+                      bgTexture?.white
+                        ? "bg-[#CEC0BA] text-white"
+                        : " bg-white text-black"
+                    } max-[530px]:w-[90px] max-[530px]:text-[15px] max-[340px]:text-[13px]  cursor-pointer hover:bg-slate-400 rounded text-center px-3 py-2 max-[340px]:w-[60px]`}>
+                    Today
+                  </div>
                 </div>
-              </div>
+                {/* 779FCC */}
+                {/* max-400px:hidden < > and month 2023 start */}
+                <div className=" max-[400px]:hidden justify-center flex items-center flex-col">
+                  <p
+                    className={`${
+                      bgTexture?.white ? "text-[#A4795A]" : " text-white"
+                    } title text-2xl max-[530px]:text-[20px] `}>
+                    {todayS?.toLocaleString("default", { month: "long" })}
+                    <span> {todayS?.getFullYear()}</span>
+                  </p>
+                  <div className=" flex gap-3 mt-2 items-center">
+                    <button
+                      onClick={() => {
+                        settoday(addMonths(todayS, -1));
 
-              {/* max-400px:hidden < > and month 2023 start */}
-              <div className=" max-[400px]:hidden justify-center flex items-center flex-col">
-                <p className="title text-2xl max-[530px]:text-[20px] ">
-                  {todayS?.toLocaleString("default", { month: "long" })}
-                  <span> {todayS?.getFullYear()}</span>
-                </p>
-                <div className=" flex gap-3 mt-2 items-center">
-                  <button
-                    onClick={() => {
-                      settoday(addMonths(todayS, -1));
-
-                      firstDayCurrentMonth = parse(
-                        currentMonth,
-                        "MMM-yyyy",
-                        todayS
-                      );
-                      lastDayOfCurrentMonth = endOfMonth(firstDayCurrentMonth);
-                    }}
-                    className=" px-3 py-1 max-[530px]:px-1 max-[340px]:px-0 max-[530px]:text-[15px]
+                        firstDayCurrentMonth = parse(
+                          currentMonth,
+                          "MMM-yyyy",
+                          todayS
+                        );
+                        lastDayOfCurrentMonth =
+                          endOfMonth(firstDayCurrentMonth);
+                      }}
+                      className=" px-3 py-1 max-[530px]:px-1 max-[340px]:px-0 max-[530px]:text-[15px]
             bg-white rounded hover:bg-slate-400">
-                    <MdKeyboardArrowLeft className=" text-2xl" />
-                  </button>
-                  <button
-                    onClick={() => {
-                      settoday(addMonths(todayS, +1));
+                      <MdKeyboardArrowLeft className=" text-2xl" />
+                    </button>
+                    <button
+                      onClick={() => {
+                        settoday(addMonths(todayS, +1));
 
-                      firstDayCurrentMonth = parse(
-                        currentMonth,
-                        "MMM-yyyy",
-                        todayS
-                      );
-                      lastDayOfCurrentMonth = endOfMonth(firstDayCurrentMonth);
-                    }}
-                    className=" px-3 py-1 max-[530px]:px-1 max-[340px]:px-0 max-[530px]:text-[15px]
+                        firstDayCurrentMonth = parse(
+                          currentMonth,
+                          "MMM-yyyy",
+                          todayS
+                        );
+                        lastDayOfCurrentMonth =
+                          endOfMonth(firstDayCurrentMonth);
+                      }}
+                      className=" px-3 py-1 max-[530px]:px-1 max-[340px]:px-0 max-[530px]:text-[15px]
             bg-white rounded hover:bg-slate-400">
-                    <MdKeyboardArrowRight className=" text-2xl" />
-                  </button>
+                      <MdKeyboardArrowRight className=" text-2xl" />
+                    </button>
+                  </div>
                 </div>
-              </div>
-              {/* max-400px:hidden < > and month 2023 end*/}
-
-              <div>
-                <button
-                  onClick={() => setTogleEvent(!togleEvent)}
-                  className=" px-3 py-2 max-[530px]:px-2 max-[530px]:text-[15px] max-[340px]:text-[13px]
-            bg-white shadow-sm rounded hover:bg-slate-400 ">
-                  Event List
-                </button>
-                {/* <button
+                {/* max-400px:hidden < > and month 2023 end*/}
+                <div>
+                  <button
+                    onClick={() => setTogleEvent(!togleEvent)}
+                    className={`${
+                      bgTexture?.white ? "bg-[#CEC0BA] text-white" : ""
+                    } px-3 py-2 max-[530px]:px-2 max-[530px]:text-[15px] max-[340px]:text-[13px]
+            bg-white shadow-sm rounded hover:bg-slate-400 `}>
+                    Event List
+                  </button>
+                  {/* <button
                   className=" px-3 py-1 
             bg-white shadow-sm">
                   week
@@ -216,186 +229,251 @@ const Calender = () => {
             bg-white shadow-sm ">
                   day
                 </button> */}
+                </div>
               </div>
             </div>
-          </div>
 
-          {/* laptop view hidden < > and month 2023 start*/}
-          <div className=" hidden max-[400px]:flex max-[400px]:gap-8 mb-5 ">
-            <button
-              onClick={() => {
-                settoday(addMonths(todayS, -1));
+            {/* laptop view hidden < > and month 2023 start*/}
+            <div className=" hidden max-[400px]:flex max-[400px]:gap-8 mb-5 ">
+              <button
+                onClick={() => {
+                  settoday(addMonths(todayS, -1));
 
-                firstDayCurrentMonth = parse(currentMonth, "MMM-yyyy", todayS);
-                lastDayOfCurrentMonth = endOfMonth(firstDayCurrentMonth);
-              }}
-              className=" px-3 py-1 max-[530px]:px-1 max-[340px]:px-0 max-[530px]:text-[15px]
+                  firstDayCurrentMonth = parse(
+                    currentMonth,
+                    "MMM-yyyy",
+                    todayS
+                  );
+                  lastDayOfCurrentMonth = endOfMonth(firstDayCurrentMonth);
+                }}
+                className={`${
+                  bgTexture?.white ? "bg-[#779FCC] " : " bg-white "
+                } px-3 py-1 max-[530px]:px-1 max-[340px]:px-0 max-[530px]:text-[15px]
+             rounded hover:bg-slate-400`}>
+                <MdKeyboardArrowLeft
+                  className={`${
+                    bgTexture?.white ? "text-[#779FCC] " : " "
+                  }  text-2xl`}
+                />
+              </button>
+              <p className="title text-2xl max-[325px]:text-[18px]">
+                {todayS?.toLocaleString("default", { month: "long" })}
+                <span
+                  className={`${
+                    bgTexture?.white ? "bg-[#CEC0BA] text-black" : "text-white"
+                  } `}>
+                  {" "}
+                  {todayS?.getFullYear()}
+                </span>
+              </p>
+              <button
+                onClick={() => {
+                  settoday(addMonths(todayS, +1));
+
+                  firstDayCurrentMonth = parse(
+                    currentMonth,
+                    "MMM-yyyy",
+                    todayS
+                  );
+                  lastDayOfCurrentMonth = endOfMonth(firstDayCurrentMonth);
+                }}
+                className=" px-3 py-1 max-[530px]:px-1 max-[340px]:px-0 max-[530px]:text-[15px]
             bg-white rounded hover:bg-slate-400">
-              <MdKeyboardArrowLeft className=" text-2xl" />
-            </button>
-            <p className="title text-2xl max-[325px]:text-[18px]">
-              {todayS?.toLocaleString("default", { month: "long" })}
-              <span> {todayS?.getFullYear()}</span>
-            </p>
-            <button
-              onClick={() => {
-                settoday(addMonths(todayS, +1));
+                <MdKeyboardArrowRight className=" text-2xl" />
+              </button>
+            </div>
+            {/* laptop view hidden < > and month 2023 end*/}
 
-                firstDayCurrentMonth = parse(currentMonth, "MMM-yyyy", todayS);
-                lastDayOfCurrentMonth = endOfMonth(firstDayCurrentMonth);
-              }}
-              className=" px-3 py-1 max-[530px]:px-1 max-[340px]:px-0 max-[530px]:text-[15px]
-            bg-white rounded hover:bg-slate-400">
-              <MdKeyboardArrowRight className=" text-2xl" />
-            </button>
-          </div>
-          {/* laptop view hidden < > and month 2023 end*/}
-
-          <div className=" w-full flex justify-between  flex-wrap gap-4">
-            {/* calendar body */}
             <div
-              className={`${
-                togleEvent == true ? "w-full  md:w-full  lg:w-[70%]" : "w-full"
-              }`}>
-              <div className=" grid grid-cols-7 bgTransparent ">
-                <div className=" w-full py-3 px-2 borderTransparent title  max-[500px]:text-[15px]">
-                  {windowWidth <= 430 ? (
-                    <p className=" text-center font-bold">S</p>
-                  ) : (
-                    <p>SUN</p>
-                  )}
+              className={` w-full
+              flex
+              justify-between
+              flex-wrap
+              gap-4`}>
+              {/* calendar body */}
+              <div
+                className={`${
+                  togleEvent == true
+                    ? "w-full  md:w-full  lg:w-[70%]"
+                    : "w-full"
+                } ${bgTexture?.white && "shadow-lg bg-[#FFEEE6]"} `}>
+                <div className=" grid grid-cols-7 bgTransparent ">
+                  <div className=" w-full py-3 px-2 borderTransparent title  max-[500px]:text-[15px]">
+                    {windowWidth <= 430 ? (
+                      <p className=" text-center font-bold">S</p>
+                    ) : (
+                      <p>SUN</p>
+                    )}
+                  </div>
+                  <div className="w-full py-3 px-2 borderTransparent title  max-[500px]:text-[15px]">
+                    {windowWidth <= 430 ? (
+                      <p className=" text-center font-bold">M</p>
+                    ) : (
+                      <p>MON</p>
+                    )}
+                  </div>
+                  <div className="w-full py-3 px-2 borderTransparent title max-[500px]:text-[15px]">
+                    {windowWidth <= 430 ? (
+                      <p className=" text-center font-bold">T</p>
+                    ) : (
+                      <p>TUE</p>
+                    )}
+                  </div>
+                  <div className="w-full py-3 px-2 borderTransparent title max-[500px]:text-[15px]">
+                    {windowWidth <= 430 ? (
+                      <p className=" text-center font-bold">W</p>
+                    ) : (
+                      <p>WED</p>
+                    )}
+                  </div>
+                  <div className="w-full py-3 px-2 borderTransparent title max-[500px]:text-[15px]">
+                    {windowWidth <= 430 ? (
+                      <p className=" text-center font-bold">T</p>
+                    ) : (
+                      <p>THU</p>
+                    )}
+                  </div>
+                  <div className="w-full py-3 px-2 borderTransparent title max-[500px]:text-[15px]">
+                    {windowWidth <= 430 ? (
+                      <p className=" text-center font-bold">F</p>
+                    ) : (
+                      <p>FRI</p>
+                    )}
+                  </div>
+                  <div className="w-full py-3 px-2 borderTransparent title max-[500px]:text-[15px]">
+                    {windowWidth <= 430 ? (
+                      <p className=" text-center font-bold">S</p>
+                    ) : (
+                      <p>SAT</p>
+                    )}
+                  </div>
                 </div>
-                <div className="w-full py-3 px-2 borderTransparent title  max-[500px]:text-[15px]">
-                  {windowWidth <= 430 ? (
-                    <p className=" text-center font-bold">M</p>
-                  ) : (
-                    <p>MON</p>
-                  )}
-                </div>
-                <div className="w-full py-3 px-2 borderTransparent title max-[500px]:text-[15px]">
-                  {windowWidth <= 430 ? (
-                    <p className=" text-center font-bold">T</p>
-                  ) : (
-                    <p>TUE</p>
-                  )}
-                </div>
-                <div className="w-full py-3 px-2 borderTransparent title max-[500px]:text-[15px]">
-                  {windowWidth <= 430 ? (
-                    <p className=" text-center font-bold">W</p>
-                  ) : (
-                    <p>WED</p>
-                  )}
-                </div>
-                <div className="w-full py-3 px-2 borderTransparent title max-[500px]:text-[15px]">
-                  {windowWidth <= 430 ? (
-                    <p className=" text-center font-bold">T</p>
-                  ) : (
-                    <p>THU</p>
-                  )}
-                </div>
-                <div className="w-full py-3 px-2 borderTransparent title max-[500px]:text-[15px]">
-                  {windowWidth <= 430 ? (
-                    <p className=" text-center font-bold">F</p>
-                  ) : (
-                    <p>FRI</p>
-                  )}
-                </div>
-                <div className="w-full py-3 px-2 borderTransparent title max-[500px]:text-[15px]">
-                  {windowWidth <= 430 ? (
-                    <p className=" text-center font-bold">S</p>
-                  ) : (
-                    <p>SAT</p>
-                  )}
-                </div>
-              </div>
-              <div className=" w-full">
-                <div className=" grid grid-cols-7 overflow-hidden">
-                  {days.map((day, index) => (
-                    <div
-                      onClick={() => {
-                        open();
-                        setOneClickDate(day);
-                      }}
-                      key={index}
-                      className={`lg:p-6 md:p-6 p-2 h-[150px] max-lg:h-[130px] max-md:h-[100px] max-[500px]:h-[80px]
-                      flex flex-col bgTransparent borderTransparent hover:bg-slate-200 hover:bg-transparent  overflow-hidden cursor-pointer`}>
+                <div className=" w-full">
+                  <div className=" grid grid-cols-7 overflow-hidden">
+                    {days.map((day, index) => (
                       <div
-                        className={`w-[35px] h-[35px] max-sm:w-[30px] max-sm:h-[30px] max-[430px]:w-[22px] max-[430px]:h-[22px] max-[330px]:w-[18px] max-[330px]:h-[18px] max-[430px]:text-[12px] flex items-center justify-center lg:ms-auto md:ms-auto ${
-                          isToday(day) ? "bg-orange-400 text-black " : ""
-                        }  rounded-[50%] ${
-                          isSameMonth(day, todayS) && !isToday(day)
-                            ? "lg:bg-slate-200 md:bg-slate-200 "
-                            : "title"
-                        }`}>
-                        <div>
-                          <time
-                            dateTime={format(day, "yyyy-MM-dd")}
-                            className={` ${
-                              isSameMonth(day, todayS)
-                                ? "text-white"
-                                : "text-black"
-                            } lg:text-black md:text-black`}>
-                            {format(day, "d")}
-                          </time>
-                        </div>
-                      </div>
-                      {events.map((event, index) => (
+                        onClick={() => {
+                          open();
+                          setOneClickDate(day);
+                        }}
+                        key={index}
+                        className={`lg:p-6 md:p-6 p-2 h-[150px] max-lg:h-[130px] max-md:h-[100px] max-[500px]:h-[80px]
+                      flex flex-col ${
+                        bgTexture?.white ? "bgTransparent2" : "bgTransparent"
+                      } bgHover borderTransparent hover:bg-slate-200 hover:bg-transparent  overflow-hidden cursor-pointer`}>
                         <div
-                          key={index}
-                          className={`w-full  ${
-                            isSameDay(day, event?.oneClickDate)
-                              ? "block"
-                              : "hidden"
-                          } title text-white ${
-                            index % 3 == 1
-                              ? " bg-pink-300 text-black"
-                              : "bg-teal-500"
-                          } ${index % 5 == 2 && "bg-rose-400"}
+                          className={`w-[35px] h-[35px] max-sm:w-[30px] max-sm:h-[30px] max-[430px]:w-[22px] max-[430px]:h-[22px] max-[330px]:w-[18px] max-[330px]:h-[18px] max-[430px]:text-[12px] flex items-center justify-center lg:ms-auto md:ms-auto 
+                           ${
+                             isToday(day) ? "bg-orange-400 text-black " : ""
+                           }  rounded-[50%] ${
+                            isSameMonth(day, todayS) && !isToday(day)
+                              ? "lg:bg-slate-200 md:bg-slate-200  "
+                              : "title"
+                          } ${
+                            isSameMonth(day, todayS) &&
+                            !isToday(day) &&
+                            bgTexture?.white
+                              ? "lg:bg-[#FFEEE6] md:bg-[#FFEEE6]  childHover"
+                              : "title"
+                          } `}>
+                          <div>
+                            <time
+                              dateTime={format(day, "yyyy-MM-dd")}
+                              className={` ${
+                                isSameMonth(day, todayS)
+                                  ? "text-white"
+                                  : "text-black"
+                              } lg:text-black md:text-black`}>
+                              {format(day, "d")}
+                            </time>
+                          </div>
+                        </div>
+                        {events.map((event, index) => (
+                          <div
+                            key={index}
+                            className={`w-full  ${
+                              isSameDay(day, event?.oneClickDate)
+                                ? "block"
+                                : "hidden"
+                            } title text-white ${
+                              index % 3 == 1
+                                ? " bg-pink-300 text-black"
+                                : "bg-teal-500"
+                            } ${index % 5 == 2 && "bg-rose-400"}
                           ${index % 4 == 2 && "bg-violet-400"}
                           ${index % 2 == 0 && "bg-blue-400"}
                           ${index % 7 == 1 && " bg-fuchsia-800"}
                           rounded mt-2 lg:px-2 md:px-2 `}>
-                          {event?.eventValue}
-                        </div>
-                      ))}
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-            {/* event list container */}
-            <div
-              className={` ${
-                togleEvent == true ? "flex w-full  lg:w-[28%]" : "hidden "
-              }  bgTransparent p-3  flex-col gap-y-5 `}>
-              <div className=" w-full flex items-center ">
-                <div
-                  onClick={() => setTogleEvent(false)}
-                  className=" w-[40%] flex items-center">
-                  <HiBars3BottomRight className=" title" />
-                </div>
-                <div className=" w-[60%] title flex items-center gap-3">
-                  <div>
-                    {todayS?.toLocaleString("default", { month: "long" })}
+                            {event?.eventValue}
+                          </div>
+                        ))}
+                      </div>
+                    ))}
                   </div>
-                  {todayS?.getFullYear()}
                 </div>
               </div>
-              <ul className=" w-full ">
-                {filteredEventDisplay.map((event, index) => (
-                  <li
-                    key={index}
-                    className={`w-full flex gap-5 mb-3 hover:text-orange-400 title`}>
-                    <div className="border-e-2 w-[10%] pe-3">
-                      <p className="">{event?.oneClickDate?.getDate()}</p>
-                      <small>{dayname(event?.oneClickDate)}</small>
+              {/* event list container */}
+              <div
+                className={` ${
+                  togleEvent == true ? "flex w-full  lg:w-[28%]" : "hidden "
+                }  ${
+                  bgTexture?.white ? "bg-[#FFEEE6] text-black shadow-xl" : ""
+                } p-3  flex-col gap-y-5 `}>
+                <div className=" w-full flex items-center ">
+                  <div
+                    onClick={() => setTogleEvent(false)}
+                    className=" w-[40%] flex items-center">
+                    <HiBars3BottomRight className=" title" />
+                  </div>
+                  <div
+                    className={`${
+                      bgTexture?.white ? "text-[#A4795A]" : "text-white"
+                    } w-[60%] title flex items-center gap-3`}>
+                    <div
+                      className={` ${
+                        bgTexture?.white ? "text-[#A4795A]" : "text-white"
+                      }`}>
+                      {todayS?.toLocaleString("default", { month: "long" })}
                     </div>
-                    <div className="">{event?.eventValue}</div>
-                  </li>
-                ))}
-              </ul>
+                    {todayS?.getFullYear()}
+                  </div>
+                </div>
+                <ul className=" w-full ">
+                  {filteredEventDisplay.map((event, index) => (
+                    <li
+                      key={index}
+                      className={`w-full liCalendar flex gap-5 mb-3 hover:text-orange-400 title`}>
+                      <div className="border-e-2 w-[10%] pe-3">
+                        <p
+                          className={`${
+                            bgTexture?.white
+                              ? "text-[#A4795A] childCalendar "
+                              : " text-white"
+                          }`}>
+                          {event?.oneClickDate?.getDate()}
+                        </p>
+                        <small
+                          className={`${
+                            bgTexture?.white
+                              ? "text-[#A4795A] childCalendar"
+                              : " text-white"
+                          }`}>
+                          {dayname(event?.oneClickDate)}
+                        </small>
+                      </div>
+                      <div
+                        className={`${
+                          bgTexture?.white
+                            ? "text-[#A4795A] childCalendar"
+                            : " text-white"
+                        }`}>
+                        {event?.eventValue}
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
-          </div>
           </div>
           <Modal opened={opened} onClose={close} withCloseButton={false}>
             <button onClick={() => close()}>
@@ -439,9 +517,7 @@ const Calender = () => {
             </form>
           </Modal>
         </div>
-        
       </div>
-      
     </>
   );
 };
