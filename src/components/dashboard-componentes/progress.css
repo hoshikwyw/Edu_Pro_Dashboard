@@ -44,6 +44,21 @@
     white-space: nowrap;
   }
 }
+
+/* @media (min-width: 1200px) {
+  .progress-item2 {
+    width: 100%;
+    padding: 10px 10px;
+    padding-right: 30px;
+    border-right: 1px solid #000000ce;
+  }
+  .progress-main2 {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    white-space: nowrap;
+  }
+} */
 .last-item {
   border: 0;
 }

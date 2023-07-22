@@ -8,6 +8,8 @@ import "../Table.css";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const DoughnutChart = () => {
+  let bgTexture = JSON.parse(localStorage.getItem("bgTexture"));
+
   const data = {
     datasets: [
       {
@@ -38,8 +40,8 @@ const DoughnutChart = () => {
     },
   };
   return (
-      <div className=" w-[38%] justify-center max-lg:w-[100%] bgTransparent flex flex-col gap-4 rounded shadow-md">
-        <h2 className="flex mt-4 px-8 justify-between font-medium text-[rgba(255,255,255,1)] text-sm tracking-wide items-center">
+      <div className={` w-[38%] justify-center max-lg:w-[100%] ${bgTexture?.white ? "bgTransparent2" : "bgTransparent"} flex flex-col gap-4 rounded shadow-md`}>
+        <h2 className={`flex mt-4 px-8 justify-between font-medium ${bgTexture?.white ? "text-black" : "text-[rgba(255,255,255,1)]"} text-sm tracking-wide items-center`}>
           Weekly sales{" "}
           <span>
             <BsThreeDots className=" text-xl" />

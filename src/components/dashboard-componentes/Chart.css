@@ -1,10 +1,18 @@
 .border-t-color {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
+.border-t-color2 {
+  border-top: 1px solid rgba(134, 134, 134, 0.589);
+}
 
 .custom-hr {
   height: 1px;
   background-color: rgba(255, 255, 255, 0.2);
+  border: none;
+}
+.custom-hr2 {
+  height: 1px;
+  background-color: rgba(134, 134, 134, 0.589);
   border: none;
 }
 
@@ -15,7 +23,13 @@
 .old-color {
   color: rgba(255, 255, 255, 0.4);
 }
+.old-color2 {
+  color: rgba(0, 0, 0, 0.4);
+}
 
 .new-color {
   color: #fff;
+}
+.new-color2 {
+  color: #000;
 }
