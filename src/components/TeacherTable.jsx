@@ -10,6 +10,8 @@ const TeacherTable = () => {
   const { isSidebarOpen } = StateContextCustom();
   const nav = useNavigate();
   const toDetail = () => nav("/detail");
+  let bgTexture = JSON.parse(localStorage.getItem("bgTexture"));
+
   useEffect(() => {
     setTeachers(teacherTable);
   }, []);
@@ -47,12 +49,12 @@ const TeacherTable = () => {
         } max-lg:ml-0`}
       >
         <div className="flex justify-center items-start flex-col gap-6">
-          <div className=" bgTransparent w-[95%] mt-10 flex flex-col gap-3 rounded p-7 mx-auto">
-            <h1 className=" font-medium text-white text-lg tracking-wide">
+          <div className={` ${bgTexture?.white ? "bgTransparent2 shadow2" : "bgTransparent shadow"} w-[95%] mt-10 flex flex-col gap-3 rounded p-7 mx-auto`}>
+            <h1 className={` font-medium ${bgTexture?.white ? "text-black" : " text-white"} text-lg tracking-wide`}>
               Teacher Table
             </h1>
             <table className="table-responsive">
-              <thead className="tableTitle border-b border-color border-x-0">
+              <thead className={`border-x-0 ${bgTexture?.white ? "text-black border-2 border-black" : "border-color tableTitle"} `}>
                 <tr>
                   <th className="max-[1100px]:px-4 text-sm tracking-wide  font-medium py-4">
                     T_ID
@@ -80,32 +82,32 @@ const TeacherTable = () => {
                   </th>
                 </tr>
               </thead>
-              <tbody className="tableTitle text-center">
+              <tbody className={`${bgTexture?.white ? "text-black" : "tableTitle"} text-center`}>
                 {data?.map((teacher) => {
                   return (
                     <tr onClick={toDetail} className="custom-hover cursor-pointer" key={teacher?.id}>
-                      <td className="tracking-wide border-b border-b-color  font-medium text-sm py-4 ">
+                      <td className={`tracking-wide border-b ${bgTexture?.white ? "border-b-2 border-black" : "border-b-color"}  font-medium text-sm py-4 `}>
                         {teacher?.id}
                       </td>
-                      <td className="tracking-wide border-b border-b-color  font-medium text-sm py-4 ">
+                      <td className={`tracking-wide border-b ${bgTexture?.white ? "border-b-2 border-black" : "border-b-color"}  font-medium text-sm py-4 `}>
                         {teacher?.name}
                       </td>
-                      <td className="tracking-wide border-b border-b-color  font-medium text-sm py-4 ">
+                      <td className={`tracking-wide border-b ${bgTexture?.white ? "border-b-2 border-black" : "border-b-color"}  font-medium text-sm py-4 `}>
                         {teacher?.age}
                       </td>
-                      <td className="tracking-wide border-b border-b-color  font-medium text-sm py-4 ">
+                      <td className={`tracking-wide border-b ${bgTexture?.white ? "border-b-2 border-black" : "border-b-color"}  font-medium text-sm py-4 `}>
                         {teacher?.department}
                       </td>
-                      <td className="tracking-wide border-b border-b-color  font-medium text-sm py-4 ">
+                      <td className={`tracking-wide border-b ${bgTexture?.white ? "border-b-2 border-black" : "border-b-color"}  font-medium text-sm py-4 `}>
                         {teacher?.date}
                       </td>
-                      <td className="tracking-wide border-b border-b-color  font-medium text-sm py-4 ">
+                      <td className={`tracking-wide border-b ${bgTexture?.white ? "border-b-2 border-black" : "border-b-color"}  font-medium text-sm py-4 `}>
                         {teacher?.salary}
                       </td>
-                      <td className="tracking-wide border-b border-b-color  font-medium text-sm py-4 ">
+                      <td className={`tracking-wide border-b ${bgTexture?.white ? "border-b-2 border-black" : "border-b-color"}  font-medium text-sm py-4 `}>
                         {teacher?.gender}
                       </td>
-                      <td className="tracking-wide border-b border-b-color  font-medium text-sm py-4 ">
+                      <td className={`tracking-wide border-b ${bgTexture?.white ? "border-b-2 border-black" : "border-b-color"}  font-medium text-sm py-4 `}>
                         {teacher?.address}
                       </td>
                     </tr>
@@ -114,39 +116,23 @@ const TeacherTable = () => {
               </tbody>
             </table>
           </div>
-          <div className="mx-auto mb-5 bgTransparent rounded">
-            <div className="flex p-border-color rounded">
-              <button
-                className="custom-hover p-border-r cursor-pointer"
-                onClick={prePage}
-              >
-                <p className=" px-2 py-2 tableTitle text-base tracking-wider">
-                  Prev
-                </p>
-              </button>
-              {number.map((n, i) => (
-                <button
-                  onClick={() => changeCPage(n)}
-                  className={`custom-hover cursor-pointer p-border-r ${
-                    currentPage === n ? "active" : ""
-                  }`}
-                  key={i}
-                >
-                  <p className="px-4 tableTitle text-base tracking-wider">
-                    {n}
-                  </p>
+          <div className={`mx-auto mb-5 ${bgTexture?.white ? "bgTransparent2" : "bgTransparent"} rounded`}>
+          <div className={`flex ${bgTexture?.white ? "border-2 border-gray-500" : "p-border-color"} rounded`}>
+            <button className={`custom-hover ${bgTexture?.white ? "border-r-2 border-gray-500" : "p-border-r"} cursor-pointer`} onClick={prePage}>
+              <p className={` px-2 py-2 ${bgTexture?.white ? " text-black font-medium" : "tableTitle"} text-base tracking-wider`}>Prev</p>
+            </button>
+            {
+              number.map((n,i) => (
+                <button onClick={() => changeCPage(n)} className={`custom-hover cursor-pointer ${bgTexture?.white ? "border-r-2 border-gray-500" : "p-border-r"} ${currentPage === n ? "active" : ""}`} key={i}>
+                  <p className={`px-4 ${bgTexture?.white ? " text-black font-medium" : "tableTitle"} text-base tracking-wider`}>{n}</p>
                 </button>
-              ))}
-              <button
-                className="custom-hover cursor-pointer "
-                onClick={nextPage}
-              >
-                <p className="px-2 py-2 tableTitle text-base tracking-wider">
-                  Next
-                </p>
-              </button>
-            </div>
+              ))
+            }
+            <button className="custom-hover cursor-pointer " onClick={nextPage}>
+              <p className={`px-2 py-2 ${bgTexture?.white ? " text-black font-medium" : "tableTitle"} text-base tracking-wider`}>Next</p>
+            </button>
           </div>
+        </div>
         </div>
       </div>
     </div>
