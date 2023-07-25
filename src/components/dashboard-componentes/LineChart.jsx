@@ -45,7 +45,7 @@ const LineChart = () => {
       {
         label: "New Dataset",
         data: [2, 2, 5, 3, 4, 2, 4, 2, 4, 2],
-        backgroundColor: bgTexture?.white ? "#1d4ed8":"#fff",
+        backgroundColor: bgTexture?.white ? "#2563eb":"#fff",
         borderColor: "white",
         showLine: false,
         tension: 0.6,
@@ -77,7 +77,7 @@ const LineChart = () => {
     scales: {
       y: {
         grid: {
-          color: bgTexture?.white ? "#a2a2a2":"rgba(255, 255, 255, 0.1)" ,
+          color: bgTexture?.white ? "#d1d5db":"rgba(255, 255, 255, 0.1)" ,
         },
         beginAtZero: true,
         display: true,
@@ -94,10 +94,11 @@ const LineChart = () => {
 
       x: {
         grid: {
-          color:  bgTexture?.white ? "#a2a2a2":"rgba(255, 255, 255, 0.1)",
+          color:  bgTexture?.white ? "#d1d5db":"rgba(255, 255, 255, 0.1)",
         },
         ticks: {
-          color: "white",
+          color: bgTexture?.white ? "black":"white",
+
         },
       },
     },
@@ -128,8 +129,8 @@ const LineChart = () => {
         <Line data={data} options={options} className="my-auto py-3"></Line>
       </div>
 
-      <div className=" w-full max-lg:flex-col flex justify-center border-t border-t-color  ">
-        <div className=" max-lg:border-r-0 border-r border-r-color w-full flex justify-center py-3">
+      <div className={`${bgTexture?.white ? "border-t-color2" : "border-t-color "} w-full max-lg:flex-col flex justify-center border-t `}>
+        <div className={`${bgTexture?.white ? "border-r-color2" : "border-r-color "} max-lg:border-r-0 border-r w-full flex justify-center py-3`}>
           <div>
             <h1 className={`${bgTexture?.white ? "text-black" : "title"} text-center text-lg `}>45.87M</h1>
             <p className={` text-sm ${bgTexture?.white ? "text-black" : "text-[#ffffffd9] "} flex items-center`}>
@@ -140,7 +141,7 @@ const LineChart = () => {
           </div>
         </div>
         <hr className={` hidden max-lg:block custom-hr`} />
-        <div className=" max-lg:border-r-0 border-r border-r-color w-full flex justify-center py-3">
+        <div className={`${bgTexture?.white ? "border-r-color2" : "border-r-color "} max-lg:border-r-0 border-r w-full flex justify-center py-3`}>
           <div>
             <h1 className={`${bgTexture?.white ? "text-black" : "title"} text-center text-lg `}>45.87M</h1>
             <p className={` text-sm ${bgTexture?.white ? "text-black" : "text-[#ffffffd9] "} flex items-center`}>

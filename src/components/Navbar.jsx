@@ -98,7 +98,7 @@ const Navbar = () => {
         {/* Navbar content */}
         <div className={` flex items-center justify-between w-full`}>
           <div className=" flex gap-3 ">
-            <button className={` ${bgTexture?.white ? "text-[#525fe1]" : "text-white"} text-xl `} onClick={toggleSidebar}>
+            <button className={` ${bgTexture?.white ? "text-blue-700" : "text-white"} text-xl `} onClick={toggleSidebar}>
               <FiMenu />
               {/* ${bgTexture?.white ? "bg-[#e4e4e1]" : "bg-transparent"} */}
             </button>

@@ -2,7 +2,7 @@
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 .border-t-color2 {
-  border-top: 1px solid rgba(134, 134, 134, 0.589);
+  border-top: 1px solid #d1d5db;
 }
 
 .custom-hr {
@@ -19,17 +19,20 @@
 .border-r-color {
   border-right: 1px solid rgba(255, 255, 255, 0.2);
 }
+.border-r-color2 {
+  border-right: 1px solid #d1d5db;
+}
 
 .old-color {
   color: rgba(255, 255, 255, 0.4);
 }
 .old-color2 {
-  color: rgba(0, 0, 0, 0.4);
+  color: #7f9be9;
 }
 
 .new-color {
   color: #fff;
 }
 .new-color2 {
-  color: #000;
+  color: #2563eb;
 }
