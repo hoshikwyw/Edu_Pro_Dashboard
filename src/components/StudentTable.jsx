@@ -50,7 +50,7 @@ const StudentTable = () => {
             Student Table
           </h1>
           <table className={`table-responsive ${bgTexture?.white && "bg-white"}`}>
-            <thead className={` ${bgTexture?.white ? " bg-gray-50 text-blue-400" : "border-color tableTitle"} `}>
+            <thead className={` ${bgTexture?.white ? "border-b text-white bg-[#525fe1]" : "border-color tableTitle"} `}>
               <tr>
                 <th className={`tracking-wide ${bgTexture?.white ? "" : "border-r border-color"} font-medium text-sm py-4 max-[1100px]:px-4`}>
                   T_ID
@@ -75,7 +75,7 @@ const StudentTable = () => {
             {bgTexture?.white ? <tbody className={`${bgTexture?.white ? "text-black" : "tableTitle"} text-center`}>
               {data?.map((student) => {
                 return (
-                  <tr onClick={toDetail} className={`${student.id % 2 == 1 && "bg-blue-100"} ${bgTexture?.white ? " hover:bg-blue-200 duration-200" : "custom-hover"} cursor-pointer`} key={student.id}>
+                  <tr onClick={toDetail} className={`${student.id % 2 == 0 && "bg-[#efeef4]"} ${bgTexture?.white ? " hover:bg-gray-100 duration-200" : "custom-hover"} cursor-pointer`} key={student.id}>
                     <td className={`tracking-wide ${bgTexture?.white ? "" : "border-color border-r"} font-medium text-sm py-4`}>
                       {student?.id}
                     </td>

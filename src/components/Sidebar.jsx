@@ -50,7 +50,10 @@ const Sidebar = ({ isOpen, isScrolled, toggleSidebar }) => {
       {/* Sidebar content */}
       <div
         className={`sidebar-item flex gap-14 items-center ps-5 py-5 h-[65px] transition-all ease-in duration-300
-      ${isScrolled ? " bg-black" : "bg-black bg-opacity-30"} `}>
+        ${bgTexture?.white && "bg-[#fff] " }
+        ${isScrolled ? "bg-black" : "bg-black bg-opacity-30"} 
+        `}>
+         {/* ${isScrolled ? " bg-black" : "bg-black bg-opacity-30"}  */}
         <Link to={"/"} className=" ">
           <img
             className=" sidebar-item"

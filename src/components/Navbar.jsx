@@ -89,25 +89,27 @@ const Navbar = () => {
         />
       </div>
       <nav
-        className={` z-30 h-[65px] ${bgTexture?.white ? "text-blue-500" : "text-white"} p-4 flex fixed ${
+        className={` z-30 h-[66px] ${bgTexture?.white ? "text-[#525fe1]" : "text-white"} p-4 flex fixed ${
           isSidebarOpen ? "navW" : " left-0 w-full"
-        } transition-all ease-in duration-300 ${
-          isScrolled ? " bg-black" : "bg-black bg-opacity-20"
-        }   `}>
+        } transition-all ease-in duration-300 
+        ${bgTexture?.white && "bg-[#fff] border-b " }
+        ${isScrolled ? "bg-black" : "bg-black bg-opacity-30"} 
+        `}>
         {/* Navbar content */}
         <div className={` flex items-center justify-between w-full`}>
           <div className=" flex gap-3 ">
-            <button className={` text-white text-xl `} onClick={toggleSidebar}>
+            <button className={` ${bgTexture?.white ? "text-[#525fe1]" : "text-white"} text-xl `} onClick={toggleSidebar}>
               <FiMenu />
+              {/* ${bgTexture?.white ? "bg-[#e4e4e1]" : "bg-transparent"} */}
             </button>
-            <div className=" bg-[#ffffff33] w-fit  py-2 px-3 rounded">
-              <div className=" flex items-center">
+            <div className={` ${bgTexture?.white ? "bg-[#f8f8f8] border" : "bg-[#ffffff33]"}  w-fit  py-2 px-3 rounded`}>
+              <div className={` flex items-center`}>
                 <input
                   type="text"
-                  className=" bg-transparent text-sm outline-none"
+                  className={` bg-transparent text-sm outline-none`}
                   placeholder="Enter Keywords"
                 />
-                <p className=" text-[#ffffffc2] text-xl cursor-pointer">
+                <p className={`${bgTexture?.white ? "text-[#9ca3af]" : "text-[#ffffffc2]"} text-xl cursor-pointer`}>
                   <BiSearch />
                 </p>
               </div>

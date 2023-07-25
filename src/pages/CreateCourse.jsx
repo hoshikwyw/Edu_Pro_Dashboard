@@ -36,7 +36,7 @@ const CreateCourse = () => {
               <form
                 onSubmit={onSubmitHandler}
                 className=" mx-10 max-sm:mx-5 mb-8">
-                <h1 className={`text-4xl my-10 max-[900px]:my-5 ${bgTexture?.white ? "text-black" : "text-white"} text-shadow max-[435px]:text-3xl max-[380px]:text-2xl createFamily tracking-wide`}>
+                <h1 className={`text-4xl my-10 max-[900px]:my-5 ${bgTexture?.white ? "text-[#525fe1]" : "text-white text-shadow createFamily"}  max-[435px]:text-3xl max-[380px]:text-2xl tracking-wide`}>
                   Create New Course
                 </h1>
                 <div className=" flex flex-col">
@@ -48,7 +48,7 @@ const CreateCourse = () => {
                           console.log("click");
                         }}
                         className={` ${bgTexture?.white ? "custom-input2" : "custom-input"} cursor-pointer w-full h-[370px] max-xl:h-[350px] rounded-md flex justify-center items-center`}>
-                        <p className={`${bgTexture?.white ? " text-black" : " text-[#bebebe]"} text-base`}>Upload cover</p>
+                        <p className={`${bgTexture?.white ? " text-[#9ca3af]" : " text-[#bebebe]"} text-base`}>Upload cover</p>
                         <input
                           id="cover"
                           className=" w-full h-[370px] "
@@ -118,14 +118,14 @@ const CreateCourse = () => {
                         <div
                               onClick={() => inputVideo.current.click()}
                               className={`${bgTexture?.white ? "custom-input2" : "custom-input"} flex justify-between cursor-pointer w-full py-5 max-xl:py-3 max-[900px]:py-5 pl-4 mr-1  border-[#e5eaef] rounded-md`}>
-                              <p className={`${bgTexture?.white ? " text-black" : " text-[#bebebe]"}]`}>Upload video</p>
+                              <p className={`${bgTexture?.white ? " text-[#9ca3af]" : " text-[#bebebe]"}`}>Upload video</p>
                               <input
                                 className={` py-3 pl-4 ${bgTexture?.white ? "custom-input2" : "custom-input"} rounded-md`}
                                 type="file"
                                 ref={inputVideo}
                                 hidden
                               />
-                              <p className={`text-xl pr-4 ${bgTexture?.white ? " text-black" : " text-[#bebebe]"}`}>
+                              <p className={`text-xl pr-4 ${bgTexture?.white ? " text-[#9ca3af]" : " text-[#bebebe]"}`}>
                                 <BiMovie />
                               </p>
                         </div>
