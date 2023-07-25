@@ -9,12 +9,19 @@ import { GrGooglePlus } from "react-icons/gr";
 import men from "../../assets/istockphoto-1153387473-612x612.jpg";
 
 const ProfileLeft = () => {
+  let bgTexture = JSON.parse(localStorage.getItem("bgTexture"));
   return (
     <div className=" relative h-full w-full  lg:p-5 flex justify-center items-center  overflow-hidden">
-      <div className="h-[95%] w-full justify-center bgTransparent rounded">
+      <div
+        className={`h-[95%] w-full justify-center ${
+          bgTexture?.white ? "bg-white shadow-lg text-black" : "bgTransparent"
+        } rounded`}>
         {/* Profile */}
         <div className=" select-none relative  lg:h-[40%] md:h-[43%] h-[35%]   w-full  overflow-hidden ">
-          <div className="absolute top-[-50%] right-[0%] md:h-[250px]  md:top-[-36%] white-transparent borderDesign bg-orange-700 "></div>
+          <div
+            className={`${
+              bgTexture?.white ? "bg-[#525FE1]" : "bg-orange-700"
+            } absolute top-[-50%] right-[0%] md:h-[250px]  md:top-[-36%] white-transparent borderDesign  `}></div>
           <div className=" lg:absolute md:absolute lg:pt-0 md:pt-0 pt-6 right-[30%] top-[20%]  md:top-[20%] md:right-[40%]  flex justify-center flex-col items-center lg:gap-y-5 gap-y-0 md:gap-y-5    lg:top-[10%] lg:right-[40%]">
             <div className="relative h-[130px] w-[130px] flex justify-center items-center overflow-hidden   rounded-[50%] bg-pink-700 ">
               <div className=" z-10 w-[94%] h-[94%] bg-black rounded-[50%]">
@@ -24,13 +31,13 @@ const ProfileLeft = () => {
                   className="w-full h-full  object-cover rounded-[50%]"
                 />
               </div>
-              <div className="backgroundNeon  absolute  top-0 left-0 w-full h-full"></div>
+              <div className="backgroundNeon  absolute  top-0 left-0 w-full h-full "></div>
             </div>
             <h1 className=" text-blue-500 text-xl">Holy </h1>
             <div className="   flex justify-center gap-8 items-center">
-              <FiFacebook className=" text-orange-500 text-xl" />
-              <FiTwitter className=" text-orange-500 text-lg" />
-              <GrGooglePlus className=" text-orange-500 text-2xl" />
+              <FiFacebook className=" text-blue-600 text-xl" />
+              <FiTwitter className=" text-blue-600 text-lg" />
+              <GrGooglePlus className=" text-blue-600 text-2xl" />
             </div>
           </div>
         </div>
@@ -45,8 +52,12 @@ const ProfileLeft = () => {
             </div>
             <div className="w-[80%] flex flex-col gap-y-3">
               <div className=" flex justify-between ">
-                <p className=" title">HTML 5</p>
-                <p className="title">65%</p>
+                <p className={`${bgTexture?.white ? "titleBlack " : "title"}`}>
+                  HTML 5
+                </p>
+                <p className={`${bgTexture?.white ? "titleBlack " : "title"}`}>
+                  65%
+                </p>
               </div>
               <div className=" progressBackground  w-full">
                 <div className=" progressBar w-[80%] bg-blue-500"></div>
@@ -59,8 +70,12 @@ const ProfileLeft = () => {
             </div>
             <div className="w-[80%] flex flex-col gap-y-3">
               <div className=" flex justify-between ">
-                <p className=" title">BootStrap 5</p>
-                <p className=" title">40%</p>
+                <p className={`${bgTexture?.white ? "titleBlack " : "title"}`}>
+                  BootStrap 5
+                </p>
+                <p className={`${bgTexture?.white ? "titleBlack " : "title"}`}>
+                  40%
+                </p>
               </div>
               <div className=" progressBackground w-full ">
                 <div className=" progressBar w-[40%] bg-blue-500"></div>
@@ -73,8 +88,12 @@ const ProfileLeft = () => {
             </div>
             <div className="w-[80%] flex flex-col gap-y-3">
               <div className=" flex justify-between ">
-                <p className=" title">AngularJS</p>
-                <p className=" title">70%</p>
+                <p className={`${bgTexture?.white ? "titleBlack " : "title"}`}>
+                  AngularJS
+                </p>
+                <p className={`${bgTexture?.white ? "titleBlack " : "title"}`}>
+                  70%
+                </p>
               </div>
               <div className=" progressBackground w-full ">
                 <div className=" progressBar w-[70%] bg-blue-500"></div>
@@ -87,8 +106,12 @@ const ProfileLeft = () => {
             </div>
             <div className="w-[80%] flex flex-col gap-y-3">
               <div className=" flex justify-between ">
-                <p className=" title">ReactJS</p>
-                <p className=" title">80%</p>
+                <p className={`${bgTexture?.white ? "titleBlack " : "title"}`}>
+                  ReactJS
+                </p>
+                <p className={`${bgTexture?.white ? "titleBlack " : "title"}`}>
+                  80%
+                </p>
               </div>
               <div className=" progressBackground w-full ">
                 <div className=" progressBar w-[80%] bg-blue-500"></div>

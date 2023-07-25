@@ -9,6 +9,10 @@
   color: #ffffff;
   font-size: 16px;
 }
+.titleBlack {
+  color: #000;
+  font-size: 16px;
+}
 .tableTitle {
   font-size: 10.8px;
   color: #ffffffd9;
@@ -16,6 +20,10 @@
 .subtitle {
   font-size: 15px;
   color: #ffffffd9;
+}
+.subtitleBlack {
+  font-size: 15px;
+  color: #000;
 }
 .bgTransparent {
   background-color: rgba(0, 0, 0, 0.192);
@@ -35,11 +43,12 @@
 /* calender */
 .borderTransparent {
   border-width: 1px 1px 1px 1px;
-  border-color: rgba(255, 254, 254, 0.192);
+  border-color: rgba(83, 116, 142, 0.261);
 }
 .bgHover:hover .childHover {
-  background-color: #cec0ba;
+  background-color: #fff;
 }
 .liCalendar:hover .childCalendar {
-  color: rgb(251 146 60 / var(--tw-text-opacity));
+  /* color: rgb(251 146 60 / var(--tw-text-opacity)); */
+  color: #677dbc;
 }

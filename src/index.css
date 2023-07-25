@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer components {
+  .li {
+    border-top: 1px solid rgba(0, 0, 0, 0.829) !important;
+  }
+}

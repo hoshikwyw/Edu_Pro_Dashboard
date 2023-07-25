@@ -58,6 +58,22 @@ li:hover {
   }
 }
 
-.white-transparent{
+.white-transparent {
   background-color: rgb(100, 159, 207);
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(29, 32, 49) !important;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: red !important;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: red;
 }
