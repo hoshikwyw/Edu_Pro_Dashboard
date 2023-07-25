@@ -14,6 +14,8 @@ import { Link, NavLink } from "react-router-dom";
 import "./sidebar.css";
 
 const Sidebar = ({ isOpen, isScrolled, toggleSidebar }) => {
+  let bgTexture = JSON.parse(localStorage.getItem("bgTexture"));
+
   // const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   // useEffect(() => {
@@ -42,7 +44,7 @@ const Sidebar = ({ isOpen, isScrolled, toggleSidebar }) => {
 
   return (
     <aside
-      className={` h-screen bg-black lg:bg-opacity-20 z-50 bg-opacity-100 w-[230px] flex flex-col fixed ${
+      className={` h-screen ${bgTexture?.white ? "bg-[#fff]" : "bg-black lg:bg-opacity-20 bg-opacity-100"}  z-50 w-[230px] flex flex-col fixed ${
         isOpen ? " left-0 opacity-100" : " left-[-300px] opacity-0"
       }  transition-all ease-in duration-[330ms]`}>
       {/* Sidebar content */}
@@ -60,60 +62,61 @@ const Sidebar = ({ isOpen, isScrolled, toggleSidebar }) => {
         </Link>
 
         <p onClick={toggleSidebar}>
-          <BsBoxArrowLeft className=" text-[#ffffffa6]  hover:text-[#ffffff] cursor-pointer closeBtn text-2xl mr-5 " />
+          <BsBoxArrowLeft className={`${bgTexture?.white ? " group-hover:text-[#fff]" : "text-[#ffffffa6] group-hover:text-[#ffffff]"} cursor-pointer closeBtn text-2xl mr-5 `} />
         </p>
       </div>
       <hr className=" bg-slate-500 border-0 py-[0.2px] " />
       {/* main navigation  */}
       <div className=" flex flex-col gap-4 mt-4 pb-[50px] sidebar-item">
-        <p className=" text-[#ffffffa6] text-[12px] uppercase ms-4">
+        <p className={`${bgTexture?.white ? "text-[#1f1f1e]" : "text-[#ffffffa6]"}  text-[12px] uppercase ms-4`}>
           main navigation
         </p>
-        <p id="navItem" >
+        <p className={`${bgTexture?.white ? "navItem2" : "navItem"}`}>
           <NavLink
             to={'/'}
-            className=" w-full sidebar-item group flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
-            <p className=" text-[#ffffffa6] text-xl group-hover:text-[#ffffff]">
+            className={`${bgTexture?.white ? "hover:bg-[#525fe1]" : "hover:bg-[#ffffff33] hover:border-s-2"} w-full sidebar-item group flex items-center gap-3  ps-3 py-2 `}>
+            <p className={`${bgTexture?.white ? " group-hover:text-[#fff]" : "text-[#ffffffa6] group-hover:text-[#ffffff]"} text-xl `}>
               <AiOutlineAppstore />
             </p>
-            <p className=" text-[#ffffffa6] text-[15px] group-hover:text-[#ffffff]">
+            <p className={` ${bgTexture?.white ? " group-hover:text-[#fff]" : "text-[#ffffffa6] group-hover:text-[#ffffff]"} text-[15px] `}>
               Dashboard
             </p>
           </NavLink>
         </p>
-        <p id="navItem" >
+        <p className={`${bgTexture?.white ? "navItem2" : "navItem"}`} >
           <NavLink
             to={'/createCourse'}
-            className=" group w-full flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
-            <p className=" text-[#ffffffa6] text-xl group-hover:text-[#ffffff]">
+            className={`group ${bgTexture?.white ? "hover:bg-[#525fe1]" : "hover:bg-[#ffffff33] hover:border-s-2"} w-full flex items-center gap-3 ps-3 py-2 `}>
+            <p className={`${bgTexture?.white ? " group-hover:text-[#fff]" : "text-[#ffffffa6] group-hover:text-[#ffffff]"} text-xl`}>
               <AiOutlineUnorderedList />
             </p>
-            <p className=" text-[#ffffffa6] text-[15px] group-hover:text-[#ffffff]">
+            <p className={`${bgTexture?.white ? " group-hover:text-[#fff]" : "text-[#ffffffa6] group-hover:text-[#ffffff]"} text-[15px]`}>
               Create Course
             </p>
           </NavLink>
         </p>
-        <p id="navItem" >
-          <NavLink
+        <p className={`${bgTexture?.white ? "navItem2" : "navItem"}`} >
+        <NavLink
             to={'/calender'}
-            className=" group w-full flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
-            <p className=" text-[#ffffffa6] text-xl group-hover:text-[#ffffff]">
+            className={`${bgTexture?.white ? "hover:bg-[#525fe1]" : "hover:bg-[#ffffff33] hover:border-s-2"} group w-full flex items-center gap-3 ps-3 py-2 `}>
+            <p className={`${bgTexture?.white ? " group-hover:text-[#fff]" : "text-[#ffffffa6] group-hover:text-[#ffffff]"} text-xl `}>
               <AiOutlineCalendar />
             </p>
-            <span className=" text-[#ffffffa6] text-[15px] group-hover:text-[#ffffff]">
-              Calendar
+
+            <span className={`${bgTexture?.white ? " group-hover:text-[#fff]" : "text-[#ffffffa6] group-hover:text-[#ffffff]"} text-[15px]`}>
+              Calender
             </span>
           </NavLink>
         </p>
-        <p id="navItem" >
+        <p className={`${bgTexture?.white ? "navItem2" : "navItem"}`} >
           <NavLink
             to={'/profile'}
-            className=" group w-full flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
-            <p className=" text-[#ffffffa6] text-xl group-hover:text-[#ffffff]">
+            className={`${bgTexture?.white ? "hover:bg-[#525fe1]" : "hover:bg-[#ffffff33] hover:border-s-2"} group w-full flex items-center gap-3 ps-3 py-2 `}>
+            <p className={`${bgTexture?.white ? " group-hover:text-[#fff]" : "text-[#ffffffa6] group-hover:text-[#ffffff]"} text-xl `}>
               <RiContactsLine />
             </p>
 
-            <span className=" text-[#ffffffa6] text-[15px] group-hover:text-[#ffffff]">
+            <span className={`${bgTexture?.white ? " group-hover:text-[#fff]" : "text-[#ffffffa6] group-hover:text-[#ffffff]"} text-[15px]`}>
               Profile
             </span>
           </NavLink>
@@ -122,38 +125,38 @@ const Sidebar = ({ isOpen, isScrolled, toggleSidebar }) => {
         <hr className=" bg-slate-500 border-0 py-[0.2px] " />
 
         <p className=" text-[#ffffffa6] text-[12px] uppercase ms-4">Tables</p>
-        <p id="navItem" >
+        <p className={`${bgTexture?.white ? "navItem2" : "navItem"}`} >
           <NavLink
             to={'/studentTable'}
-            className=" group w-full flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
-            <p className=" text-[#ffffffa6] text-xl group-hover:text-[#ffffff]">
+            className={`${bgTexture?.white ? "hover:bg-[#525fe1]" : "hover:bg-[#ffffff33] hover:border-s-2"} group  w-full flex items-center gap-3 ps-3 py-2 `}>
+            <p className={`${bgTexture?.white ? " group-hover:text-[#fff]" : "text-[#ffffffa6] group-hover:text-[#ffffff]"} text-xl `}>
               <CgProfile />
             </p>
-            <span className=" text-[#ffffffa6] text-[15px] group-hover:text-[#ffffff]">
+            <span className={`${bgTexture?.white ? " group-hover:text-[#fff]" : "text-[#ffffffa6] group-hover:text-[#ffffff]"} text-[15px]`}>
               Students List
             </span>
           </NavLink>
         </p>
-        <p id="navItem" >
+        <p className={`${bgTexture?.white ? "navItem2" : "navItem"}`} >
           <NavLink
             to={'/teacherTable'}
-            className=" group w-full flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
-            <p className=" text-[#ffffffa6] text-xl group-hover:text-[#ffffff]">
+            className={`${bgTexture?.white ? "hover:bg-[#525fe1]" : "hover:bg-[#ffffff33] hover:border-s-2"} group w-full flex items-center gap-3 ps-3 py-2 `}>
+            <p className={`${bgTexture?.white ? " group-hover:text-[#fff]" : "text-[#ffffffa6] group-hover:text-[#ffffff]"} text-xl `}>
               <AiOutlineTable />
             </p>
-            <span className=" text-[#ffffffa6] text-[15px] group-hover:text-[#ffffff]">
+            <span className={`${bgTexture?.white ? " group-hover:text-[#fff]" : "text-[#ffffffa6] group-hover:text-[#ffffff]"} text-[15px]`}>
               Teacher List
             </span>
           </NavLink>
         </p>
-        <p id="navItem" >
+        <p className={`${bgTexture?.white ? "navItem2" : "navItem"}`} >
           <NavLink
             to={'/courseTable'}
-            className=" group w-full flex items-center gap-3 hover:bg-[#ffffff33] hover:border-s-2 ps-3 py-2 ">
-            <p className=" text-[#ffffffa6] text-xl group-hover:text-[#ffffff]">
+            className={`${bgTexture?.white ? "hover:bg-[#525fe1]" : "hover:bg-[#ffffff33] hover:border-s-2"} group w-full flex items-center gap-3 ps-3 py-2 `}>
+            <p className={`${bgTexture?.white ? " group-hover:text-[#fff]" : "text-[#ffffffa6] group-hover:text-[#ffffff]"} text-xl `}>
               <GiNewspaper />
             </p>
-            <span className=" text-[#ffffffa6] text-[15px] group-hover:text-[#ffffff]">
+            <span className={`${bgTexture?.white ? " group-hover:text-[#fff]" : "text-[#ffffffa6] group-hover:text-[#ffffff]"} text-[15px]`}>
               Course List
             </span>
           </NavLink>

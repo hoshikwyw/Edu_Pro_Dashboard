@@ -8,6 +8,7 @@
     background: rgba(255, 255, 255, 0.2);
     overflow: hidden;
 }
+
 .glass-btn::after{
     content: "";
     position: absolute;
