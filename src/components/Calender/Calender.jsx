@@ -158,7 +158,7 @@ const Calender = () => {
                     onClick={() => settoday(today)}
                     className={`${
                       bgTexture?.white
-                        ? "bg-[#CEC0BA] text-white"
+                        ? "bg-[#525FE1] text-white"
                         : " bg-white text-black"
                     } max-[530px]:w-[90px] max-[530px]:text-[15px] max-[340px]:text-[13px]  cursor-pointer hover:bg-slate-400 rounded text-center px-3 py-2 max-[340px]:w-[60px]`}>
                     Today
@@ -169,7 +169,7 @@ const Calender = () => {
                 <div className=" max-[400px]:hidden justify-center flex items-center flex-col">
                   <p
                     className={`${
-                      bgTexture?.white ? "text-[#A4795A]" : " text-white"
+                      bgTexture?.white ? "text-[#677DBC]" : " text-white"
                     } title text-2xl max-[530px]:text-[20px] `}>
                     {todayS?.toLocaleString("default", { month: "long" })}
                     <span> {todayS?.getFullYear()}</span>
@@ -214,9 +214,9 @@ const Calender = () => {
                   <button
                     onClick={() => setTogleEvent(!togleEvent)}
                     className={`${
-                      bgTexture?.white ? "bg-[#CEC0BA] text-white" : ""
+                      bgTexture?.white ? "bg-[#525FE1] text-white" : "bg-white "
                     } px-3 py-2 max-[530px]:px-2 max-[530px]:text-[15px] max-[340px]:text-[13px]
-            bg-white shadow-sm rounded hover:bg-slate-400 `}>
+            shadow-sm rounded hover:bg-slate-400 `}>
                     Event List
                   </button>
                   {/* <button
@@ -260,7 +260,7 @@ const Calender = () => {
                 {todayS?.toLocaleString("default", { month: "long" })}
                 <span
                   className={`${
-                    bgTexture?.white ? "bg-[#CEC0BA] text-black" : "text-white"
+                    bgTexture?.white ? "bg-[#525FE1] text-black" : "text-white"
                   } `}>
                   {" "}
                   {todayS?.getFullYear()}
@@ -296,7 +296,7 @@ const Calender = () => {
                   togleEvent == true
                     ? "w-full  md:w-full  lg:w-[70%]"
                     : "w-full"
-                } ${bgTexture?.white && "shadow-lg bg-[#FFEEE6]"} `}>
+                } ${bgTexture?.white && "shadow-lg bg-[#7F9BE9]"} `}>
                 <div className=" grid grid-cols-7 bgTransparent ">
                   <div className=" w-full py-3 px-2 borderTransparent title  max-[500px]:text-[15px]">
                     {windowWidth <= 430 ? (
@@ -359,12 +359,12 @@ const Calender = () => {
                         key={index}
                         className={`lg:p-6 md:p-6 p-2 h-[150px] max-lg:h-[130px] max-md:h-[100px] max-[500px]:h-[80px]
                       flex flex-col ${
-                        bgTexture?.white ? "bgTransparent2" : "bgTransparent"
-                      } bgHover borderTransparent hover:bg-slate-200 hover:bg-transparent  overflow-hidden cursor-pointer`}>
+                        bgTexture?.white ? "bgTransparent2 " : "bgTransparent "
+                      } bgHover borderTransparent hover:bg-slate-200  hover:bg-transparent  overflow-hidden cursor-pointer`}>
                         <div
                           className={`w-[35px] h-[35px] max-sm:w-[30px] max-sm:h-[30px] max-[430px]:w-[22px] max-[430px]:h-[22px] max-[330px]:w-[18px] max-[330px]:h-[18px] max-[430px]:text-[12px] flex items-center justify-center lg:ms-auto md:ms-auto 
                            ${
-                             isToday(day) ? "bg-orange-400 text-black " : ""
+                             isToday(day) ? "bg-[#8be1e6]  text-black " : ""
                            }  rounded-[50%] ${
                             isSameMonth(day, todayS) && !isToday(day)
                               ? "lg:bg-slate-200 md:bg-slate-200  "
@@ -373,7 +373,7 @@ const Calender = () => {
                             isSameMonth(day, todayS) &&
                             !isToday(day) &&
                             bgTexture?.white
-                              ? "lg:bg-[#FFEEE6] md:bg-[#FFEEE6]  childHover"
+                              ? "lg:bg-[#FFFFFFF] md:bg-[#FFFFFF]  childHover"
                               : "title"
                           } `}>
                           <div>
@@ -417,7 +417,7 @@ const Calender = () => {
                 className={` ${
                   togleEvent == true ? "flex w-full  lg:w-[28%]" : "hidden "
                 }  ${
-                  bgTexture?.white ? "bg-[#FFEEE6] text-black shadow-xl" : ""
+                  bgTexture?.white ? "bg-[#FFFFFF] text-black shadow-xl" : ""
                 } p-3  flex-col gap-y-5 `}>
                 <div className=" w-full flex items-center ">
                   <div
@@ -427,11 +427,11 @@ const Calender = () => {
                   </div>
                   <div
                     className={`${
-                      bgTexture?.white ? "text-[#A4795A]" : "text-white"
+                      bgTexture?.white ? "text-[#525FE1]" : "text-white"
                     } w-[60%] title flex items-center gap-3`}>
                     <div
                       className={` ${
-                        bgTexture?.white ? "text-[#A4795A]" : "text-white"
+                        bgTexture?.white ? "text-[#525FE1]" : "text-white"
                       }`}>
                       {todayS?.toLocaleString("default", { month: "long" })}
                     </div>
@@ -447,7 +447,7 @@ const Calender = () => {
                         <p
                           className={`${
                             bgTexture?.white
-                              ? "text-[#A4795A] childCalendar "
+                              ? "text-[#000] childCalendar "
                               : " text-white"
                           }`}>
                           {event?.oneClickDate?.getDate()}
@@ -455,7 +455,7 @@ const Calender = () => {
                         <small
                           className={`${
                             bgTexture?.white
-                              ? "text-[#A4795A] childCalendar"
+                              ? "text-[#000] childCalendar"
                               : " text-white"
                           }`}>
                           {dayname(event?.oneClickDate)}
@@ -464,7 +464,7 @@ const Calender = () => {
                       <div
                         className={`${
                           bgTexture?.white
-                            ? "text-[#A4795A] childCalendar"
+                            ? "text-[#000] childCalendar"
                             : " text-white"
                         }`}>
                         {event?.eventValue}
