@@ -125,7 +125,7 @@ const StudentTable = () => {
             </tbody> }
           </table>
         </div>
-        <div className={`mx-auto mb-5 bgTransparent2 rounded`}>
+        <div className={`mx-auto mb-5 ${bgTexture?.white ? "bgTransparent2" : "bgTransparent"} rounded`}>
           {bgTexture?.white ? <div className={`border-2 rounded flex`}>
             <button className={` cursor-pointer border-r-2 hover:bg-blue-100 duration-500`} onClick={prePage}>
               <p className={` px-2 py-2 text-base tracking-wider text-blue-500`}>Prev</p>

@@ -33,7 +33,7 @@ const Detail = () => {
             <FaArrowLeft className={`${bgTexture?.white ? "text-black" : "text-white"} icon-btn max-[500px]:text-sm`}/>
             </div>
             {/* detail left start */}
-            <div className={`flex justify-center w-[45%] max-xl:w-full ${bgTexture?.white ? "text-black" : "text-white"}`}>
+            <div className={`flex justify-center w-[45%] max-xl:w-full ${bgTexture?.white ? "text-[#6F6B80] font-bold" : "text-white"}`}>
               <div className=' flex flex-col'>
                 {/* image div  */}
                 <div className=' relative p-10 max-[500px]:p-5'>
@@ -47,81 +47,81 @@ const Detail = () => {
                     <div className='flex justify-between pb-3'>
                       <p className=' flex items-center gap-2'>
                         <span className={`text-lg ${bgTexture?.white && "text-blue-700"}`}><HiOutlineClock/></span>
-                        <span className='max-xl:text-lg max-md:text-base max-sm:text-sm'>Duration</span>
+                        <span className='max-xl:text-lg max-md:text-base max-sm:text-sm tracking-wide'>Duration</span>
                       </p>
-                      <p className='max-xl:text-lg max-md:text-base max-sm:text-sm'>17 Weeks</p>
+                      <p className='max-xl:text-lg max-md:text-base max-sm:text-sm tracking-wide'>17 Weeks</p>
                     </div>
                     <hr className={`${bgTexture?.white ? "border-[] border-black" : "custom-hr"}`} />
 
                     <div className='flex justify-between py-3'>
                       <p className=' flex items-center gap-2'>
                         <span className={`text-lg ${bgTexture?.white && "text-blue-700"}`}><BsPeople/></span>
-                        <span className='max-xl:text-lg max-md:text-base max-sm:text-sm'>Students</span>
+                        <span className='max-xl:text-lg max-md:text-base max-sm:text-sm tracking-wide'>Students</span>
                       </p>
-                      <p className='max-xl:text-lg max-md:text-base max-sm:text-sm'>189</p>
+                      <p className='max-xl:text-lg max-md:text-base max-sm:text-sm tracking-wide'>189</p>
                     </div>
                     <hr className={`${bgTexture?.white ? "border-[] border-black" : "custom-hr"}`} />
 
                     <div className='flex justify-between py-3'>
                       <p className=' flex items-center gap-2'>
                         <span className={`text-lg ${bgTexture?.white && "text-blue-700"}`}><RiDraftLine/></span>
-                        <span className='max-xl:text-lg max-md:text-base max-sm:text-sm'>Lessons</span>
+                        <span className='max-xl:text-lg max-md:text-base max-sm:text-sm tracking-wide'>Lessons</span>
                       </p>
-                      <p className='max-xl:text-lg max-md:text-base max-sm:text-sm'>18</p>
+                      <p className='max-xl:text-lg max-md:text-base max-sm:text-sm tracking-wide'>18</p>
                     </div>
                     <hr className={`${bgTexture?.white ? "border-[] border-black" : "custom-hr"}`} />
 
                     <div className='flex justify-between py-3'>
                       <p className=' flex items-center gap-2'>
                         <span className={`text-lg ${bgTexture?.white && "text-blue-700"}`}><BsBarChart/></span>
-                        <span className='max-xl:text-lg max-md:text-base max-sm:text-sm'>Skill level</span>
+                        <span className='max-xl:text-lg max-md:text-base max-sm:text-sm tracking-wide'>Skill level</span>
                       </p>
-                      <p className='max-xl:text-lg max-md:text-base max-sm:text-sm'>Expert</p>
+                      <p className='max-xl:text-lg max-md:text-base max-sm:text-sm tracking-wide'>Expert</p>
                     </div>
                     <hr className={`${bgTexture?.white ? "border-[] border-black" : "custom-hr"}`} />
 
                     <div className='flex justify-between py-3'>
                       <p className=' flex items-center gap-2'>
                         <span className={`text-lg ${bgTexture?.white && "text-blue-700"}`}><RiArtboardLine/></span>
-                        <span className='max-xl:text-lg max-md:text-base max-sm:text-sm'>Quizzes</span>
+                        <span className='max-xl:text-lg max-md:text-base max-sm:text-sm tracking-wide'>Quizzes</span>
                       </p>
-                      <p className='max-xl:text-lg max-md:text-base max-sm:text-sm'>0</p>
+                      <p className='max-xl:text-lg max-md:text-base max-sm:text-sm tracking-wide'>0</p>
                     </div>
                     <hr className={`${bgTexture?.white ? "border-[] border-black" : "custom-hr"}`} />
 
                     <div className='flex justify-between py-3'>
                       <p className=' flex items-center gap-2'>
                         <span className={`text-lg ${bgTexture?.white && "text-blue-700"}`}><RiAwardLine/></span>
-                        <span className='max-xl:text-lg max-md:text-base max-sm:text-sm'>Certifications</span>
+                        <span className='max-xl:text-lg max-md:text-base max-sm:text-sm tracking-wide'>Certifications</span>
                       </p>
-                      <p className='max-xl:text-lg max-md:text-base max-sm:text-sm'>Yes</p>
+                      <p className='max-xl:text-lg max-md:text-base max-sm:text-sm tracking-wide'>Yes</p>
                     </div>
                     <hr className={`${bgTexture?.white ? "border-[] border-black" : "custom-hr"}`} />
 
                     <div className='flex justify-between py-3'>
                       <p className=' flex items-center gap-2'>
                         <span className={`text-lg ${bgTexture?.white && "text-blue-700"}`}><BsPercent/></span>
-                        <span className='max-xl:text-lg max-md:text-base max-sm:text-sm'>Pass Percentage</span>
+                        <span className='max-xl:text-lg max-md:text-base max-sm:text-sm tracking-wide'>Pass Percentage</span>
                       </p>
-                      <p className='max-xl:text-lg max-md:text-base max-sm:text-sm'>80%</p>
+                      <p className='max-xl:text-lg max-md:text-base max-sm:text-sm tracking-wide'>80%</p>
                     </div>
                     <hr className={`${bgTexture?.white ? "border-[] border-black" : "custom-hr"}`} />
 
                     <div className='flex justify-between py-3'>
                       <p className=' flex items-center gap-2'>
                         <span className={`text-lg ${bgTexture?.white && "text-blue-700"}`}><AiTwotoneCalendar/></span>
-                        <span className='max-xl:text-lg max-md:text-base max-sm:text-sm'>Deadline</span>
+                        <span className='max-xl:text-lg max-md:text-base max-sm:text-sm tracking-wide'>Deadline</span>
                       </p>
-                      <p className='max-xl:text-lg max-md:text-base max-sm:text-sm'>25 Dec, 2023</p>
+                      <p className='max-xl:text-lg max-md:text-base max-sm:text-sm tracking-wide'>25 Dec, 2023</p>
                     </div>
                     <hr className={`${bgTexture?.white ? "border-[] border-black" : "custom-hr"}`} />
 
                     <div className='flex justify-between py-3'>
                       <p className=' flex items-center gap-2'>
                         <span className={`text-lg ${bgTexture?.white && "text-blue-700"}`}><MdPersonOutline/></span>
-                        <span className='max-xl:text-lg max-md:text-base max-sm:text-sm'>Instructor</span>
+                        <span className='max-xl:text-lg max-md:text-base max-sm:text-sm tracking-wide'>Instructor</span>
                       </p>
-                      <p className='max-xl:text-lg max-md:text-base max-sm:text-sm'>James Carlson</p>
+                      <p className='max-xl:text-lg max-md:text-base max-sm:text-sm tracking-wide'>James Carlson</p>
                     </div>
                   </div>
 
@@ -146,28 +146,28 @@ const Detail = () => {
                       src="https://eduvibe.devsvibe.com/main/wp-content/uploads/2022/11/instructor-03-02-2-100x100.webp"
                       className=" w-8 rounded-full"
                     />
-                    <p className={`${bgTexture?.white ? "text-black" : "tableTitle"} text-sm tracking-wide`}>
+                    <p className={`${bgTexture?.white ? "text-gray-500" : "tableTitle"} text-sm tracking-wide`}>
                       Janet Fleming
                     </p>
                   </div>
-                  <div className={`${bgTexture?.white ? "text-black" : "tableTitle"} flex items-center gap-2`}>
+                  <div className={`${bgTexture?.white ? "text-gray-500" : "tableTitle"} flex items-center gap-2`}>
                     <RxCalendar className={`${bgTexture?.white && "text-blue-700"} text-lg`} />
                     <p className="text-sm tracking-wide">09 Feb, 2023</p>
                   </div>
-                  <div className={`${bgTexture?.white ? "text-black" : "tableTitle"} flex items-center gap-2`}>
+                  <div className={`${bgTexture?.white ? "text-gray-500" : "tableTitle"} flex items-center gap-2`}>
                     <TiMessages className={`${bgTexture?.white && "text-blue-700"} text-lg`} />
                     <p className="text-sm tracking-wide">0 Comments</p>
                   </div>
-                  <div className={`${bgTexture?.white ? "text-black" : "tableTitle"} flex items-center gap-1`}>
+                  <div className={`${bgTexture?.white ? "text-gray-500" : "tableTitle"} flex items-center gap-1`}>
                     <RiEyeLine className={`${bgTexture?.white && "text-blue-700"} text-lg`} />
                     <p className="text-sm tracking-wide">1 Min Read</p>
                   </div>
               </div>
               <div className=" flex flex-col gap-4">
-                  <h1 className={`${bgTexture?.white ? "text-black" : "text-gray-50"} text-xl font-medium max-xl:text-2xl max-md:text-xl`}>
+                  <h1 className={`${bgTexture?.white ? "text-gray-800" : "text-gray-50"} text-2xl font-bold max-xl:text-2xl tracking-wider max-md:text-xl`}>
                     Social Media Marketing MASTERY( A-Z ) Journey
                   </h1>
-                  <p className={`${bgTexture?.white ? "text-black" : "tableTitle"} text-sm tracking-wide`}>
+                  <p className={`${bgTexture?.white ? "text-gray-500" : "tableTitle"} text-sm tracking-wider`}>
                     Grursus mal suada faci lisis Lorem ipsum dolarorit more
                     ametion consectetur elit. Vesti at bulum nec the odio aea the
                     dumm ipsumm ipsum that dolocons rsus mal suada and fadolorit
@@ -183,15 +183,15 @@ const Detail = () => {
                     suada and fadolorit to the consectetur elit. All the Lorem
                     Ipsum generators on the Internet tend.
                   </p>
-                  <div className={`${bgTexture?.white ? "bg-gray-500" : "bg-color"} shadow-lg p-5 rounded`}>
-                    <p className=" text-gray-50 text-lg tracking-wide text-center">
+                  <div className={`${bgTexture?.white ? "bg-white shadow-lg rounded-md border-t-[3px] border-blue-700" : "bg-color"} shadow-lg p-5 rounded`}>
+                    <p className={`${bgTexture?.white ? " text-blue-700" : "text-gray-50"} text-lg tracking-wide text-center`}>
                       “ Duis vel scelerisque augue, ut vehicula nisl. Curabitur et
                       mollis tortor, eget sollicitudin lectus. Praesent a ante ac
                       urna ultrices volutpat at sed ligula. Phasellus nibh dui,
                       pulvinar a nibh quis. ”
                     </p>
                   </div>
-                  <p className={`${bgTexture?.white ? "text-black" : "tableTitle"} text-sm tracking-wide`}>
+                  <p className={`${bgTexture?.white ? "text-gray-500" : "tableTitle"} text-sm tracking-wider`}>
                     Grursus mal suada faci lisis Lorem ipsum dolarorit more
                     ametion consectetur elit. Vesti at bulum nec the odio aea the
                     dumm ipsumm ipsum that dolocons rsus mal suada and fadolorit
