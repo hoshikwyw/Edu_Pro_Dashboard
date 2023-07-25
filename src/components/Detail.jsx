@@ -33,7 +33,7 @@ const Detail = () => {
             <FaArrowLeft className={`${bgTexture?.white ? "text-black" : "text-white"} icon-btn max-[500px]:text-sm`}/>
             </div>
             {/* detail left start */}
-            <div className={`flex justify-center w-[45%] max-xl:w-full ${bgTexture?.white ? "text-[#6F6B80] font-bold" : "text-white"}`}>
+            <div className={`flex justify-center w-[45%] max-xl:w-full ${bgTexture?.white ? "text-[#1f1f1e]" : "text-white"}`}>
               <div className=' flex flex-col'>
                 {/* image div  */}
                 <div className=' relative p-10 max-[500px]:p-5'>
@@ -51,7 +51,7 @@ const Detail = () => {
                       </p>
                       <p className='max-xl:text-lg max-md:text-base max-sm:text-sm tracking-wide'>17 Weeks</p>
                     </div>
-                    <hr className={`${bgTexture?.white ? "border-[] border-black" : "custom-hr"}`} />
+                    <hr className={`${bgTexture?.white ? "custom-hr2" : "custom-hr"}`} />
 
                     <div className='flex justify-between py-3'>
                       <p className=' flex items-center gap-2'>
@@ -60,7 +60,7 @@ const Detail = () => {
                       </p>
                       <p className='max-xl:text-lg max-md:text-base max-sm:text-sm tracking-wide'>189</p>
                     </div>
-                    <hr className={`${bgTexture?.white ? "border-[] border-black" : "custom-hr"}`} />
+                    <hr className={`${bgTexture?.white ? "custom-hr2" : "custom-hr"}`} />
 
                     <div className='flex justify-between py-3'>
                       <p className=' flex items-center gap-2'>
@@ -69,7 +69,7 @@ const Detail = () => {
                       </p>
                       <p className='max-xl:text-lg max-md:text-base max-sm:text-sm tracking-wide'>18</p>
                     </div>
-                    <hr className={`${bgTexture?.white ? "border-[] border-black" : "custom-hr"}`} />
+                    <hr className={`${bgTexture?.white ? "custom-hr2" : "custom-hr"}`} />
 
                     <div className='flex justify-between py-3'>
                       <p className=' flex items-center gap-2'>
@@ -78,7 +78,7 @@ const Detail = () => {
                       </p>
                       <p className='max-xl:text-lg max-md:text-base max-sm:text-sm tracking-wide'>Expert</p>
                     </div>
-                    <hr className={`${bgTexture?.white ? "border-[] border-black" : "custom-hr"}`} />
+                    <hr className={`${bgTexture?.white ? "custom-hr2" : "custom-hr"}`} />
 
                     <div className='flex justify-between py-3'>
                       <p className=' flex items-center gap-2'>
@@ -87,7 +87,7 @@ const Detail = () => {
                       </p>
                       <p className='max-xl:text-lg max-md:text-base max-sm:text-sm tracking-wide'>0</p>
                     </div>
-                    <hr className={`${bgTexture?.white ? "border-[] border-black" : "custom-hr"}`} />
+                    <hr className={`${bgTexture?.white ? "custom-hr2" : "custom-hr"}`} />
 
                     <div className='flex justify-between py-3'>
                       <p className=' flex items-center gap-2'>
@@ -96,7 +96,7 @@ const Detail = () => {
                       </p>
                       <p className='max-xl:text-lg max-md:text-base max-sm:text-sm tracking-wide'>Yes</p>
                     </div>
-                    <hr className={`${bgTexture?.white ? "border-[] border-black" : "custom-hr"}`} />
+                    <hr className={`${bgTexture?.white ? "custom-hr2" : "custom-hr"}`} />
 
                     <div className='flex justify-between py-3'>
                       <p className=' flex items-center gap-2'>
@@ -105,7 +105,7 @@ const Detail = () => {
                       </p>
                       <p className='max-xl:text-lg max-md:text-base max-sm:text-sm tracking-wide'>80%</p>
                     </div>
-                    <hr className={`${bgTexture?.white ? "border-[] border-black" : "custom-hr"}`} />
+                    <hr className={`${bgTexture?.white ? "custom-hr2" : "custom-hr"}`} />
 
                     <div className='flex justify-between py-3'>
                       <p className=' flex items-center gap-2'>
@@ -114,7 +114,7 @@ const Detail = () => {
                       </p>
                       <p className='max-xl:text-lg max-md:text-base max-sm:text-sm tracking-wide'>25 Dec, 2023</p>
                     </div>
-                    <hr className={`${bgTexture?.white ? "border-[] border-black" : "custom-hr"}`} />
+                    <hr className={`${bgTexture?.white ? "custom-hr2" : "custom-hr"}`} />
 
                     <div className='flex justify-between py-3'>
                       <p className=' flex items-center gap-2'>
@@ -164,7 +164,7 @@ const Detail = () => {
                   </div>
               </div>
               <div className=" flex flex-col gap-4">
-                  <h1 className={`${bgTexture?.white ? "text-gray-800" : "text-gray-50"} text-2xl font-bold max-xl:text-2xl tracking-wider max-md:text-xl`}>
+                  <h1 className={`${bgTexture?.white ? "text-gray-800" : "text-gray-50"} text-xl font-semibold max-xl:text-xl tracking-wider max-md:text-lg`}>
                     Social Media Marketing MASTERY( A-Z ) Journey
                   </h1>
                   <p className={`${bgTexture?.white ? "text-gray-500" : "tableTitle"} text-sm tracking-wider`}>
