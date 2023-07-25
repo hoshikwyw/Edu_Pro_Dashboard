@@ -49,8 +49,8 @@ const StudentTable = () => {
           <h1 className={` font-medium ${bgTexture?.white ? "text-black" : " text-white"} text-lg tracking-wide`}>
             Student Table
           </h1>
-          <table className={`table-responsive ${bgTexture?.white && "bg-gray-50"}`}>
-            <thead className={` ${bgTexture?.white ? "text-blue-400" : "border-color tableTitle"} `}>
+          <table className={`table-responsive ${bgTexture?.white && "bg-white"}`}>
+            <thead className={` ${bgTexture?.white ? " bg-gray-50 text-blue-400" : "border-color tableTitle"} `}>
               <tr>
                 <th className={`tracking-wide ${bgTexture?.white ? "" : "border-r border-color"} font-medium text-sm py-4 max-[1100px]:px-4`}>
                   T_ID
@@ -125,22 +125,36 @@ const StudentTable = () => {
             </tbody> }
           </table>
         </div>
-        <div className={`mx-auto mb-5 ${bgTexture?.white ? "bgTransparent2" : "bgTransparent"} rounded`}>
-          <div className={`flex ${bgTexture?.white ? "border-2 border-gray-500" : "p-border-color"} rounded`}>
-            <button className={`custom-hover ${bgTexture?.white ? "border-r-2 border-gray-500" : "p-border-r"} cursor-pointer`} onClick={prePage}>
-              <p className={` px-2 py-2 ${bgTexture?.white ? " text-black font-medium" : "tableTitle"} text-base tracking-wider`}>Prev</p>
+        <div className={`mx-auto mb-5 bgTransparent2 rounded`}>
+          {bgTexture?.white ? <div className={`border-2 rounded flex`}>
+            <button className={` cursor-pointer border-r-2 hover:bg-blue-100 duration-500`} onClick={prePage}>
+              <p className={` px-2 py-2 text-base tracking-wider text-blue-500`}>Prev</p>
             </button>
             {
               number.map((n,i) => (
-                <button onClick={() => changeCPage(n)} className={`custom-hover cursor-pointer ${bgTexture?.white ? "border-r-2 border-gray-500" : "p-border-r"} ${currentPage === n ? "active" : ""}`} key={i}>
+                <button onClick={() => changeCPage(n)} className={`border-r ${currentPage === n ? " bg-blue-500" : "hover:bg-blue-100 duration-500"} cursor-pointer`} key={i}>
+                  <p className={`px-4 text-base tracking-wider text-blue-500 ${currentPage === n && " text-white"}`}>{n}</p>
+                </button>
+              ))
+            }
+            <button className={` cursor-pointer border-l hover:bg-blue-100 duration-500`} onClick={nextPage}>
+              <p className={`px-2 py-2 text-base tracking-wider text-blue-500`}>Next</p>
+            </button>
+          </div> : <div className={`flex ${bgTexture?.white ? "" : "p-border-color"} rounded`}>
+            <button className={` ${bgTexture?.white ? "" : "p-border-r custom-hover"} cursor-pointer`} onClick={prePage}>
+              <p className={` px-2 py-2 ${bgTexture?.white ? " text-white bg-blue-700 hover:bg-blue-950 duration-500 rounded-l font-medium" : "tableTitle"} text-base tracking-wider`}>Prev</p>
+            </button>
+            {
+              number.map((n,i) => (
+                <button onClick={() => changeCPage(n)} className={` cursor-pointer ${bgTexture?.white ? "" : "p-border-r custom-hover"} ${currentPage === n ? "active" : ""}`} key={i}>
                   <p className={`px-4 ${bgTexture?.white ? " text-black font-medium" : "tableTitle"} text-base tracking-wider`}>{n}</p>
                 </button>
               ))
             }
-            <button className="custom-hover cursor-pointer " onClick={nextPage}>
-              <p className={`px-2 py-2 ${bgTexture?.white ? " text-black font-medium" : "tableTitle"} text-base tracking-wider`}>Next</p>
+            <button className={`${bgTexture?.white ? "" : "custom-hover"} cursor-pointer `} onClick={nextPage}>
+              <p className={`px-2 py-2 ${bgTexture?.white ? " text-white bg-blue-700 hover:bg-blue-950  duration-500 rounded-r font-medium" : "tableTitle"} text-base tracking-wider`}>Next</p>
             </button>
-          </div>
+          </div>}
         </div>
         </div>
       </div>

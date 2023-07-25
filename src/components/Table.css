@@ -34,6 +34,11 @@
     background-color: rgba(0, 0, 0, 0.2);
 }
 
+.active2 {
+  color: #1D4ED8;
+  transform: scale(1.1);
+}
+
 .border-b-color{
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
