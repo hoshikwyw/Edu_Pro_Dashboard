@@ -49,55 +49,80 @@ const StudentTable = () => {
           <h1 className={` font-medium ${bgTexture?.white ? "text-black" : " text-white"} text-lg tracking-wide`}>
             Student Table
           </h1>
-          <table className={`table-responsive ${bgTexture?.white && "bg-gray-100"}`}>
-            <thead className={` ${bgTexture?.white ? "text-black border-2 border-black" : "border-color tableTitle"} `}>
+          <table className={`table-responsive ${bgTexture?.white && "bg-gray-50"}`}>
+            <thead className={` ${bgTexture?.white ? "text-blue-400" : "border-color tableTitle"} `}>
               <tr>
-                <th className={`tracking-wide border-r ${bgTexture?.white ? "border-r-2 border-black" : "border-color"} font-medium text-sm py-4 max-[1100px]:px-4`}>
+                <th className={`tracking-wide ${bgTexture?.white ? "" : "border-r border-color"} font-medium text-sm py-4 max-[1100px]:px-4`}>
                   T_ID
                 </th>
-                <th className={`tracking-wide border-r ${bgTexture?.white ? "border-r-2 border-black" : "border-color"} font-medium text-sm py-4 max-[1100px]:px-12`}>
+                <th className={`tracking-wide ${bgTexture?.white ? "" : "border-r border-color"} font-medium text-sm py-4 max-[1100px]:px-12`}>
                   STUDENT NAME
                 </th>
-                <th className={`tracking-wide border-r ${bgTexture?.white ? "border-r-2 border-black" : "border-color"} font-medium text-sm py-4 max-[1100px]:px-20`}>
+                <th className={`tracking-wide ${bgTexture?.white ? "" : "border-r border-color"} font-medium text-sm py-4 max-[1100px]:px-20`}>
                   EMAIL
                 </th>
-                <th className={`tracking-wide border-r ${bgTexture?.white ? "border-r-2 border-black" : "border-color"} font-medium text-sm py-4 max-[1100px]:px-14`}>
+                <th className={`tracking-wide ${bgTexture?.white ? "" : "border-r border-color"} font-medium text-sm py-4 max-[1100px]:px-14`}>
                   PHONE
                 </th>
-                <th className={`tracking-wide border-r ${bgTexture?.white ? "border-r-2 border-black" : "border-color"} font-medium text-sm py-4 max-[1100px]:px-4`}>
+                <th className={`tracking-wide ${bgTexture?.white ? "" : "border-r border-color"} font-medium text-sm py-4 max-[1100px]:px-4`}>
                   AGE
                 </th>
-                <th className={`tracking-wide border-r ${bgTexture?.white ? "border-r-2 border-black" : "border-color"} font-medium text-sm py-4 max-[1100px]:px-24`}>
+                <th className={`tracking-wide ${bgTexture?.white ? "" : "border-r border-color"} font-medium text-sm py-4 max-[1100px]:px-24`}>
                   ADDRESS
                 </th>
               </tr>
             </thead>
-            <tbody className={`${bgTexture?.white ? "text-black border-2 border-black" : "tableTitle"} text-center`}>
+            {bgTexture?.white ? <tbody className={`${bgTexture?.white ? "text-black" : "tableTitle"} text-center`}>
               {data?.map((student) => {
                 return (
-                  <tr onClick={toDetail} className={`${bgTexture?.white && "border-b-2 border-black"} custom-hover cursor-pointer`} key={student.id}>
-                    <td className={`tracking-wide border-r ${bgTexture?.white ? "border-r-2 border-black" : "border-color"} font-medium text-sm py-4`}>
+                  <tr onClick={toDetail} className={`${student.id % 2 == 1 && "bg-blue-100"} ${bgTexture?.white ? " hover:bg-blue-200 duration-200" : "custom-hover"} cursor-pointer`} key={student.id}>
+                    <td className={`tracking-wide ${bgTexture?.white ? "" : "border-color border-r"} font-medium text-sm py-4`}>
                       {student?.id}
                     </td>
-                    <td className={`tracking-wide border-r ${bgTexture?.white ? "border-r-2 border-black" : "border-color"} font-medium text-sm py-4`}>
+                    <td className={`tracking-wide ${bgTexture?.white ? "" : "border-color border-r"} font-medium text-sm py-4`}>
                       {student?.name}
                     </td>
-                    <td className={`tracking-wide border-r ${bgTexture?.white ? "border-r-2 border-black" : "border-color"} font-medium text-sm py-4`}>
+                    <td className={`tracking-wide ${bgTexture?.white ? "" : "border-color border-r"} font-medium text-sm py-4`}>
                       {student?.email}
                     </td>
-                    <td className={`tracking-wide border-r ${bgTexture?.white ? "border-r-2 border-black" : "border-color"} font-medium text-sm py-4`}>
+                    <td className={`tracking-wide ${bgTexture?.white ? "" : "border-color border-r"} font-medium text-sm py-4`}>
                       {student?.phone}
                     </td>
-                    <td className={`tracking-wide border-r ${bgTexture?.white ? "border-r-2 border-black" : "border-color"} font-medium text-sm py-4`}>
+                    <td className={`tracking-wide ${bgTexture?.white ? "" : "border-color border-r"} font-medium text-sm py-4`}>
                       {student?.age}
                     </td>
-                    <td className={`tracking-wide border-r ${bgTexture?.white ? "border-r-2 border-black" : "border-color"} font-medium text-sm py-4`}>
+                    <td className={`tracking-wide ${bgTexture?.white ? "" : "border-color border-r"} font-medium text-sm py-4`}>
                       {student?.address}
                     </td>
                   </tr>
                 );
               })}
-            </tbody>
+            </tbody> : <tbody className={`${bgTexture?.white ? "text-black" : "tableTitle"} text-center`}>
+              {data?.map((student) => {
+                return (
+                  <tr onClick={toDetail} className={` ${bgTexture?.white ? " hover:bg-blue-200 duration-200" : "custom-hover"} cursor-pointer`} key={student.id}>
+                    <td className={`tracking-wide ${bgTexture?.white ? "" : "border-color border-r"} font-medium text-sm py-4`}>
+                      {student?.id}
+                    </td>
+                    <td className={`tracking-wide ${bgTexture?.white ? "" : "border-color border-r"} font-medium text-sm py-4`}>
+                      {student?.name}
+                    </td>
+                    <td className={`tracking-wide ${bgTexture?.white ? "" : "border-color border-r"} font-medium text-sm py-4`}>
+                      {student?.email}
+                    </td>
+                    <td className={`tracking-wide ${bgTexture?.white ? "" : "border-color border-r"} font-medium text-sm py-4`}>
+                      {student?.phone}
+                    </td>
+                    <td className={`tracking-wide ${bgTexture?.white ? "" : "border-color border-r"} font-medium text-sm py-4`}>
+                      {student?.age}
+                    </td>
+                    <td className={`tracking-wide ${bgTexture?.white ? "" : "border-color border-r"} font-medium text-sm py-4`}>
+                      {student?.address}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody> }
           </table>
         </div>
         <div className={`mx-auto mb-5 ${bgTexture?.white ? "bgTransparent2" : "bgTransparent"} rounded`}>
