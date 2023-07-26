@@ -28,7 +28,7 @@ ChartJs.register(
 const LineChart = () => {
   let bgTexture = JSON.parse(localStorage.getItem("bgTexture"));
 
-  const [data, setData] = useState({
+  const data = {
     labels: [
       "Jan",
       "Feb",
@@ -66,7 +66,7 @@ const LineChart = () => {
         hoverOffset: 4,
       },
     ],
-  });
+  };
 
   const options = {
     plugins: {
