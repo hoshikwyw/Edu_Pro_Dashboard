@@ -12,6 +12,7 @@ export const themeSlice = createSlice({
   reducers: {
     addBgTexture: (state, { payload }) => {
       state.bgTexture = payload;
+      // console.log(payload);
       localStorage.setItem("bgTexture", JSON.stringify(payload));
     },
     addEvent: (state, { payload }) => {
